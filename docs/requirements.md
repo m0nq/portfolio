@@ -12,26 +12,32 @@ Prospective clients seeking web development services.
 ## Website Pages:
 
 Homepage (1 Page):
+
 - Focus: Project Showcase
 
 Blog (1 Page):
+
 - Focus: Industry insights, development process explanations, and personal branding
 - Content Requirements: Thoughts and explanations on how each project was developed
 
 ## Homepage:
 
 ### Hero Section:
+
 Eye-catching non-animated visual (photo of developer, animation, etc.).
 Compelling headline introducing myself and my expertise.
 Brief call to action (e.g., "Contact Me for Your Project")
 
 ### About Me Section:
+
 Brief introduction of my background, skills, and experience. Highlight key strengths and areas of specialization.
 
 ### Project Showcase:
+
 Grid layout displaying a selection of the developer's most impressive projects.
 
 Each project should include:
+
 - A clear and concise title.
 - A captivating image or video thumbnail.
 - A short description of the project's scope, key features, and technologies used.
@@ -46,22 +52,27 @@ Publish regular blog posts (frequency to be determined) on topics relevant to we
 personal experiences.
 
 Each blog post should include:
+
 - Engaging and informative content tailored to the target audience.
 - High-quality visuals (images, infographics) to enhance readability.
 - Clear call to action (e.g., subscribe to the blog, contact for a consultation).
 - Consider categories and tags to organize blog content.
 
 ### Design Requirements:
+
 - Modern and professional aesthetics: Clean and uncluttered layout for optimal usability.
 - High-quality visuals and consistent brand identity throughout the website.
-- Responsive design: Website must adapt seamlessly to various screen sizes (mobile, tablet, desktop) for a flawless user experience across
-devices.
+- Responsive design: Website must adapt seamlessly to various screen sizes (mobile, tablet, desktop) for a flawless user
+  experience across
+  devices.
 - Easy navigation: Intuitive navigation bar with clear links to both Homepage and Blog sections.
-Consider implementing a "back to top" button for improved user experience.
+  Consider implementing a "back to top" button for improved user experience.
 - Fast loading speed: Optimize website elements (images, videos) to ensure quick page load times.
 
 ### Functionality Requirements:
+
 - Contact form: Allow visitors to send inquiries directly through the website.
-- Social media links: Integrate buttons to connect with the developer on professional platforms (e.g., LinkedIn, Github).
+- Social media links: Integrate buttons to connect with the developer on professional platforms (e.g., LinkedIn,
+  Github).
 - Search functionality (Optional): Implement a search bar for users to find specific blog posts.
 - Ensure conformity to website checklist.
