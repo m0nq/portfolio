@@ -234,7 +234,7 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- CODE STANDARD -->
 
-## Codeing Standard
+## Coding Standard
 
 Always use clean coding
 standards [JS](https://github.com/ryanmcdermott/clean-code-javascript), [TS](https://github.com/labs42io/clean-code-typescript)
