@@ -306,13 +306,13 @@ Project Link: [https://github.com/m0nq/portfolio](https://github.com/m0nq/portfo
 
 [stars-url]: https://github.com/m0nq/portfolio/graphs/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/m0nq/portfolio.svg?style=for-the-badge
 
 [issues-url]: https://github.com/m0nq/portfolio/issues
 
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 
-[license-url]: https://github.com/m0nq/portfolio/blob/master/LICENSE.txt
+[license-url]: https://github.com/m0nq/portfolio/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
