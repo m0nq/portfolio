@@ -9,9 +9,10 @@ const config: GatsbyConfig = {
         // You can overwrite values here that are used for the SEO component
         // You can also add new values here to query them like usual
         // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-jodie/gatsby-config.mjs
+        title: 'Monk Wellington',
         siteTitle: 'Monk Wellington',
         siteTitleAlt: 'Monk Wellington',
-        // siteUrl: `https://jodie.lekoarts.de`,
+        siteUrl: 'https://m0nq.github.io/portfolio',
         siteDescription: `Portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
         siteImage: '/banner.jpg',
         siteLanguage: 'en',
@@ -70,6 +71,28 @@ const config: GatsbyConfig = {
                 saveStatsTo: `${__dirname}/public/.statoscope/_stats.json`,
                 open: false
             }
+        },
+        'gatsby-plugin-postcss',
+        'gatsby-plugin-image',
+        'gatsby-plugin-mdx',
+        'gatsby-transformer-remark',
+        'gatsby-plugin-sharp',
+        'gatsby-transformer-sharp',
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                'name': 'images',
+                'path': './src/images/'
+            },
+            __key: 'images'
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                'name': 'pages',
+                'path': './src/pages/'
+            },
+            __key: 'pages'
         }
     ].filter(Boolean) as Array<PluginRef>
 };
