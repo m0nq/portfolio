@@ -1,6 +1,6 @@
 {
     "name": "portfolio",
-    "description": "Image-heavy photography portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.",
+    "description": "A place for me to showcase all the projects I've worked on. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.",
     "version": "1.0.0",
     "author": "Monk Wellington <monk.wellington@gmail.com>",
     "license": "MIT",
@@ -19,7 +19,16 @@
         "gatsby-plugin-sitemap": "^6.13.1",
         "gatsby-plugin-webpack-statoscope": "^1.0.3",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "@mdx-js/react": "^3.0.1",
+        "gatsby-plugin-image": "^3.13.1",
+        "gatsby-plugin-mdx": "^5.13.1",
+        "gatsby-plugin-postcss": "^6.13.1",
+        "gatsby-plugin-sharp": "^5.13.1",
+        "gatsby-source-filesystem": "^5.13.1",
+        "gatsby-transformer-remark": "^6.13.1",
+        "gatsby-transformer-sharp": "^5.13.1",
+        "postcss": "^8.4.38"
     },
     "devDependencies": {
         "@types/dotenv": "^8.2.0",
