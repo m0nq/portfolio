@@ -12,7 +12,9 @@
 -->
 
 [//]: # ([![Contributors][contributors-shield]][contributors-url])
+
 [//]: # ([![Forks][forks-shield]][forks-url])
+
 [//]: # ([![Stargazers][stars-shield]][stars-url])
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
@@ -149,7 +151,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/m0nq/portfolio.git
    ```
 2. Install NPM packages
    ```sh
@@ -187,10 +189,8 @@ This is an example of how to list things you need to use the software and how to
 ## Roadmap
 
 - [X] Add back to top links
-- [ ] Add Changelog
 - [ ] Add "components" document to easily copy & paste sections of the readme
 - [ ] Multi-language Support
-    - [ ] Chinese
     - [ ] Spanish
 
 [//]: # (See the [open issues]&#40;https://github.com/othneildrew/Best-README-Template/issues&#41; for a full list of proposed features &#40;)
