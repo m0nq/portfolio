@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkPortfolio_of_Monk_Wellington=self.webpackChunkPortfolio_of_Monk_Wellington||[]).push([[453],{731:function(e,l,n){n.r(l);var t=n(6540),o=n(2412);l.default=e=>t.createElement(o.A,null,t.createElement("div",{style:{textAlign:"center"}},t.createElement("h1",null,"404"),t.createElement("p",null,"Page not found.")))}}]);
-//# sourceMappingURL=component---src-pages-404-tsx-adf4435a52059cec022e.js.map

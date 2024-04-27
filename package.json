@@ -1,6 +1,6 @@
 {
     "name": "portfolio",
-    "description": "A place for me to showcase all the projects I've worked on. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.",
+    "description": "A place for to showcase all the projects web application projects by Monk Wellington.",
     "version": "1.0.0",
     "author": "Monk Wellington <monk.wellington@gmail.com>",
     "license": "MIT",
@@ -13,29 +13,28 @@
         "clean": "gatsby clean"
     },
     "dependencies": {
-        "@lekoarts/gatsby-theme-jodie": "^5.1.4",
-        "gatsby": "^5.13.3",
-        "gatsby-plugin-manifest": "^5.13.1",
-        "gatsby-plugin-sitemap": "^6.13.1",
-        "gatsby-plugin-webpack-statoscope": "^1.0.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
         "@mdx-js/react": "^3.0.1",
+        "autoprefixer": "^10.4.19",
+        "gatsby": "^5.13.3",
         "gatsby-plugin-image": "^3.13.1",
+        "gatsby-plugin-manifest": "^5.13.1",
         "gatsby-plugin-mdx": "^5.13.1",
         "gatsby-plugin-postcss": "^6.13.1",
         "gatsby-plugin-sharp": "^5.13.1",
+        "gatsby-plugin-sitemap": "^6.13.1",
         "gatsby-source-filesystem": "^5.13.1",
         "gatsby-transformer-remark": "^6.13.1",
         "gatsby-transformer-sharp": "^5.13.1",
-        "postcss": "^8.4.38"
+        "postcss": "^8.4.38",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwindcss": "^3.4.3"
     },
     "devDependencies": {
-        "@types/dotenv": "^8.2.0",
-        "@types/node": "^18.19.13",
-        "@types/react": "^18.2.51",
-        "@types/react-dom": "^18.2.18",
-        "cross-env": "^7.0.3",
+        "@types/node": "^20.11.19",
+        "@types/react": "^18.2.55",
+        "@types/react-dom": "^18.2.19",
+        "dotenv": "^16.4.5",
         "typescript": "^5.3.3"
     }
 }

@@ -2,23 +2,18 @@
     "compilerOptions": {
         "target": "esnext",
         "lib": ["dom", "esnext"],
-        "jsx": "react-jsx",
-        "jsxImportSource": "theme-ui",
+        "jsx": "react",
         "module": "esnext",
         "moduleResolution": "node",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "skipLibCheck": true,
-        "baseUrl": "./src",
-        "paths": {
-            "@/*": ["./src/*"]
-        }
+        "noImplicitAny": false,
+        "skipLibCheck": true
     },
-    "include": [
-        "./src/**/*",
-        "./gatsby-node.ts",
-        "./gatsby-config.ts",
-        "./plugins/**/*"
-    ]
+    "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*"]
 }
