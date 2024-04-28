@@ -1,0 +1,68 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@tailwind utilities;
+
+/**
+ * Use this directive to control where Tailwind injects the hover, focus,
+ * responsive, dark mode, and other variants of each class.
+ *
+ * If omitted, Tailwind will append these classes to the very end of
+ * your stylesheet by default.
+ */
+@tailwind variants;
+
+:root {
+  --dark-background-color: #181a1b;
+  --text-color: #fff;
+  --primary-color: pink;
+  --secondary-color: royalblue;
+}
+
+@layer base {
+  html {
+    @apply text-base font-normal;
+  }
+
+  .inner-container {
+    @apply grid grid-cols-1 xl:grid-cols-[375px_1fr] lg:grid-cols-[320px_1fr] md:grid-cols-1 sm:grid-cols-1;
+  }
+
+  header, footer {
+    @apply text-[--text-color] relative w-full p-4 bg-[--dark-background-color] sm:relative sm:w-full sm:p-4 md:w-full md:relative lg:fixed lg:w-[320px] xl:w-[375px];
+  }
+
+  header {
+    @apply h-full flex flex-row items-center text-[--text-color] justify-center
+    sm:flex-row sm:content-center sm:justify-between
+    md:p-8 md:flex-row md:content-center md:justify-between
+    lg:flex-col lg:items-start lg:justify-start;
+  }
+
+  main {
+    @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
+  }
+
+  footer {
+    @apply bottom-0 text-sm md:p-4;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+}
