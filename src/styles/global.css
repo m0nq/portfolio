@@ -25,6 +25,13 @@
  */
 @tailwind variants;
 
+:root {
+  --dark-background-color: #181a1b;
+  --text-color: #fff;
+  --primary-color: pink;
+  --secondary-color: royalblue;
+}
+
 @layer base {
   html {
     @apply text-base font-normal;
@@ -35,11 +42,11 @@
   }
 
   header, footer {
-    @apply text-[#e8e6e3] relative w-full p-4 bg-[#181a1b] sm:relative sm:w-full sm:p-4 md:w-full md:relative lg:fixed lg:w-[320px] xl:w-[375px];
+    @apply text-[--text-color] relative w-full p-4 bg-[--dark-background-color] sm:relative sm:w-full sm:p-4 md:w-full md:relative lg:fixed lg:w-[320px] xl:w-[375px];
   }
 
   header {
-    @apply h-full flex flex-row items-center text-[#e8e6e3] justify-center
+    @apply h-full flex flex-row items-center text-[--text-color] justify-center
     sm:flex-row sm:content-center sm:justify-between
     md:p-8 md:flex-row md:content-center md:justify-between
     lg:flex-col lg:items-start lg:justify-start;
