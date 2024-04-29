@@ -6,8 +6,6 @@ import type { GatsbyConfig } from 'gatsby';
 import 'dotenv/config';
 import * as path from 'node:path';
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
-
 const config: GatsbyConfig = {
     pathPrefix: '/portfolio',
     siteMetadata: {
@@ -25,16 +23,16 @@ const config: GatsbyConfig = {
                 link: '/'
             },
             {
+                name: 'contact',
+                link: '/contact'
+            },
+            {
                 name: 'about',
                 link: '/about'
             },
             {
                 name: 'projects',
                 link: '/projects'
-            },
-            {
-                name: 'contact',
-                link: '/contact'
             },
             {
                 name: 'blog',
@@ -77,7 +75,8 @@ const config: GatsbyConfig = {
             resolve: `gatsby-plugin-alias-imports`,
             options: {
                 alias: {
-                    '@components': path.resolve(__dirname, 'src/components')
+                    '@components': path.resolve(__dirname, 'src/components'),
+                    '@utils': path.resolve(__dirname, 'src/utils')
                 },
                 extensions: []
             }
