@@ -9,14 +9,14 @@ import * as path from 'node:path';
 const config: GatsbyConfig = {
     pathPrefix: '/portfolio',
     siteMetadata: {
-        title: 'Monk Wellington',
-        siteTitle: 'Monk Wellington',
+        title: 'Monk\'s Portfolio',
+        siteTitle: 'Monk\'s Portfolio',
         siteTitleAlt: 'Monk Wellington',
         siteUrl: 'https://m0nq.github.io/portfolio',
         siteDescription: `Portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
         siteImage: '/banner.jpg',
         siteLanguage: 'en',
-        author: '@m0nq',
+        author: 'Monk Wellington',
         menuLinks: [
             {
                 name: 'home',
@@ -77,11 +77,13 @@ const config: GatsbyConfig = {
                 alias: {
                     '@components': path.resolve(__dirname, 'src/components'),
                     '@utils': path.resolve(__dirname, 'src/utils'),
-                    '@types': path.resolve(__dirname, 'src/types')
+                    '@data-types': path.resolve(__dirname, 'src/data-types'),
+                    '@hooks': path.resolve(__dirname, 'src/hooks')
                 },
                 extensions: []
             }
-        }
+        },
+        'gatsby-plugin-react-helmet'
     ].filter(Boolean) as Array<PluginRef>
 };
 

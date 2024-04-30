@@ -70,10 +70,6 @@
     @apply m-2 text-center
   }
 
-  .separator {
-    @apply pt-8 pb-8 hidden
-  }
-
   .primary-navigation > ul {
     @apply my-8 mx-0 p-0 list-disc
   }

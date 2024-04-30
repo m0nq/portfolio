@@ -5,7 +5,11 @@ import { ReactElement } from 'react';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
 
-export const Header = ({ siteTitle, menuLinks }: { siteTitle: string, menuLinks: MenuLink[] }): ReactElement => {
+export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement => {
+    const filteredMenuLinks = menuLinks
+        .filter((link: MenuLink) => link.name !== 'home')
+        .filter((link: MenuLink) => link.name !== 'contact');
+
     return (
         <header>
             <Link to="/" className="profile-link">
@@ -16,18 +20,15 @@ export const Header = ({ siteTitle, menuLinks }: { siteTitle: string, menuLinks:
             <nav className="primary-navigation">
                 <ul>
                     <li key="contact"><Link to="/contact" className="nav-link">Contact</Link></li>
-                    {menuLinks
-                        .filter((link: MenuLink) => link.name !== 'home')
-                        .filter((link: MenuLink) => link.name !== 'contact')
-                        .map(({ name, link }) => {
-                            const parsedName = capitalizeFirstLetter(name);
-                            return (
-                                <li key={name}><Link to={link} className="nav-link">{parsedName}</Link></li>
-                            );
-                        })}
+                    {filteredMenuLinks.map(({ name, link }) => {
+                        return (
+                            <li key={name}>
+                                <Link to={link} className="nav-link">{capitalizeFirstLetter(name)}</Link>
+                            </li>
+                        );
+                    })}
                 </ul>
             </nav>
         </header>
-    )
-        ;
+    );
 };
