@@ -5,7 +5,7 @@
     "author": "Monk Wellington <monk.wellington@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "start": "gatsby develop",
+        "start": "gatsby develop -H 0.0.0.0",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
         "build": "gatsby build -- --prefix-paths",

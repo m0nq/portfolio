@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
         siteDescription: `Portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
         siteImage: '/banner.jpg',
         siteLanguage: 'en',
-        author: 'Monk Wellington',
+        author: 'm0nq',
         menuLinks: [
             {
                 name: 'home',

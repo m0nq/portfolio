@@ -10,7 +10,7 @@ import { findLink } from '@utils/find-link';
 const IndexPage: React.FC<PageProps> = () => {
     return (
         <Layout>
-            <main>Main</main>
+            <main>Interesting stuff will go here...</main>
         </Layout>
     );
 };

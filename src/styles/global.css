@@ -46,7 +46,7 @@
   }
 
   header {
-    @apply h-full flex flex-row items-center text-[--text-color] justify-center
+    @apply h-full flex flex-row items-center text-[--text-color] justify-between
     sm:flex-row sm:content-center sm:justify-between
     md:p-8 md:flex-row md:content-center md:justify-between
     lg:flex-col lg:items-start lg:justify-start;
@@ -63,11 +63,11 @@
 
 @layer components {
   .profile-link {
-    @apply w-12 sm:w-16 md:w-[4.5rem] lg:w-20
+    @apply w-12 sm:w-16 md:w-[4.5rem] lg:w-20 lg:self-center lg:pr-36
   }
 
   .profile-image {
-    @apply m-2 text-center w-full rounded-full
+    @apply m-2 w-full rounded-full md:w-24 lg:w-32
   }
 
   .primary-navigation > ul {
