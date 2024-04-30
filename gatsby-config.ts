@@ -76,7 +76,8 @@ const config: GatsbyConfig = {
             options: {
                 alias: {
                     '@components': path.resolve(__dirname, 'src/components'),
-                    '@utils': path.resolve(__dirname, 'src/utils')
+                    '@utils': path.resolve(__dirname, 'src/utils'),
+                    '@types': path.resolve(__dirname, 'src/types')
                 },
                 extensions: []
             }
