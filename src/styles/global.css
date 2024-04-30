@@ -34,7 +34,7 @@
 
 @layer base {
   html {
-    @apply text-base font-normal;
+    @apply text-base font-normal font-sans;
   }
 
   .inner-container {
@@ -46,7 +46,7 @@
   }
 
   header {
-    @apply h-full flex flex-row items-center text-[--text-color] justify-center
+    @apply h-full flex flex-row items-center text-[--text-color] justify-between
     sm:flex-row sm:content-center sm:justify-between
     md:p-8 md:flex-row md:content-center md:justify-between
     lg:flex-col lg:items-start lg:justify-start;
@@ -62,6 +62,26 @@
 }
 
 @layer components {
+  .profile-link {
+    @apply w-12 sm:w-16 md:w-[4.5rem] lg:w-20 lg:self-center lg:pr-36
+  }
+
+  .profile-image {
+    @apply m-2 w-full rounded-full md:w-24 lg:w-32
+  }
+
+  .primary-navigation > ul {
+    @apply my-8 mx-0 p-0 list-disc
+  }
+
+  .primary-navigation > ul li {
+    @apply list-none inline-block sm:inline-block md:inline-block lg:block lg:py-2
+  }
+
+  .nav-link {
+    @apply no-underline duration-[0.3s] transition-all ease-in-out delay-0 ml-[0.5rem] text-base
+    sm:ml-4 sm:text-[1.25rem] md:ml-4 md:text-2xl lg:ml-0 lg:text-3xl
+  }
 }
 
 @layer utilities {

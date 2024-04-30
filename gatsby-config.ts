@@ -4,20 +4,41 @@
 import type { PluginRef } from 'gatsby';
 import type { GatsbyConfig } from 'gatsby';
 import 'dotenv/config';
-
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
+import * as path from 'node:path';
 
 const config: GatsbyConfig = {
     pathPrefix: '/portfolio',
     siteMetadata: {
-        title: 'Monk Wellington',
-        siteTitle: 'Monk Wellington',
+        title: 'Monk\'s Portfolio',
+        siteTitle: 'Monk\'s Portfolio',
         siteTitleAlt: 'Monk Wellington',
         siteUrl: 'https://m0nq.github.io/portfolio',
         siteDescription: `Portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
         siteImage: '/banner.jpg',
         siteLanguage: 'en',
-        author: '@m0nq'
+        author: 'm0nq',
+        menuLinks: [
+            {
+                name: 'home',
+                link: '/'
+            },
+            {
+                name: 'contact',
+                link: '/contact'
+            },
+            {
+                name: 'about',
+                link: '/about'
+            },
+            {
+                name: 'projects',
+                link: '/projects'
+            },
+            {
+                name: 'blog',
+                link: '/blog'
+            }
+        ]
     },
     trailingSlash: 'never',
     plugins: [
@@ -49,6 +70,30 @@ const config: GatsbyConfig = {
                 'path': './src/pages/'
             },
             __key: 'pages'
+        },
+        {
+            resolve: `gatsby-plugin-alias-imports`,
+            options: {
+                alias: {
+                    '@components': path.resolve(__dirname, 'src/components'),
+                    '@utils': path.resolve(__dirname, 'src/utils'),
+                    '@data-types': path.resolve(__dirname, 'src/data-types'),
+                    '@hooks': path.resolve(__dirname, 'src/hooks')
+                },
+                extensions: []
+            }
+        },
+        {
+            resolve: `gatsby-plugin-google-fonts-v2`,
+            options: {
+                fonts: [
+                    {
+                        family: 'Quicksand',
+                        variable: true,
+                        weights: ['300..700']
+                    }
+                ]
+            }
         }
     ].filter(Boolean) as Array<PluginRef>
 };

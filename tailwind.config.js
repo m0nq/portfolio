@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`
   ],
   theme: {
+    fontFamily: {
+      sans: ['Quicksand', ...defaultTheme.fontFamily.sans]
+    },
     extend: {
       colors: {
         'text-color': 'var(--text-color)',

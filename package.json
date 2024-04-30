@@ -5,16 +5,18 @@
     "author": "Monk Wellington <monk.wellington@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "build": "gatsby build -- --prefix-paths",
-        "develop:cypress": "cross-env CYPRESS_SUPPORT=y npm run start",
-        "build:cypress": "cross-env CYPRESS_SUPPORT=y npm run build",
-        "start": "gatsby develop",
+        "start": "gatsby develop -H 0.0.0.0",
         "serve": "gatsby serve",
-        "clean": "gatsby clean"
+        "clean": "gatsby clean",
+        "build": "gatsby build -- --prefix-paths",
+        "build:cypress": "cross-env CYPRESS_SUPPORT=y npm run build",
+        "develop:cypress": "cross-env CYPRESS_SUPPORT=y npm run start"
     },
     "dependencies": {
         "@mdx-js/react": "^3.0.1",
         "gatsby": "^5.13.3",
+        "gatsby-plugin-alias-imports": "^1.0.5",
+        "gatsby-plugin-google-fonts-v2": "^1.0.1",
         "gatsby-plugin-image": "^3.13.1",
         "gatsby-plugin-manifest": "^5.13.1",
         "gatsby-plugin-mdx": "^5.13.1",
