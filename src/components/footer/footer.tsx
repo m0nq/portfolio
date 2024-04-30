@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactElement } from 'react';
+
 import { useSiteMetadata } from '@hooks/use-site-metadata';
 
 export const Footer = (): ReactElement => {

@@ -83,7 +83,18 @@ const config: GatsbyConfig = {
                 extensions: []
             }
         },
-        'gatsby-plugin-react-helmet'
+        {
+            resolve: `gatsby-plugin-google-fonts-v2`,
+            options: {
+                fonts: [
+                    {
+                        family: 'Quicksand',
+                        variable: true,
+                        weights: ['300..700']
+                    }
+                ]
+            }
+        }
     ].filter(Boolean) as Array<PluginRef>
 };
 
