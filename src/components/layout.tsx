@@ -24,9 +24,6 @@ export const Layout = ({ children }) => {
       } render={({ site: { siteMetadata } }: DataProps) => {
           return (
               <>
-                  <head>
-                      <title>{siteMetadata.title}</title>
-                  </head>
                   <div className="outer-wrapper">
                       <div className="inner-container">
                           <Header siteTitle={siteMetadata.title} menuLinks={siteMetadata.menuLinks} />
