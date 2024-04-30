@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { ReactElement } from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
@@ -13,8 +14,7 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement =
     return (
         <header>
             <Link to="/" className="profile-link">
-                <div className="profile-image">Image</div>
-                {/*<img  />*/}
+                <StaticImage src="../../images/smiling_monk.jpeg" alt="Monk smiling" className="profile-image" />
             </Link>
             <div className="separator"></div>
             <nav className="primary-navigation">

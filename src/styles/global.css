@@ -67,7 +67,7 @@
   }
 
   .profile-image {
-    @apply m-2 text-center
+    @apply m-2 text-center w-full rounded-full
   }
 
   .primary-navigation > ul {
