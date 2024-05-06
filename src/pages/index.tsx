@@ -6,11 +6,12 @@ import { graphql } from 'gatsby';
 import { Layout } from '@components/layout';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { findLink } from '@utils/find-link';
+import { Main } from '@components/main/Main';
 
 const IndexPage: React.FC<PageProps> = () => {
     return (
         <Layout>
-            <main>Interesting stuff will go here...</main>
+            <Main />
         </Layout>
     );
 };

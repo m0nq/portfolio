@@ -82,6 +82,11 @@
     @apply no-underline duration-[0.3s] transition-all ease-in-out delay-0 ml-[0.5rem] text-base
     sm:ml-4 sm:text-[1.25rem] md:ml-4 md:text-2xl lg:ml-0 lg:text-3xl
   }
+
+  .main-wrapper {
+    contain: none;
+    @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
+  }
 }
 
 @layer utilities {
