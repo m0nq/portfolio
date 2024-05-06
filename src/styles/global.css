@@ -87,6 +87,10 @@
     contain: none;
     @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
   }
+
+  .banner-section {
+    @apply h-screen relative p-7
+  }
 }
 
 @layer utilities {

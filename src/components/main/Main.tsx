@@ -1,16 +1,21 @@
 import React from 'react';
 
+import { Section } from '@components/section/Section';
+import { Banner } from '@components/banner/Banner';
+
 export const Main = () => {
     return (
         <main className="main-wrapper">
             <div className="item-list-wrapper">
                 <div className="item-list">
-                    <section className="banner-section">Banner area</section>
+                    <Section classes="banner-section">
+                        <Banner />
+                    </Section>
                     <span id="top-content"></span>
-                    <section className="about">About section with contact button</section>
-                    <section className="offerings">Offerings</section>
-                    <section className="testimonials">Testimonials</section>
-                    <section className="misc">Misc</section>
+                    <Section classes="about">About section with contact button</Section>
+                    <Section classes="offerings">Offerings</Section>
+                    <Section classes="testimonials">Testimonials</Section>
+                    <Section classes="latest-projects">Latest Projects</Section>
                 </div>
             </div>
         </main>
