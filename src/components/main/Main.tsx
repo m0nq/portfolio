@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
+import { Offerings } from '@components/offerings/Offerings';
 
 export const Main = () => {
     return (
@@ -12,8 +13,9 @@ export const Main = () => {
                         <Banner />
                     </Section>
                     <span id="top-content"></span>
-                    <Section classes="about">About section with contact button</Section>
-                    <Section classes="offerings">Offerings</Section>
+                    <Section classes="offerings">
+                        <Offerings />
+                    </Section>
                     <Section classes="testimonials">Testimonials</Section>
                     <Section classes="latest-projects">Latest Projects</Section>
                 </div>

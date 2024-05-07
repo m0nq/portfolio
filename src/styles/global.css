@@ -34,7 +34,7 @@
 
 @layer base {
   html {
-    @apply text-base font-light font-sans text-white;
+    @apply text-base font-light font-sans text-white bg-[--background-color];
   }
 
   .inner-container {
@@ -42,7 +42,8 @@
   }
 
   header, footer {
-    @apply text-[--text-color] relative w-full p-4 bg-[--dark-background-color] sm:relative sm:w-full sm:p-4 md:w-full
+    @apply text-[--text-color] relative w-full p-4 bg-[--dark-background-color]
+    sm:relative sm:w-full sm:p-4 md:w-full
     md:relative lg:fixed lg:w-[320px] xl:w-[375px];
   }
 
@@ -90,7 +91,7 @@
   }
 
   .banner-section {
-    @apply h-screen relative p-7;
+    @apply relative p-7 h-auto sm:h-screen;
   }
 
   .banner-image {
@@ -129,12 +130,33 @@
     @apply mb-4 text-2xl;
   }
 
-  .banner-btns {
+  .banner-btn-container {
     @apply flex gap-10;
   }
 
-  .banner-btns > button {
+  .banner-btn-container > button {
     transition: color 0.3s ease 0s;
     @apply items-center inline-flex self-start relative font-bold capitalize pt-0 py-0 pb-3.5 tracking-wider;
+  }
+
+  .gradient {
+    background: radial-gradient(at left bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    @apply z-[1] h-full w-full top-0 left-0 absolute;
+  }
+
+  .offerings {
+    @apply my-44 py-0 px-[75px];
+  }
+
+  .offerings-container {
+    @apply mx-auto max-w-full;
+  }
+
+  .offerings-container > div {
+    @apply md:max-w-2xl md:w-2/3;
+  }
+
+  .offerings-container > div > h2 {
+    @apply leading-tight tracking-normal;
   }
 }
