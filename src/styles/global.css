@@ -110,7 +110,7 @@
     text-shadow: 0 0 5px rgba(0, 0, 0, 1);
     margin-inline-start: 0;
     margin-inline-end: 0;
-    @apply mt-2 mb-6 leading-5  tracking-normal lg:mb-6;
+    @apply mt-2 mb-6 leading-5 tracking-normal lg:mb-6;
   }
 
   h1 {

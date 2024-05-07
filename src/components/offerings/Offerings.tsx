@@ -3,7 +3,7 @@ import React from 'react';
 export const Offerings = () => {
     return (
         <>
-            <div style={{ color: 'black' }} className="offerings-container">
+            <div className="offerings-container">
                 <div>
                     <h2>Offerings section</h2>
                     <p>Post-ironic kombucha single-origin coffee, salvia VHS portland iPhone hoodie selfies. Umami

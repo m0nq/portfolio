@@ -12,7 +12,6 @@ export const Main = () => {
                     <Section classes="banner-section">
                         <Banner />
                     </Section>
-                    <span id="top-content"></span>
                     <Section classes="offerings">
                         <Offerings />
                     </Section>
