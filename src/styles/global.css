@@ -171,4 +171,23 @@
   .testimonials {
     @apply relative;
   }
+
+  .testimonials-container h3 {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    @apply w-full text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .testimonials-container {
+    @apply mx-auto relative flex flex-col gap-10 items-center bottom-[28rem]
+    sm:bottom-80 md:justify-center md:items-center md:flex-row
+    lg:gap-10 xl:gap-10;
+  }
+
+  .title-aside {
+    @apply text-center max-w-72 sm:max-w-xs md:grow md:shrink md:basis-1/2 lg:max-w-sm;
+  }
+
+  .testimonials-span {
+    @apply text-[--primary-color] text-2xl lg:text-4xl;
+  }
 }

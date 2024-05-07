@@ -21,7 +21,17 @@ export const Testimonials = () => {
                     width: '100%'
                 }} />
             <div className="testimonials-image-overlay"></div>
-            <div className="testimonials-container"></div>
+            <div className="testimonials-container">
+                <aside className="title-aside">
+                    <h3>Built for speed</h3>
+                    <p>By using GatsbyJS, the Barcadia site is super-fast out of the box</p>
+                </aside>
+                <span className="testimonials-span">X</span>
+                <aside className="title-aside">
+                    <h3>Built For Content</h3>
+                    <p>Contentful helps you edit your application with ease as your business expands</p>
+                </aside>
+            </div>
         </>
     );
 };
