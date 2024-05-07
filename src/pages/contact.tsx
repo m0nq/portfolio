@@ -18,7 +18,7 @@ const Contact: React.FC<PageProps> = () => {
 export default Contact;
 
 export const Head = ({ data: { site: { siteMetadata } } }): ReactElement => {
-    const title: string = findLink(siteMetadata.menuLinks, 'contact') || siteMetadata.siteMetadata.title;
+    const title: string = findLink(siteMetadata.menuLinks, 'contact') || siteMetadata.title;
 
     return <title>{capitalizeFirstLetter(title)}</title>;
 };

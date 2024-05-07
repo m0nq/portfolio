@@ -19,7 +19,7 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head = ({ data: { site: { siteMetadata } } }): ReactElement => {
-    const title: string = findLink(siteMetadata.menuLinks, 'home') || siteMetadata.siteMetadata.title;
+    const title: string = siteMetadata.title || findLink(siteMetadata.menuLinks, 'home');
 
     return <title>{capitalizeFirstLetter(title)}</title>;
 };

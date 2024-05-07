@@ -3,6 +3,7 @@ import React from 'react';
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import { Offerings } from '@components/offerings/Offerings';
+import { Testimonials } from '@components/testimonials/Testimonials';
 
 export const Main = () => {
     return (
@@ -15,8 +16,10 @@ export const Main = () => {
                     <Section classes="offerings">
                         <Offerings />
                     </Section>
-                    <Section classes="testimonials">Testimonials</Section>
-                    <Section classes="latest-projects">Latest Projects</Section>
+                    <Section classes="testimonials">
+                        <Testimonials />
+                    </Section>
+                    <Section classes="projects">Latest Projects</Section>
                 </div>
             </div>
         </main>

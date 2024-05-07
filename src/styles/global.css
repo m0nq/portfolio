@@ -33,8 +33,16 @@
 }
 
 @layer base {
-  html {
-    @apply text-base font-light font-sans text-white bg-[--background-color];
+  /*@font-face {*/
+  /*  font-family: 'Quicksand', sans-serif;*/
+  /*  !*font-optical-sizing: auto;*!*/
+  /*  font-stretch: auto;*/
+  /*  font-style: normal;*/
+  /*  font-weight: 400;*/
+  /*  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap') format('woff2');*/
+  /*}*/
+  body {
+    @apply bg-[--dark-background-color] text-base font-light font-sans text-[--text-color];
   }
 
   .inner-container {
@@ -158,5 +166,9 @@
 
   .offerings-container > div > h2 {
     @apply leading-tight tracking-normal;
+  }
+
+  .testimonials {
+    @apply relative;
   }
 }
