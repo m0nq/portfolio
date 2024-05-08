@@ -11,7 +11,9 @@ export const Banner = () => (
                     height: '100%',
                     left: 0,
                     margin: 0,
-                    maxWidth: 'none',
+                    overflowX: 'hidden',
+                    overflowY: 'hidden',
+                    maxWidth: '100%',
                     padding: 0,
                     position: 'absolute',
                     right: 0,
@@ -24,8 +26,9 @@ export const Banner = () => (
             <div className="banner-content">
                 <h1>Monk Wellington<span style={{ color: 'pink' }}>.</span></h1>
                 <h2>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis cum ex laboriosam
-                    nam obcaecati placeat reprehenderit tenetur.
+                    Front-End Web Developer – React Specialist
+                    <br />
+                    Enhancing user journey's with code
                 </h2>
                 <div className="banner-btn-container">
                     <button className="banner-button">Get in touch!</button>

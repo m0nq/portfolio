@@ -14,7 +14,6 @@ export const Testimonials = () => {
                     objectPosition: '50% 50%',
                     overflowX: 'hidden',
                     overflowY: 'hidden',
-                    // position: 'relative',
                     right: 0,
                     top: 0,
                     verticalAlign: '100%',
