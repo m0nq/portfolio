@@ -69,6 +69,11 @@
   footer {
     @apply bottom-0 text-sm md:p-4;
   }
+
+  a {
+    transition: color .3s ease-in-out, text-decoration-line .3s ease-in-out;
+    @apply cursor-pointer hover:underline;
+  }
 }
 
 @layer components {
@@ -153,7 +158,7 @@
   }
 
   .offerings {
-    @apply my-44 py-0 px-[75px];
+    @apply py-[6.5rem] px-[75px];
   }
 
   .offerings-container {
@@ -169,18 +174,18 @@
   }
 
   .testimonials {
-    @apply relative;
+    @apply relative max-h-[31rem] my-6;
+  }
+
+  .testimonials-container {
+    @apply mx-auto relative flex flex-col gap-10 items-center bottom-[29rem]
+    sm:bottom-80 md:justify-center md:items-center md:flex-row
+    lg:gap-10 xl:gap-10;
   }
 
   .testimonials-container h3 {
     border-bottom: 2px solid rgba(255, 255, 255, 0.15);
     @apply w-full text-2xl md:text-3xl lg:text-4xl;
-  }
-
-  .testimonials-container {
-    @apply mx-auto relative flex flex-col gap-10 items-center bottom-[28rem]
-    sm:bottom-80 md:justify-center md:items-center md:flex-row
-    lg:gap-10 xl:gap-10;
   }
 
   .title-aside {
@@ -189,5 +194,80 @@
 
   .testimonials-span {
     @apply text-[--primary-color] text-2xl lg:text-4xl;
+  }
+
+  .projects {
+    @apply py-[6.5rem] px-[75px];
+  }
+
+  .projects-container {
+    @apply mx-auto max-w-screen-xl;
+  }
+
+  .intro-area {
+    @apply max-w-2xl mb-20;
+  }
+
+  .intro-area h2 {
+    margin-block-start: 0.83rem;
+    margin-block-end: 0.83rem;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    @apply font-bold mt-2 mb-4 text-4xl lg:mb-6;
+  }
+
+  .intro-area p {
+    @apply text-[#afc2cb] mt-2 mb-4;
+  }
+
+  .project-details {
+    @apply flex flex-wrap w-full gap-10;
+  }
+
+  .project-details a {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    transition: border-color 0.6s ease 0s, background-color 0.6s ease 0s, box-shadow 0.6s ease 0s;
+    @apply grow-0 shrink-0 basis-full rounded-md px-4 py-2.5 text-white no-underline
+    md:px-4 md:basis-[calc(50%_-_20px)];
+  }
+
+  .project-details a h4 {
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    @apply mt-2 mb-4 text-[1.5rem] font-bold;
+  }
+
+  .project-details a p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    @apply text-[#afc2cb] mt-2 mb-4;
+  }
+
+  .blog-item {
+    @apply flex flex-col items-start gap-5 mt-auto;
+  }
+
+  .blog-btn {
+    transition: color 0.3s ease 0s;
+    @apply text-white bg-transparent border-0 no-underline px-0 pt-0 pb-4 capitalize font-bold relative self-start
+    inline-flex items-center;
+  }
+
+  .blog-item p {
+    @apply text-[rgba(119_119_119)] mt-2 mb-0 font-bold;
+  }
+
+  .learn-more {
+    @apply mt-20;
+  }
+
+  .blog-link {
+    @apply text-white bg-transparent border-0 no-underline px-0 pt-0 pb-4 capitalize font-bold relative self-start
+    inline-flex items-center;
   }
 }

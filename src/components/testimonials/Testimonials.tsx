@@ -20,7 +20,6 @@ export const Testimonials = () => {
                     verticalAlign: '100%',
                     width: '100%'
                 }} />
-            <div className="testimonials-image-overlay"></div>
             <div className="testimonials-container">
                 <aside className="title-aside">
                     <h3>Built for speed</h3>

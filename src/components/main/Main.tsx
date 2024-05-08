@@ -4,6 +4,7 @@ import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import { Offerings } from '@components/offerings/Offerings';
 import { Testimonials } from '@components/testimonials/Testimonials';
+import { Projects } from '@components/projects/Projects';
 
 export const Main = () => {
     return (
@@ -19,7 +20,9 @@ export const Main = () => {
                     <Section classes="testimonials">
                         <Testimonials />
                     </Section>
-                    <Section classes="projects">Latest Projects</Section>
+                    <Section classes="projects">
+                        <Projects />
+                    </Section>
                 </div>
             </div>
         </main>
