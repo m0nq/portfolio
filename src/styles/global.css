@@ -160,43 +160,56 @@
     @apply z-[1] h-full w-full top-0 left-0 absolute;
   }
 
-  .offerings {
+  .about {
     @apply py-[6.5rem] px-12 md:px-20 flex content-center;
   }
 
-  .offerings-container {
+  .about-container {
     @apply w-full text-[1.25rem] mx-auto flex content-center md:max-w-2xl;
   }
 
-  .offerings-container > div {
+  .about-container > div {
     @apply md:text-justify;
   }
 
-  .offerings-container a {
+  .about-container a {
     @apply underline;
   }
 
-  .testimonials {
-    @apply relative max-h-[31rem] my-6 max-w-fit md:max-w-full;
+  .skills {
+    grid-template-areas: 'content';
+    @apply grid max-h-[31rem] my-6 max-w-fit md:max-w-full;
   }
 
-  .testimonials-container {
-    @apply mx-auto relative flex flex-col gap-10 items-center bottom-[29rem] w-4/5
-    md:bottom-[25rem] md:justify-center md:items-center md:flex-row
-    lg:gap-10 xl:bottom-[22rem] xl:gap-10;
+  .skills > * {
+    grid-area: content;
   }
 
-  .testimonials-container h3 {
+  .skills-container {
+    @apply z-[1] mx-auto flex flex-col items-center bottom-[29rem] w-4/5
+    md:bottom-[25rem] md:justify-center md:items-center
+    lg:gap-10 xl:gap-10;
+  }
+
+  .skills-container h2 {
+    @apply text-4xl;
+  }
+
+  .skills-container h3 {
     border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-    @apply w-full text-2xl md:text-3xl lg:text-4xl;
+    @apply w-full text-2xl;
   }
 
-  .title-aside {
+  .skills-content {
+    @apply flex gap-x-52;
+  }
+
+  .skill-list {
     @apply text-center max-w-72 sm:max-w-xs md:grow md:shrink md:basis-1/2 lg:max-w-sm;
   }
 
-  .testimonials-span {
-    @apply text-[--primary-color] text-2xl lg:text-4xl;
+  .skills-span {
+    @apply text-[--primary-color] text-2xl lg:text-4xl self-center;
   }
 
   .projects {

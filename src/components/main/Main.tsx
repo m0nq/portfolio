@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
-import { Testimonials } from '@components/testimonials/Testimonials';
+import { Skills } from '@components/skills/Skills';
 import { Projects } from '@components/projects/Projects';
 import { About } from '@components/about/About';
 
@@ -14,14 +14,14 @@ export const Main = () => {
                     <Section classes="banner-section">
                         <Banner />
                     </Section>
-                    <Section classes="offerings">
+                    <Section classes="about">
                         <About />
                     </Section>
                     {/*<Section classes="offerings">*/}
                     {/*    <Offerings />*/}
                     {/*</Section>*/}
-                    <Section classes="testimonials">
-                        <Testimonials />
+                    <Section classes="skills">
+                        <Skills />
                     </Section>
                     <Section classes="projects">
                         <Projects />

@@ -3,7 +3,7 @@ import React from 'react';
 export const About = () => {
     return (
         <>
-            <div className="offerings-container">
+            <div className="about-container">
                 <div>
                     <p>
                         I started my career at <a href="https://www.industriallogic.com/" target="_blank">Industrial
