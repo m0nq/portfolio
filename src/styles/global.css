@@ -28,7 +28,7 @@
 :root {
   --dark-background-color: #181a1b;
   --text-color: #fff;
-  --primary-color: pink;
+  --primary-color: hotpink;
   --secondary-color: royalblue;
 }
 
@@ -118,6 +118,14 @@
     @apply max-w-[700px] w-full min-h-[32vh] z-[2] relative md:w-[66vw];
   }
 
+  .banner-content > h1 {
+    @apply font-semibold;
+  }
+
+  .banner-content > h1 > span {
+    @apply text-[--primary-color]
+  }
+
   .banner-content button {
     @apply underline;
   }
@@ -126,7 +134,7 @@
     text-shadow: 0 0 5px rgba(0, 0, 0, 1);
     margin-inline-start: 0;
     margin-inline-end: 0;
-    @apply mt-2 mb-6 leading-5 tracking-normal lg:mb-6 w-fit;
+    @apply mt-2 mb-6 leading-5 tracking-normal w-fit lg:mb-6;
   }
 
   h1 {
@@ -143,7 +151,7 @@
   h2 {
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
-    @apply mb-4 text-2xl;
+    @apply mb-4 text-[1.5rem];
   }
 
   .banner-btn-container {
@@ -186,26 +194,34 @@
   }
 
   .skills-container {
-    @apply z-[1] mx-auto flex flex-col items-center bottom-[29rem] w-4/5
-    md:bottom-[25rem] md:justify-center md:items-center
-    lg:gap-10 xl:gap-10;
+    text-shadow: 0 0 50px black;
+    @apply z-[1] font-normal mx-auto flex flex-col items-center bottom-[29rem] w-4/5 justify-start
+    md:justify-center md:items-center lg:gap-10 xl:gap-10;
   }
 
   .skills-container h2 {
-    @apply text-4xl;
+    @apply md:text-[2.25rem] font-semibold;
   }
 
   .skills-container h3 {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-    @apply w-full text-2xl;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    @apply w-full md:text-2xl;
   }
 
   .skills-content {
-    @apply flex gap-x-52;
+    @apply flex flex-col md:flex-row md:gap-28 lg:gap-x-52;
   }
 
   .skill-list {
     @apply text-center max-w-72 sm:max-w-xs md:grow md:shrink md:basis-1/2 lg:max-w-sm;
+  }
+
+  .skill-list > h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  .skill-list > ul {
+    @apply lg:text-2xl;
   }
 
   .skills-span {
