@@ -79,22 +79,14 @@ const config: GatsbyConfig = {
             }
         },
         {
-            resolve: `gatsby-plugin-google-fonts-v2`,
+            resolve: 'gatsby-plugin-web-font-loader',
             options: {
-                fonts: [
-                    {
-                        family: 'Quicksand',
-                        variable: true,
-                        weights: ['300..700']
-                    },
-                    {
-                        family: 'Montserrat',
-                        variable: true,
-                        weights: ['100..900']
-                    }
-                ]
+                google: {
+                    families: ['Quicksand:300,400,500,600,700', 'Montserrat:100,200,300,400,500,600,700,800,900']
+                }
             }
-        }
+        },
+        'gatsby-plugin-modal-routing'
     ].filter(Boolean) as Array<PluginRef>
 };
 
