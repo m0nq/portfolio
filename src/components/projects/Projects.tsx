@@ -16,7 +16,7 @@ export const Projects = () => {
                         <h4>First</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <span className="blog-btn">Read More</span>
+                            <span className="blog-styles">Read More</span>
                             <p>May 7th, 2024</p>
                         </div>
                     </a>
@@ -39,7 +39,7 @@ export const Projects = () => {
                     </a>
                 </section>
                 <div className="learn-more">
-                    <a href="#" className="blog-link">All Blog Posts</a>
+                    <a href="#" className="blog-link">All Projects</a>
                     {/* image? */}
                 </div>
             </div>

@@ -14,7 +14,8 @@ export const About = () => {
                         to find the right car configuration, making it a seamless experience for customers.
                         <br />
                         <br />
-                        At <a href="#" target="_blank">RefleXion Medical</a>, I dedicated several years to creating
+                        At <a href="https://reflexion.com/" target="_blank">RefleXion Medical</a>, I dedicated several
+                        years to creating
                         an intuitive Electron based user interface that allowed doctors to interact seamlessly with
                         cutting-edge cancer treatment and research technology. This experience deepened my
                         appreciation for the transformative power of technology in the medical field.
