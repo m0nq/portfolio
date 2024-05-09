@@ -8,7 +8,7 @@
         "start": "gatsby develop -H 0.0.0.0",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
-        "build": "gatsby build -- --prefix-paths",
+        "build": "gatsby build",
         "build:cypress": "cross-env CYPRESS_SUPPORT=y npm run build",
         "develop:cypress": "cross-env CYPRESS_SUPPORT=y npm run start"
     },

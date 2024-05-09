@@ -7,7 +7,6 @@ import 'dotenv/config';
 import * as path from 'node:path';
 
 const config: GatsbyConfig = {
-    pathPrefix: '/portfolio',
     siteMetadata: {
         title: 'Monk\'s Portfolio',
         siteTitle: 'Monk\'s Portfolio',
