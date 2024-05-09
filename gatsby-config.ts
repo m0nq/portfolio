@@ -12,9 +12,9 @@ const config: GatsbyConfig = {
         title: 'Monk\'s Portfolio',
         siteTitle: 'Monk\'s Portfolio',
         siteTitleAlt: 'Monk Wellington',
-        siteUrl: 'https://m0nq.github.io/portfolio',
+        siteUrl: 'https://m0nq.github.io',
+        siteImage: '',
         siteDescription: `Portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
-        siteImage: '/banner.jpg',
         siteLanguage: 'en',
         author: 'm0nq',
         menuLinks: [
@@ -25,10 +25,6 @@ const config: GatsbyConfig = {
             {
                 name: 'contact',
                 link: '/contact'
-            },
-            {
-                name: 'about',
-                link: '/about'
             },
             {
                 name: 'projects',
