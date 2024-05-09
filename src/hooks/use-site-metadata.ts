@@ -10,9 +10,9 @@ export const useSiteMetadata = () => {
                   siteTitle
                   siteTitleAlt
                   siteUrl
-                  siteDescription
                   siteImage
                   siteLanguage
+                  siteDescription
                   author
                   menuLinks {
                       name

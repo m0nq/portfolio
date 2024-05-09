@@ -18,7 +18,7 @@ const Blog: React.FC<PageProps> = () => {
 export default Blog;
 
 export const Head = ({ data: { site: { siteMetadata } } }): ReactElement => {
-    const title: string = findLink(siteMetadata.menuLinks, 'blog') || siteMetadata.siteMetadata.title;
+    const title: string = findLink(siteMetadata.menuLinks, 'blog') || siteMetadata.title;
 
     return <title>{capitalizeFirstLetter(title)}</title>;
 };
