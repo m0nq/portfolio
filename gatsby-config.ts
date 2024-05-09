@@ -87,6 +87,11 @@ const config: GatsbyConfig = {
                         family: 'Quicksand',
                         variable: true,
                         weights: ['300..700']
+                    },
+                    {
+                        family: 'Montserrat',
+                        variable: true,
+                        weights: ['100..900']
                     }
                 ]
             }

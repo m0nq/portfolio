@@ -24,7 +24,7 @@ export const Banner = () => (
         </div>
         <div className="banner-container">
             <div className="banner-content">
-                <h1>Monk Wellington<span>.</span></h1>
+                <h1>MONK WELLINGTON<span>.</span></h1>
                 <h2>
                     Front-End Web Developer – React Specialist
                     <br />

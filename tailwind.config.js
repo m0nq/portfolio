@@ -8,7 +8,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Quicksand', ...defaultTheme.fontFamily.sans]
+      sans: ['Quicksand', 'Montserrat', ...defaultTheme.fontFamily.sans]
     },
     extend: {
       colors: {
