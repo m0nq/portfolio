@@ -8,10 +8,11 @@ export const About = () => {
                     <p>
                         I started my career at <a href="https://www.industriallogic.com/" target="_blank">Industrial
                         Logic</a>, where I learned the ropes of Extreme Programming and how to build software that's
-                        both robust and easy to maintain. Working with <a href="https://www.ford.com/" target="_blank">Ford
-                        Motors</a> I had the opportunity to collaborate across multiple teams, contributing to the
-                        development of a high-functioning, user-focused website that streamlined the process for users
-                        to find the right car configuration, making it a seamless experience for customers.
+                        both robust and easy to maintain with agile methodologies. Working with <a
+                        href="https://www.ford.com/" target="_blank">Ford Motors</a> I had the opportunity to
+                        collaborate across multiple teams, contributing to the development of a high-functioning,
+                        user-focused website that streamlined the process for users to find the right car configuration,
+                        making it a seamless experience for customers.
                         <br />
                         <br />
                         At <a href="https://reflexion.com/" target="_blank">RefleXion Medical</a>, I dedicated several
