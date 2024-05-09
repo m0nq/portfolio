@@ -38,7 +38,6 @@ export const About = () => {
                         Gatsby, especially projects for small businesses and non-profits, industries that help creatives
                         promote and express themselves, as well as green tech offering climate focused solutions.
                     </p>
-                    {/*<a href="#">Learn more...</a>*/}
                 </div>
             </div>
         </>

@@ -17,9 +17,6 @@ export const Main = () => {
                     <Section classes="about">
                         <About />
                     </Section>
-                    {/*<Section classes="offerings">*/}
-                    {/*    <Offerings />*/}
-                    {/*</Section>*/}
                     <Section classes="skills">
                         <Skills />
                     </Section>
