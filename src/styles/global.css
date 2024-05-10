@@ -25,12 +25,6 @@
  */
 @tailwind variants;
 
-:root {
-  --dark-background-color: #181a1b;
-  --primary-color: hotpink;
-  --secondary-color: dodgerblue;
-}
-
 @layer base {
   /*@font-face {*/
   /*  font-family: 'Quicksand', sans-serif;*/
@@ -41,7 +35,7 @@
   /*  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap') format('woff2');*/
   /*}*/
   body {
-    @apply bg-[--dark-background-color] text-base font-light font-sans text-white;
+    @apply bg-dark text-base font-light font-sans text-white;
   }
 
   .inner-container {
@@ -49,7 +43,7 @@
   }
 
   header, footer {
-    @apply text-white relative w-full p-4 bg-[--dark-background-color]
+    @apply text-white relative w-full p-4 bg-dark
     sm:relative sm:w-full sm:p-4 md:w-full
     md:relative lg:fixed lg:w-[320px] xl:w-[375px];
   }
@@ -80,7 +74,7 @@
   }
 
   .profile-image {
-    @apply m-2 w-full rounded-full md:w-24 lg:w-32 shadow-2xl shadow-black hover:shadow-secondary
+    @apply m-2 w-full rounded-full md:w-24 lg:w-32 shadow-[0_0_4rem_#000] shadow-black hover:shadow-secondary
     transition-all duration-300 ease-linear;
   }
 
@@ -295,13 +289,11 @@
   }
 
   .modal-overlay {
-    @apply fixed top-0 left-0 right-0 bottom-0 bg-black/75 z-50;
+    @apply fixed top-0 left-0 right-0 bottom-0 bg-black/75 z-50 w-screen h-screen flex justify-center items-center overflow-y-auto;
   }
 
   .contact {
-    transform: translate(-50%, -50%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    @apply fixed top-1/2 left-1/2 z-50 w-2/5 rounded-lg bg-[--dark-background-color] py-4;
+    @apply bg-dark rounded-lg shadow-md p-8 w-11/12 z-50 sm:my-auto lg:w-2/5;
   }
 
   form {

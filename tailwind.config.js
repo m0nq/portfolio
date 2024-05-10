@@ -12,7 +12,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        'dark-background-color': 'var(--dark-background-color)',
+        'dark': '#181a1b',
         'primary': 'hotpink',
         'secondary': 'dodgerblue'
       }
