@@ -29,18 +29,14 @@ export const Contact = (): ReactElement | null => {
     const { isOpen, setIsOpen } = useContext(ContactContext);
 
     useEffect(() => {
-        (() => {
-            console.log('formErrors ->', formErrors);
-            if (Object.keys(formErrors).every(field => !formErrors[field]) && isSubmit) {
-                handleSubmit(formValues);
-            }
-        })();
+        if (Object.keys(formErrors).every(field => !formErrors[field]) && isSubmit) {
+            handleSubmit(formValues);
+        }
     }, [formErrors]);
 
     const handleFormChange = (e: React.SyntheticEvent) => {
         const { name, value } = e.target as HTMLInputElement;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
     };
 
     const handleFormSubmit = (e: React.SyntheticEvent) => {
@@ -56,22 +52,22 @@ export const Contact = (): ReactElement | null => {
             message: ''
         };
         const emailRegex = /^[^\s@]+@[^\s@]{2,}$/i;
+        const nameRegex = /^[a-z ,'-]+$/i;
 
         if (!values.name) {
-            errors.name = 'You need a few more characters in that name';
+            errors.name = 'You need a few more characters here...';
+        } else if (!values.name.match(nameRegex)) {
+            errors.name = 'You trying to be funny...?';
         }
 
-        if (!values._replyto) {
-            errors._replyto = 'Email is required';
-        } else if (!values._replyto.match(emailRegex)) {
-            errors._replyto = 'That looks kind of funny...';
+        if (!values._replyto || !values._replyto.match(emailRegex)) {
+            errors._replyto = 'That doesn\'t look right...';
         }
 
         if (!values.message) {
             errors.message = 'Nothing to say...? 🤔';
         }
 
-        console.log('Current errors ->', errors);
         return errors;
     };
 

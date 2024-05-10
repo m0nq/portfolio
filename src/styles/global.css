@@ -312,6 +312,10 @@
     @apply align-middle rounded mb-6 py-3 px-4 w-full text-black shadow-inner shadow-black;
   }
 
+  .contact-form p {
+    @apply mt-[-1.75rem] self-start;
+  }
+
   .contact-send-btn {
     @apply mt-3 mx-4 px-8 py-3 border rounded border-white;
   }
