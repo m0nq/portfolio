@@ -20,7 +20,6 @@
         "gatsby-plugin-image": "^3.13.1",
         "gatsby-plugin-manifest": "^5.13.1",
         "gatsby-plugin-mdx": "^5.13.1",
-        "gatsby-plugin-modal-routing": "^1.2.0",
         "gatsby-plugin-sharp": "^5.13.1",
         "gatsby-plugin-sitemap": "^6.13.1",
         "gatsby-plugin-web-font-loader": "^1.0.4",

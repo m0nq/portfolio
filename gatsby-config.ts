@@ -85,8 +85,7 @@ const config: GatsbyConfig = {
                     families: ['Quicksand:300,400,500,600,700', 'Montserrat:100,200,300,400,500,600,700,800,900']
                 }
             }
-        },
-        'gatsby-plugin-modal-routing'
+        }
     ].filter(Boolean) as Array<PluginRef>
 };
 
