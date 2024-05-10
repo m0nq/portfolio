@@ -9,7 +9,7 @@ type ContactContext = {
 
 export const ContactContext = createContext({} as ContactContext);
 
-export const ContactContextProvider = ({ children }) => {
+export const ContactProvider = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
