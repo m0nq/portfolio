@@ -1,6 +1,6 @@
 {
     "name": "portfolio",
-    "description": "A place for to showcase all the projects web application projects by Monk Wellington.",
+    "description": "A place to showcase all the web application projects by Monk Wellington.",
     "version": "1.0.0",
     "author": "Monk Wellington <monk.wellington@gmail.com>",
     "license": "MIT",
@@ -13,15 +13,16 @@
         "develop:cypress": "cross-env CYPRESS_SUPPORT=y npm run start"
     },
     "dependencies": {
+        "@formspree/react": "^2.5.1",
         "@mdx-js/react": "^3.0.1",
-        "gatsby": "^5.13.3",
+        "gatsby": "5.10.0",
         "gatsby-plugin-alias-imports": "^1.0.5",
-        "gatsby-plugin-google-fonts-v2": "^1.0.1",
         "gatsby-plugin-image": "^3.13.1",
         "gatsby-plugin-manifest": "^5.13.1",
         "gatsby-plugin-mdx": "^5.13.1",
         "gatsby-plugin-sharp": "^5.13.1",
         "gatsby-plugin-sitemap": "^6.13.1",
+        "gatsby-plugin-web-font-loader": "^1.0.4",
         "gatsby-source-filesystem": "^5.13.1",
         "gatsby-transformer-remark": "^6.13.1",
         "gatsby-transformer-sharp": "^5.13.1",

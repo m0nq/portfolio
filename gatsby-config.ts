@@ -73,26 +73,18 @@ const config: GatsbyConfig = {
                     '@components': path.resolve(__dirname, 'src/components'),
                     '@utils': path.resolve(__dirname, 'src/utils'),
                     '@data-types': path.resolve(__dirname, 'src/data-types'),
-                    '@hooks': path.resolve(__dirname, 'src/hooks')
+                    '@hooks': path.resolve(__dirname, 'src/hooks'),
+                    '@contexts': path.resolve(__dirname, 'src/contexts')
                 },
                 extensions: []
             }
         },
         {
-            resolve: `gatsby-plugin-google-fonts-v2`,
+            resolve: 'gatsby-plugin-web-font-loader',
             options: {
-                fonts: [
-                    {
-                        family: 'Quicksand',
-                        variable: true,
-                        weights: ['300..700']
-                    },
-                    {
-                        family: 'Montserrat',
-                        variable: true,
-                        weights: ['100..900']
-                    }
-                ]
+                google: {
+                    families: ['Quicksand:300,400,500,600,700', 'Montserrat:100,200,300,400,500,600,700,800,900']
+                }
             }
         }
     ].filter(Boolean) as Array<PluginRef>

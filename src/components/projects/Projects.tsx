@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 export const Projects = () => {
     return (
@@ -12,31 +13,31 @@ export const Projects = () => {
                     </p>
                 </div>
                 <section className="project-details">
-                    <a href="#">
+                    <div>
                         <h4>First</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <span className="blog-styles">Read More</span>
+                            <Link to="#" className="blog-styles">Read More</Link>
                             <p>May 7th, 2024</p>
                         </div>
-                    </a>
-                    <a href="#">
+                    </div>
+                    <div>
                         <h4>Second</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <span className="btn-styles">Read More</span>
+                            <Link to="#" className="blog-styles">Read More</Link>
                             <p>May 7th, 2024</p>
                         </div>
-                    </a>
-                    <a href="#">
+                    </div>
+                    <div>
                         <h4>Third</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <span className="btn-styles">Read More</span>
+                            <Link to="#" className="blog-styles">Read More</Link>
                             {/* image? */}
                             <p>May 7th, 2024</p>
                         </div>
-                    </a>
+                    </div>
                 </section>
                 <div className="learn-more">
                     <a href="#" className="blog-link">All Projects</a>
