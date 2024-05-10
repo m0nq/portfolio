@@ -3,6 +3,7 @@ import React from 'react';
 import { Header } from '@components/header/header';
 import { Footer } from '@components/footer/footer';
 import { useSiteMetadata } from '@hooks/use-site-metadata';
+import { Contact } from '@components/contact/Contact';
 
 export const Layout = ({ children }) => {
     const { menuLinks } = useSiteMetadata();
@@ -16,6 +17,7 @@ export const Layout = ({ children }) => {
                     <Footer />
                 </div>
             </div>
+            <Contact />
         </>
     );
 };

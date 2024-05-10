@@ -250,8 +250,7 @@
   }
 
   .project-details > div {
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    @apply grow-0 shrink-0 basis-full rounded-md px-4 py-2.5 text-white
+    @apply grow-0 shrink-0 basis-full rounded-md px-4 py-2.5 text-white border-2 border-white/15
     md:px-4 md:basis-[calc(50%_-_20px)];
   }
 

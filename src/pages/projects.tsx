@@ -6,12 +6,15 @@ import { graphql } from 'gatsby';
 import { Layout } from '@components/layout';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { findLink } from '@utils/find-link';
+import { ContactProvider } from '@contexts/Contact.context';
 
 const Projects: React.FC<PageProps> = () => {
     return (
-        <Layout>
-            <main>Projects</main>
-        </Layout>
+        <ContactProvider>
+            <Layout>
+                <main>Projects</main>
+            </Layout>
+        </ContactProvider>
     );
 };
 
