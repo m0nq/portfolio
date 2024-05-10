@@ -18,7 +18,7 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement =
     return (
         <header>
             <Link to="/" className="profile-link">
-                <StaticImage src="../../images/smiling_monk.jpeg" alt="Monk smiling" className="profile-image" />
+                <StaticImage src="../../images/smiling_monk.jpeg" alt="Smiling Monk" className="profile-image" />
             </Link>
             <nav className="primary-navigation">
                 <ul>
