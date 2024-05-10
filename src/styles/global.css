@@ -316,8 +316,12 @@
     @apply mt-[-1.75rem] self-start;
   }
 
+  .contact-cancel-btn {
+    @apply mt-3 mx-4 px-8 py-3 border rounded border-white hover:bg-secondary transition-all duration-200 ease-linear hover:no-underline;
+  }
+
   .contact-send-btn {
-    @apply mt-3 mx-4 px-8 py-3 border rounded border-white;
+    @apply mt-3 mx-4 px-8 py-3 border rounded border-white hover:bg-primary transition-all duration-200 ease-linear hover:no-underline;
   }
 
   .success-message {
