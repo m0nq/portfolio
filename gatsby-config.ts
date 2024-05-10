@@ -73,7 +73,8 @@ const config: GatsbyConfig = {
                     '@components': path.resolve(__dirname, 'src/components'),
                     '@utils': path.resolve(__dirname, 'src/utils'),
                     '@data-types': path.resolve(__dirname, 'src/data-types'),
-                    '@hooks': path.resolve(__dirname, 'src/hooks')
+                    '@hooks': path.resolve(__dirname, 'src/hooks'),
+                    '@contexts': path.resolve(__dirname, 'src/contexts')
                 },
                 extensions: []
             }

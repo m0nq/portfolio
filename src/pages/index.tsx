@@ -7,12 +7,18 @@ import { Layout } from '@components/layout';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { findLink } from '@utils/find-link';
 import { Main } from '@components/main/Main';
+import { ContactContextProvider } from '@contexts/Contact.context';
+import { Contact } from '@components/contact/Contact';
 
 const IndexPage: React.FC<PageProps> = () => {
+
     return (
-        <Layout>
-            <Main />
-        </Layout>
+        <ContactContextProvider>
+            <Layout>
+                <Main />
+            </Layout>
+            <Contact />
+        </ContactContextProvider>
     );
 };
 
