@@ -1,6 +1,8 @@
 import React from 'react';
 import { useContext } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { FaReact } from 'react-icons/fa';
+
 import { ContactContext } from '@contexts/Contact.context';
 
 export const Banner = () => {
@@ -30,12 +32,14 @@ export const Banner = () => {
             <div className="banner-container">
                 <div className="banner-content">
                     <h1>MONK WELLINGTON<span>.</span></h1>
-                    <p>
-                        Front-End Web Developer – React Specialist
-                    </p>
-                    <p>
-                        Enhancing user journey's with code
-                    </p>
+                    <div className="strong-emphasis">
+                        <p>
+                            Front-End Web Developer <FaReact /> React Specialist
+                        </p>
+                        <p>
+                            Empathy to code.
+                        </p>
+                    </div>
                     <div className="banner-btn-container">
                         <button className="banner-button" onClick={() => setIsOpen(true)}>Get in touch!</button>
                     </div>

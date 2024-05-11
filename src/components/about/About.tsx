@@ -6,40 +6,56 @@ export const About = () => {
             <div className="about-container">
                 <div>
                     <p>
-                        I started my career at <a href="https://www.industriallogic.com/" target="_blank">Industrial
-                        Logic</a>, where I learned the ropes of Extreme Programming and how to build software that's
-                        both robust and easy to maintain utilizing agile methodologies. Working with <a
-                        href="https://www.ford.com/" target="_blank">Ford Motors</a> I had the opportunity to
-                        collaborate across multiple teams, contributing to the development of a high-functioning,
-                        user-focused website that streamlined the process to find the right car configuration,
-                        making it a seamless experience for customers.
+                        Monk started his career at <a href="https://www.industriallogic.com/" target="_blank">Industrial
+                        Logic</a>, where he learned the ropes of Extreme Programming and how to build software that's
+                        robust and maintainable with agile methodologies. Working with <a href="https://www.ford.com/"
+                        target="_blank">Ford Motors</a> he had the opportunity to collaborate across multiple teams,
+                        contributing to the development of a high-functioning, user-focused website that streamlined the
+                        process for customers to find the right car configuration.
                         <br />
                         <br />
-                        At <a href="https://reflexion.com/" target="_blank">RefleXion Medical</a>, I dedicated several
-                        years to creating
-                        an intuitive Electron based user interface that allowed doctors to interact seamlessly with
-                        cutting-edge cancer treatment and research technology. This experience deepened my
-                        appreciation for the transformative power of technology in the medical field.
+                        At <a href="https://reflexion.com/" target="_blank">RefleXion Medical</a>, he dedicated several
+                        years to creating an intuitive Electron based user interface that allowed doctors to interact
+                        seamlessly with cutting-edge cancer treatment and research technology. This experience deepened
+                        his appreciation for the transformative power of technology.
                     </p>
                     <br />
                     <p>
-                        Throughout my career, I've been driven by a passion for the creative process and its
-                        ability to inspire both intellectual and emotional growth. I firmly believe that
-                        everyone has the innate ability to create something unique, given the right tools and
-                        opportunities. Web technology tools, in particular, offer a powerful canvas for bringing
-                        innovative ideas to life.
+                        Growing up as a dancer, Monk has always had a passion for the creative process and its ability
+                        to inspire both intellectual and emotional growth. An advocate for self-empowerment, he believes
+                        that anyone,given the right tools, opportunities, and support, can cultivate their own unique
+                        creative spark. Web technology tools offer a particularly powerful canvas for making connections
+                        and bringing innovative ideas to life.
                         <br />
                         <br />
-                        My diverse experiences have equipped me with a well-rounded skillset, enabling me to
-                        tackle projects with a user-centric approach, attention to detail, and a commitment to
-                        delivering exceptional results.
+                        Throughout his experiences, he's cultivated a versatile skill set that allows him to approach
+                        projects with a user-centric mindset to that goes from empathy to code. This dedication to
+                        exceeding expectations is fueled by a keen eye for detail.
                     </p>
                     <br />
                     <p>
-                        I'm open to work that utilizes my expertise of JavaScript and React frameworks like Next.js and
-                        Gatsby, especially projects for small businesses and non-profits, industries that help creatives
-                        promote and express themselves, as well as green tech offering climate focused solutions.
+                        He is open to projects that utilizes his expertise of JavaScript and React frameworks like
+                        Next.js and Gatsby
                     </p>
+                    <br />
+                    <ul>
+                        <li>
+                            <span className="strong-emphasis">Small Businesses and Non-Profits:</span> Monk is
+                            passionate about supporting organizations with a positive social impact. He believes his
+                            skills can help them achieve their goals and missions.
+                        </li>
+                        <li>
+                            <span className="strong-emphasis">Creative Industries:</span> Having a background in
+                            creative fields himself, Monk understands the needs of artists and creators. He's eager to
+                            use his skills to develop tools and platforms that help them showcase their work and connect
+                            with audiences.
+                        </li>
+                        <li>
+                            <span className="strong-emphasis">Green Tech Companies:</span> Monk is environmentally
+                            conscious and wants to contribute to a more sustainable future. He's keen to work on
+                            projects that develop climate-focused solutions with these companies.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </>

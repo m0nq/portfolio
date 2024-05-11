@@ -43,9 +43,7 @@
   }
 
   header, footer {
-    @apply text-white relative w-full p-4 bg-dark
-    sm:relative sm:w-full sm:p-4 md:w-full
-    md:relative lg:fixed lg:w-[320px] xl:w-[375px];
+    @apply text-white relative w-full p-4 bg-dark sm:w-full sm:p-4 md:w-full lg:fixed lg:w-[320px] xl:w-[375px];
   }
 
   header {
@@ -104,11 +102,15 @@
   }
 
   .banner-container {
-    @apply mx-auto h-full flex items-end justify-start;
+    @apply mx-auto h-full;
   }
 
   .banner-content {
-    @apply max-w-[700px] w-full min-h-[32vh] z-[2] relative md:w-[66vw];
+    @apply max-w-[700px] w-full min-h-[32vh] z-[2] relative flex flex-col items-start justify-between sm:justify-evenly sm:h-full md:justify-end;
+  }
+
+  .banner-content svg {
+    @apply inline align-[-0.1rem];
   }
 
   .banner-content > h1 {
@@ -151,7 +153,7 @@
   }
 
   .banner-btn-container {
-    @apply flex gap-10;
+    @apply flex gap-10 mt-10;
   }
 
   .banner-button {
@@ -177,7 +179,15 @@
   }
 
   .about-container a {
-    @apply underline decoration-secondary;
+    @apply underline decoration-secondary hover:underline hover:decoration-primary;
+  }
+
+  .about-container ul {
+    @apply list-disc px-6;
+  }
+
+  .about-container li:not(:first-child) {
+    @apply mt-5;
   }
 
   .skills {
@@ -333,5 +343,11 @@
 
   .success-message {
     @apply flex flex-col mx-auto items-center my-12;
+  }
+}
+
+@layer utilities {
+  .strong-emphasis {
+    @apply font-semibold;
   }
 }
