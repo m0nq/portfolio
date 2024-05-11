@@ -3,18 +3,12 @@ import { ReactElement } from 'react';
 import { graphql } from 'gatsby';
 import { type PageProps } from 'gatsby';
 
-import { Layout } from '@components/layout';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { findLink } from '@utils/find-link';
-import { ContactProvider } from '@contexts/Contact.context';
 
 const Blog: React.FC<PageProps> = () => {
     return (
-        <ContactProvider>
-            <Layout>
-                <main>Blog</main>
-            </Layout>
-        </ContactProvider>
+        <main>Blog</main>
     );
 };
 

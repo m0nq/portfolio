@@ -6,6 +6,7 @@ import { ReactElement } from 'react';
 import ReactDom from 'react-dom';
 import { useForm } from '@formspree/react';
 import { ValidationError } from '@formspree/react';
+
 import { ContactContext } from '@contexts/Contact.context';
 
 type FormValues = {
@@ -75,7 +76,7 @@ export const Contact = (): ReactElement | null => {
 
     return ReactDom.createPortal(
         <>
-            <div className="modal-overlay" onClick={() => setIsOpen(!isOpen)}>(
+            <div className="modal-overlay" onClick={() => setIsOpen(!isOpen)}>
                 <div className="contact" onClick={e => e.stopPropagation()}>
                     {state.succeeded ? (
                         <div className="success-message">

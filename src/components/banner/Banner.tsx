@@ -30,11 +30,12 @@ export const Banner = () => {
             <div className="banner-container">
                 <div className="banner-content">
                     <h1>MONK WELLINGTON<span>.</span></h1>
-                    <h2>
+                    <p>
                         Front-End Web Developer – React Specialist
-                        <br />
+                    </p>
+                    <p>
                         Enhancing user journey's with code
-                    </h2>
+                    </p>
                     <div className="banner-btn-container">
                         <button className="banner-button" onClick={() => setIsOpen(true)}>Get in touch!</button>
                     </div>

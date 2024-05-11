@@ -115,6 +115,10 @@
     @apply font-medium;
   }
 
+  .banner-content > p {
+    @apply my-2 text-[1.15rem] sm:text-2xl;
+  }
+
   .banner-content > h1 > span {
     @apply text-primary;
   }
