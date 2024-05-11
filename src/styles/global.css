@@ -43,14 +43,14 @@
   }
 
   header, footer {
-    @apply text-white relative w-full p-4 bg-dark sm:w-full sm:p-4 md:w-full lg:fixed lg:w-[320px] xl:w-[375px];
+    @apply text-white relative z-40 w-full p-4 bg-dark sm:w-full sm:p-4 md:w-full lg:fixed lg:w-[320px] xl:w-[375px];
   }
 
   header {
-    @apply h-full flex flex-row items-center text-white justify-between
+    @apply h-full flex flex-row items-center text-white justify-between sticky top-0
     sm:flex-row sm:content-center sm:justify-between
-    md:p-8 md:flex-row md:content-center md:justify-between
-    lg:flex-col lg:items-start lg:justify-start;
+    sm:px-8 md:flex-row md:content-center md:justify-between
+    lg:fixed lg:z-0 lg:flex-col lg:items-start lg:justify-start;
   }
 
   main {
