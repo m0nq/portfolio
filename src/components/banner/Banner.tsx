@@ -10,38 +10,25 @@ export const Banner = () => {
 
     return (
         <>
-            <div className="banner-image">
+            <div className="banner-image-container">
                 <StaticImage src="../../images/macbook-color.webp"
                     alt="Illuminated MacBook laptop"
-                    style={{
-                        bottom: 0,
-                        height: '100%',
-                        left: 0,
-                        margin: 0,
-                        overflowX: 'hidden',
-                        overflowY: 'hidden',
-                        maxWidth: '100%',
-                        padding: 0,
-                        position: 'absolute',
-                        right: 0,
-                        top: 0,
-                        width: '100%',
-                        objectFit: 'cover'
-                    }} />
+                    className="banner-image" />
             </div>
             <div className="banner-container">
                 <div className="banner-content">
                     <h1>MONK WELLINGTON<span>.</span></h1>
                     <div className="strong-emphasis">
                         <p>
-                            Front-End Web Developer <FaReact /> React Specialist
+                            Empathy to code.
                         </p>
                         <p>
-                            Empathy to code.
+                            Front-End Web Developer <FaReact /> React Specialist.
                         </p>
                     </div>
                     <div className="banner-btn-container">
-                        <button className="banner-button" onClick={() => setIsOpen(true)}>Get in touch!</button>
+                        <button className="banner-button" onClick={() => setIsOpen(true)}>Get in touch!
+                        </button>
                     </div>
                 </div>
             </div>

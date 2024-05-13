@@ -97,8 +97,12 @@
     @apply relative p-7 h-auto sm:h-screen;
   }
 
-  .banner-image {
+  .banner-image-container {
     @apply overflow-hidden z-[1] h-full w-full top-0 left-0 absolute;
+  }
+
+  .banner-image {
+    @apply bottom-0 left-0 m-0 h-full overflow-x-hidden overflow-y-hidden max-w-full p-0 absolute right-0 top-0 w-full object-cover;
   }
 
   .banner-container {
@@ -232,6 +236,10 @@
 
   .skills-span {
     @apply text-primary text-2xl lg:text-4xl self-center;
+  }
+
+  .skills-image {
+    @apply w-full h-[571px] top-0 left-0 object-cover object-[50%_50%] overflow-x-hidden overflow-y-hidden align-[100%]
   }
 
   .projects {

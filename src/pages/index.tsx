@@ -17,7 +17,7 @@ export const Head = ({ data: { site: { siteMetadata } } }): ReactElement => {
 };
 
 export const query = graphql`
-    query HomePageQuery {
+    query IndexPageQuery {
         site {
             siteMetadata {
                 title

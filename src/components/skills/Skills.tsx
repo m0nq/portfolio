@@ -38,17 +38,7 @@ export const Skills = () => {
             </div>
             <StaticImage src="../../images/abstract-building.webp"
                 alt="Testimonials"
-                style={{
-                    width: '100%',
-                    height: '571px',
-                    top: 0,
-                    left: 0,
-                    objectFit: 'cover',
-                    objectPosition: '50% 50%',
-                    overflowX: 'hidden',
-                    overflowY: 'hidden',
-                    verticalAlign: '100%'
-                }} />
+                className="skills-image" />
         </>
     );
 };

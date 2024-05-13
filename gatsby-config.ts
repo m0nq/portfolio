@@ -3,10 +3,14 @@
  */
 import type { PluginRef } from 'gatsby';
 import type { GatsbyConfig } from 'gatsby';
-import 'dotenv/config';
 import * as path from 'node:path';
 
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`
+});
+
 const config: GatsbyConfig = {
+    graphqlTypegen: true,
     siteMetadata: {
         title: 'Monk\'s Portfolio',
         siteTitle: 'Monk\'s Portfolio',
