@@ -1,9 +1,11 @@
 import React from 'react';
+import { Matcher } from '@testing-library/react';
 import { render } from '@testing-library/react';
+import { SelectorMatcherOptions } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { Layout } from './Layout';
+import { Layout } from '@components/Layout';
 
 jest.mock('@components/header/header', () => ({
     Header: () => <div data-testid="header">Header</div>
@@ -22,31 +24,29 @@ jest.mock('@hooks/use-site-metadata', () => ({
 }));
 
 describe('Layout component', () => {
-    it('should render the Header component', () => {
-        render(<Layout>This is the content</Layout>);
+    let textQuery: (id: Matcher, options?: (SelectorMatcherOptions | undefined)) => HTMLElement;
+    beforeEach(() => {
+        const { getByText } = render(<Layout>This is the content</Layout>);
+        textQuery = getByText;
+    });
 
+    it('should render the Header component', () => {
         const header = screen.getByTestId('header');
 
         expect(header).toBeDefined();
     });
 
     it('should render the children component', () => {
-        const { getByText } = render(<Layout>This is the content</Layout>);
-
-        expect(getByText('This is the content')).toBeInTheDocument();
+        expect(textQuery('This is the content')).toBeInTheDocument();
     });
 
     it('should render the Footer component', () => {
-        render(<Layout>This is the content</Layout>);
-
         const footer = screen.getByTestId('footer');
 
         expect(footer).toBeDefined();
     });
 
     it('should render the Contact component', () => {
-        render(<Layout>This is the content</Layout>);
-
         const contact = screen.getByTestId('contact'); // Assuming Contact has a data-testid
 
         expect(contact).toBeDefined();
