@@ -67,6 +67,46 @@
 }
 
 @layer components {
+  .main-wrapper {
+    contain: none;
+    @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
+  }
+
+  .banner-image-container {
+    @apply overflow-hidden z-[1] h-full w-full top-0 left-0 absolute;
+  }
+
+  .banner-image {
+    @apply bottom-0 left-0 m-0 h-full overflow-x-hidden overflow-y-hidden max-w-full p-0 absolute right-0 top-0 w-full object-cover;
+  }
+
+  .banner-container {
+    @apply mx-auto h-full;
+  }
+
+  .banner-content {
+    @apply max-w-[700px] w-full min-h-[32vh] z-[2] relative flex flex-col items-start justify-between sm:justify-evenly sm:h-full md:justify-end;
+  }
+
+  .banner-content svg {
+    @apply inline align-[-0.1rem];
+  }
+
+  .banner-content > h1 {
+    @apply font-medium;
+  }
+
+  .banner-content > p {
+    @apply my-2 text-base font-normal sm:text-2xl;
+  }
+
+  .banner-content > h1 > span {
+    @apply text-primary;
+  }
+
+  /*.banner-content button {*/
+  /*@apply underline decoration-primary;*/
+  /*}*/
   .profile-link {
     @apply w-12 sm:w-16 md:w-[4.5rem] lg:w-20 lg:self-center lg:pr-36;
   }
