@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "resolveJsonModule": true,
         "target": "esnext",
         "lib": ["dom", "esnext"],
         "jsx": "react",
@@ -7,8 +8,14 @@
         "moduleResolution": "node",
         "baseUrl": "./",
         "paths": {
-            "@*": ["./src/*"]
+            "@*": ["./src/*"],
+            "@components": ["./src/components/*"],
+            "@utils": ["./src/utils/*"],
+            "@data-types": ["./src/data-types/*"],
+            "@hooks": ["./src/hooks/*"],
+            "@contexts": ["./src/contexts/*"]
         },
+        "types": ["@types/jest"],
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
