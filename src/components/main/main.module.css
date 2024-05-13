@@ -1,0 +1,12 @@
+.main-wrapper {
+  contain: none;
+  @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
+}
+
+.item-list-wrapper {
+
+}
+
+.item-list {
+
+}

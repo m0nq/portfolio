@@ -6,11 +6,13 @@ import { Skills } from '@components/skills/Skills';
 import { Projects } from '@components/projects/Projects';
 import { About } from '@components/about/About';
 
+import styles from './main.module.css';
+
 export const Main = () => {
     return (
-        <main className="main-wrapper">
-            <div className="item-list-wrapper">
-                <div className="item-list">
+        <main className={styles ? styles.mainWrapper : 'main-wrapper'}>
+            <div className={styles ? styles.itemListWrapper : 'item-list-wrapper'}>
+                <div className={styles ? styles.itemList : 'item-list'}>
                     <Section classes="banner-section">
                         <Banner />
                     </Section>
