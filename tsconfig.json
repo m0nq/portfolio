@@ -10,7 +10,7 @@
         "paths": {
             "@*": ["./src/*"]
         },
-        "types": ["@types/jest"],
+        "types": ["@types/jest", "jest", "@testing-library/jest-dom"],
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
