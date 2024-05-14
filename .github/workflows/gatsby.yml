@@ -30,6 +30,7 @@ defaults:
 jobs:
   # Build job
   build:
+    name: Build Site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -78,8 +79,25 @@ jobs:
         with:
           path: ./public
 
+  # Jest job
+  test:
+    name: Jest Unit Tests
+    runs-on: ubuntu-latest
+#    defaults:
+#      run:
+#        working-directory: ../../
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm cache verify
+      - run: npm ci
+      - run: npm run test
+
   # Deployment job
   deploy:
+    name: Deploy Job
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

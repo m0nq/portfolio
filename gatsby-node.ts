@@ -9,6 +9,10 @@ exports.createPages = () => {};
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
     actions.createTypes(`
+        type Query {
+            site: Site!
+        }
+        
         type Site {
             siteMetadata: SiteMetadata!
             title: String!
