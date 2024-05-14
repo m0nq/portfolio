@@ -7,11 +7,11 @@ import '@testing-library/jest-dom';
 
 import { Layout } from '@components/Layout';
 
-jest.mock('@components/header/header', () => ({
+jest.mock('@components/header/Header', () => ({
     Header: () => <div data-testid="header">Header</div>
 }));
 
-jest.mock('@components/footer/footer', () => ({
+jest.mock('@components/footer/Footer', () => ({
     Footer: () => <div data-testid="footer">Footer</div>
 }));
 
