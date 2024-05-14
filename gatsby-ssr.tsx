@@ -3,6 +3,7 @@ import React from 'react';
 import './src/styles/global.css';
 import { Layout } from './src/components/layout';
 import { ContactProvider } from './src/contexts/Contact.context';
+import { ScrollProvider } from './src/contexts/Scroll.context';
 
 export const onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
     setPostBodyComponents([
@@ -22,8 +23,10 @@ export const wrapPageElement = ({ element, props }) => {
 
 export const wrapRootElement = ({ element, props }) => {
     return (
-        <ContactProvider {...props}>
-            {element}
-        </ContactProvider>
+        <ScrollProvider {...props}>
+            <ContactProvider {...props}>
+                {element}
+            </ContactProvider>
+        </ScrollProvider>
     );
 };

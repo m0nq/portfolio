@@ -1,10 +1,15 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'gatsby';
 
+import { ScrollContext } from '@contexts/Scroll.context';
+
 export const Projects = () => {
+    const { elementRef } = useContext(ScrollContext);
+
     return (
         <>
-            <div className="projects-container">
+            <div className="projects-container" ref={elementRef}>
                 <div className="intro-area">
                     <h2>Latest Projects</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aliquid cupiditate dolorum ducimus
