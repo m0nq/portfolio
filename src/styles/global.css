@@ -192,7 +192,7 @@
   }
 
   .banner-btn-container {
-    @apply flex gap-10 mt-10;
+    @apply flex gap-10 mt-10 text-xl;
   }
 
   .banner-button {

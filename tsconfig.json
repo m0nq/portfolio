@@ -8,12 +8,7 @@
         "moduleResolution": "node",
         "baseUrl": "./",
         "paths": {
-            "@*": ["./src/*"],
-            "@components": ["./src/components/*"],
-            "@utils": ["./src/utils/*"],
-            "@data-types": ["./src/data-types/*"],
-            "@hooks": ["./src/hooks/*"],
-            "@contexts": ["./src/contexts/*"]
+            "@*": ["./src/*"]
         },
         "types": ["@types/jest"],
         "esModuleInterop": true,

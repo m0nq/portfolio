@@ -5,7 +5,6 @@ export default {
     transform: {
         '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`
     },
-    // moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     moduleNameMapper: {
         '^@components/(.*)$': '<rootDir>/src/components/$1',
         '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
