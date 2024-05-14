@@ -128,7 +128,7 @@
     @apply ml-[0.5rem] text-base sm:ml-4 sm:text-[1.25rem] md:ml-4 md:text-2xl lg:ml-0 lg:text-3xl;
   }
 
-  .banner-section {
+  .banner {
     @apply relative p-7 h-auto sm:h-screen;
   }
 
