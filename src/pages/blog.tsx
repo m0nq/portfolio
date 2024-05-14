@@ -8,7 +8,7 @@ import { findLink } from '@utils/find-link';
 
 const Blog: React.FC<PageProps> = () => {
     return (
-        <main>Blog</main>
+        <main>Soon... 👀</main>
     );
 };
 
