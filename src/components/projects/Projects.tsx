@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { ScrollContext } from '@contexts/Scroll.context';
 
 export const Projects = () => {
-    const { elementRef } = useContext(ScrollContext);
+    const { elementRef } = useContext(ScrollContext) || {};
 
     return (
         <>

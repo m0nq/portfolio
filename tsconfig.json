@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "resolveJsonModule": true,
         "target": "esnext",
         "lib": ["dom", "esnext"],
         "jsx": "react",
@@ -9,6 +10,7 @@
         "paths": {
             "@*": ["./src/*"]
         },
+        "types": ["@types/jest", "jest", "@testing-library/jest-dom"],
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,

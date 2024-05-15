@@ -27,7 +27,8 @@ export const Banner = () => {
                         </p>
                     </div>
                     <div className="banner-btn-container">
-                        <button className="banner-button" onClick={() => setIsOpen(true)}>Get in touch!
+                        <button className="banner-button" onClick={() => setIsOpen(true)}>
+                            Get in touch!
                         </button>
                     </div>
                 </div>

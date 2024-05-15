@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './src/styles/global.css';
-import { Layout } from './src/components/layout';
+import { Layout } from './src/components/Layout';
 import { ContactProvider } from './src/contexts/Contact.context';
 import { ScrollProvider } from './src/contexts/Scroll.context';
 

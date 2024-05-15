@@ -129,8 +129,7 @@ export const Contact = (): ReactElement | null => {
                                 <input type="text" name="_gotcha" style={{ display: 'none' }} />
                             </fieldset>
                             <button className="contact-cancel-btn" onClick={() => setIsOpen(false)}>Cancel</button>
-                            <button type="submit" className="contact-send-btn">Send
-                            </button>
+                            <button type="submit" className="contact-send-btn">Send</button>
                         </form>
                     )}
                 </div>
