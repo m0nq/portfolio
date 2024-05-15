@@ -11,16 +11,16 @@ export const Main = () => {
         <main className="main-wrapper">
             <div className="item-list-wrapper">
                 <div className="item-list">
-                    <Section classes="banner-section">
+                    <Section classes="banner" data-testid="banner">
                         <Banner />
                     </Section>
-                    <Section classes="about">
+                    <Section classes="about" data-testid="about">
                         <About />
                     </Section>
-                    <Section classes="skills">
+                    <Section classes="skills" data-testid="skills">
                         <Skills />
                     </Section>
-                    <Section classes="projects">
+                    <Section classes="projects" data-testid="projects">
                         <Projects />
                     </Section>
                 </div>

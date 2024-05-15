@@ -4,11 +4,14 @@ import { useRef } from 'react';
 import { createContext } from 'react';
 
 interface ScrollContextProps {
-    elementRef: RefObject<HTMLDivElement>;
+    elementRef: RefObject<HTMLDivElement> | null;
     handleScroll: () => void;
 }
 
-export const ScrollContext = createContext<ScrollContextProps>({} as ScrollContextProps);
+export const ScrollContext = createContext<ScrollContextProps>({
+    elementRef: null,
+    handleScroll: () => {}
+});
 
 export const ScrollProvider = ({ children }) => {
     const elementRef = useRef<HTMLDivElement>(null);

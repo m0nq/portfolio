@@ -37,7 +37,7 @@ export const Skills = () => {
                 </div>
             </div>
             <StaticImage src="../../images/abstract-building.webp"
-                alt="Testimonials"
+                alt="ABstract building"
                 className="skills-image" />
         </>
     );
