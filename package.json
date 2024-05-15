@@ -9,8 +9,7 @@
         "serve": "gatsby serve",
         "clean": "gatsby clean",
         "build": "gatsby build",
-        "build:cypress": "cross-env CYPRESS_SUPPORT=y npm run build",
-        "develop:cypress": "cross-env CYPRESS_SUPPORT=y npm run start",
+        "e2e:cypress": "cypress open",
         "test": "jest",
         "test:coverage": "npm run test -- --coverage",
         "test:watch": "npm run test -- --watch"
@@ -44,6 +43,7 @@
         "autoprefixer": "^10.4.19",
         "babel-jest": "^29.7.0",
         "babel-preset-gatsby": "^3.13.2",
+        "cypress": "^13.9.0",
         "dotenv": "^16.4.5",
         "gatsby-plugin-postcss": "^6.13.1",
         "identity-obj-proxy": "^3.0.0",

@@ -17,7 +17,7 @@ const config: GatsbyConfig = {
         siteTitleAlt: 'Monk Wellington',
         siteUrl: 'https://m0nq.github.io',
         siteImage: '',
-        siteDescription: `Portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
+        description: 'Portfolio with colorful accents. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.',
         siteLanguage: 'en',
         author: 'm0nq',
         menuLinks: [

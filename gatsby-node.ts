@@ -20,7 +20,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
             siteTitleAlt: String!
             siteUrl: String!
             siteImage: String!
-            siteDescription: String!
+            description: String!
             siteLanguage: String!
             author: String!
             menuLinks: [MenuLink!]!
