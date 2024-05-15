@@ -10,7 +10,15 @@
         "paths": {
             "@*": ["./src/*"]
         },
-        "types": ["@types/jest", "jest", "@testing-library/jest-dom"],
+        "types": [
+            "@types/jest",
+            "jest",
+            "@testing-library/jest-dom",
+            "@types/node",
+            "node",
+            "cypress",
+            "@testing-library/cypress"
+        ],
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
