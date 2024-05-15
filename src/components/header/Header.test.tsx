@@ -1,5 +1,4 @@
 import React from 'react';
-// Mock dependencies
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -8,9 +7,13 @@ import { Header } from './Header';
 import { ContactContext } from '@contexts/Contact.context';
 import { ScrollContext } from '@contexts/Scroll.context';
 
+// Mock context values
+const mockSetIsOpen = jest.fn();
+const mockHandleScroll = jest.fn();
+
 jest.mock('react', () => ({
     ...jest.requireActual('react'),
-    useContext: jest.fn((context) => {
+    useContext: jest.fn(context => {
         if (context === ContactContext) {
             return { setIsOpen: mockSetIsOpen };
         } else if (context === ScrollContext) {
@@ -20,10 +23,6 @@ jest.mock('react', () => ({
         }
     })
 }));
-
-// Mock context values
-const mockSetIsOpen = jest.fn();
-const mockHandleScroll = jest.fn();
 
 describe('Header', () => {
     it('renders Header component with menuLinks', () => {
