@@ -8,7 +8,9 @@ export const Footer = (): ReactElement => {
 
     return (
         <footer>
-            <div>@ {new Date().getFullYear()} by <a href="https://github.com/m0nq" target="_blank">{author}</a></div>
+            <div>@ {new Date().getFullYear()} by <a href="https://github.com/m0nq"
+                target="_blank"
+                className="footer-link">{author}</a></div>
         </footer>
     );
 };
