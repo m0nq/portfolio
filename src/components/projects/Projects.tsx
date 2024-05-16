@@ -12,9 +12,8 @@ export const Projects = () => {
             <div className="projects-container" ref={elementRef}>
                 <div className="intro-area">
                     <h2>Latest Projects</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aliquid cupiditate dolorum ducimus
-                        eaque eligendi, esse ex, fuga iure iusto libero magnam modi nobis non porro reprehenderit
-                        sapiente velit voluptas.
+                    <p>
+                        Some highlights of the recent projects I've worked on.
                     </p>
                 </div>
                 <section className="project-details">
