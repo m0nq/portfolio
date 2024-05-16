@@ -29,8 +29,9 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element =>
                     {filteredMenuLinks.map(({ name, link }) => {
                         return name.includes('projects') ? (
                             <li key={name}>
-                                <button className="nav-link"
-                                    onClick={handleScroll}>{capitalizeFirstLetter(name)}</button>
+                                <button className="nav-link" onClick={handleScroll}>
+                                    {capitalizeFirstLetter(name)}
+                                </button>
                             </li>
                         ) : (
                             <li key={name}>
