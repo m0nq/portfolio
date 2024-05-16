@@ -2,7 +2,7 @@
 
 ## Where all the code lives for my professional portfolio and blog
 
-### Status Badge ![](https://github.com/m0nq/m0nq.github.io/workflows/gatsby.yml/badge.svg)
+[](https://github.com/m0nq/m0nq.github.io/actions/workflows/gatsby.yml/badge.svg)
 
 <!-- PROJECT SHIELDS -->
 <!--
