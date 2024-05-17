@@ -117,6 +117,7 @@ Feel free to message me if you have any questions or concerns about the code tha
 
 * [![React][React.js]][React-url]
 * [![Gatsby][Gatsby.js]][Gatsby-url]
+* [![TailwindCSS][TailwindCSS]][Tailwind-url]
 
 [//]: # (* [![Vue][Vue.js]][Vue-url])
 
@@ -329,6 +330,10 @@ Project Link: [https://github.com/m0nq/portfolio](https://github.com/m0nq/portfo
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 
 [React-url]: https://reactjs.org/
+
+[TailwindCSS]: https://img.shields.io/badge/Tailwind-20232A?style=for-the-badge&logo=tailwindcss&logoColor=61DAFB
+
+[Tailwind-url]: https://tailwindcss.com/
 
 [//]: # ([Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
 
