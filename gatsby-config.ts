@@ -57,16 +57,16 @@ const config: GatsbyConfig = {
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                'name': 'images',
-                'path': './src/images/'
+                name: 'images',
+                path: './src/images/'
             },
             __key: 'images'
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                'name': 'pages',
-                'path': './src/pages/'
+                name: 'pages',
+                path: './src/pages/'
             },
             __key: 'pages'
         },
@@ -89,6 +89,13 @@ const config: GatsbyConfig = {
                 google: {
                     families: ['Quicksand:300,400,500,600,700', 'Montserrat:100,200,300,400,500,600,700,800,900']
                 }
+            }
+        },
+        {
+            resolve: 'gatsby-source-wordpress',
+            options: {
+                url: process.env.WORDPRESS_URL || 'http://localhost:8080/graphql',
+                verbose: true
             }
         }
     ].filter(Boolean) as Array<PluginRef>
