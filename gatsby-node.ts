@@ -16,7 +16,33 @@ exports.createPages = async ({ actions: { createPage }, graphql, reporter }): Pr
           allPostQuery: allWpPost(sort: { date: DESC }) {
               edges {
                   node {
+                      author {
+                          node {
+                              name
+                          }
+                      }
+                      content
+                      categories {
+                          nodes {
+                              link
+                              name
+                          }
+                      }
                       databaseId
+                      date(formatString: "MMMM Do, YYYY")
+                      featuredImage {
+                          node {
+                              altText
+                              localFile {
+                                  childImageSharp {
+                                      gatsbyImageData(width: 10, placeholder: BLURRED, formats: AUTO)
+                                  }
+                              }
+                          }
+                      }
+                      excerpt
+                      slug
+                      title
                       uri
                   }
                   next {
@@ -27,22 +53,34 @@ exports.createPages = async ({ actions: { createPage }, graphql, reporter }): Pr
                   }
               }
           }
-          #          postQuery: wpPost {
-          #              content
-          #              date(formatString: "MMMM Do, YYYY")
-          #              title
-          #              uri
-          #              databaseId
-          #              featuredImage {
-          #                  node {
-          #                      databaseId
-          #                      filename
-          #                      link
-          #                      srcSet
-          #                      uri
-          #                  }
-          #              }
-          #          }
+          postQuery: wpPost {
+              content
+              date(formatString: "MMMM Do, YYYY")
+              title
+              uri
+              databaseId
+              categories {
+                  nodes {
+                      name
+                      link
+                  }
+              }
+              tags {
+                  nodes {
+                      name
+                      link
+                  }
+              }
+              featuredImage {
+                  node {
+                      databaseId
+                      filename
+                      link
+                      srcSet
+                      uri
+                  }
+              }
+          }
           catQuery: allWpCategory {
               nodes {
                   databaseId
@@ -78,14 +116,14 @@ exports.createPages = async ({ actions: { createPage }, graphql, reporter }): Pr
     const posts = allPostQuery.edges;
     posts.forEach(post => {
         createPage({
-            path: post.node.uri,
+            path: `/blog${post.node.uri}`,
             component: slash(path.resolve('./src/templates/post.tsx')),
             context: {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
                 databaseId: post.node.databaseId,
-                nextId: post.next ? post.next.databaseId : null,
-                prevId: post.previous ? post.previous.databaseId : null
+                nextId: post.next && post.next.databaseId || null,
+                prevId: post.previous && post.previous.databaseId || null
             }
         });
     });
@@ -100,20 +138,20 @@ exports.createPages = async ({ actions: { createPage }, graphql, reporter }): Pr
     });
 
   // Create your paginated category indexes
-  //   const categories = queryResult.data.catQuery.nodes;
-  //   categories.map(category => {
-  //       paginate({
-  //           createPage, // The Gatsby `createPage` function
-  //           items: category.posts.nodes, // An array of objects
-  //           itemsPerPage: 4, // How many items you want per page
-  //           pathPrefix: category.uri.slice(0, -1), // Creates pages like `/blog`, `/blog/2`, etc
-  //           component: path.resolve(`./src/templates/categories.js`), // Just like `createPage()`
-  //           context: {
-  //               catId: category.databaseId,
-  //               catName: category.name
-  //           }
-  //       });
-  //   });
+    const categories = catQuery.nodes;
+    categories.map(category => {
+        paginate({
+            createPage, // The Gatsby `createPage` function
+            items: category.posts.nodes, // An array of objects
+            itemsPerPage: 4, // How many items you want per page
+            pathPrefix: category.uri.slice(0, -1), // Creates pages like `/blog`, `/blog/2`, etc
+            component: path.resolve(`./src/templates/Categories.tsx`), // Just like `createPage()`
+            context: {
+                catId: category.databaseId,
+                catName: category.name
+            }
+        });
+    });
 
   // Create your paginated tag indexes
   //   const tags = queryResult.data.tagQuery.nodes;
