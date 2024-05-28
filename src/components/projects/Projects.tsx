@@ -9,7 +9,7 @@ export const Projects = () => {
 
     return (
         <>
-            <div className="projects-container" ref={elementRef}>
+            <div id="projects" className="projects-container" ref={elementRef}>
                 <div className="intro-area">
                     <h2>Latest Projects</h2>
                     <p>

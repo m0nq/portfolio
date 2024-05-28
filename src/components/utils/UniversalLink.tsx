@@ -1,6 +1,6 @@
 import React from 'react';
 import { type ReactNode } from 'react';
-import { Link as GatsbyLink } from 'gatsby';
+import { Link } from 'gatsby';
 
 export const UniversalLink = ({
     children,
@@ -18,9 +18,13 @@ export const UniversalLink = ({
 
     if (to.match(/^\/(?!\/)/)) {
         return (
-            <GatsbyLink to={to} activeClassName={activeClassName} partiallyActive={partiallyActive} {...other}>
+            <Link to={to}
+                className={activeClassName}
+                activeClassName={activeClassName}
+                partiallyActive={partiallyActive}
+                {...other}>
                 {children}
-            </GatsbyLink>
+            </Link>
         );
     }
 

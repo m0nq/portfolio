@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import { useContext } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -12,6 +11,7 @@ import { UniversalLink } from '@components/utils/UniversalLink';
 export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element => {
     const { setIsOpen } = useContext(ContactContext);
     const { handleScroll } = useContext(ScrollContext);
+    const url: string = window?.location?.href || '';
 
     const filteredMenuLinks = menuLinks
         .filter((link: MenuLink) => link.name !== 'home')
@@ -30,13 +30,21 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element =>
                     {filteredMenuLinks.map(({ name, link }) => {
                         return name.includes('projects') ? (
                             <li key={name}>
-                                <button className="nav-link" onClick={handleScroll}>
-                                    {capitalizeFirstLetter(name)}
-                                </button>
+                                {url.endsWith('/') ? (
+                                    <button className="nav-link" onClick={handleScroll}>
+                                        {capitalizeFirstLetter(name)}
+                                    </button>
+                                ) : (
+                                    <UniversalLink to="/#projects" activeClassName="nav-link">
+                                        {capitalizeFirstLetter(name)}
+                                    </UniversalLink>
+                                )}
                             </li>
                         ) : (
                             <li key={name}>
-                                <Link to={link} className="nav-link">{capitalizeFirstLetter(name)}</Link>
+                                <UniversalLink to={link} activeClassName="nav-link">
+                                    {capitalizeFirstLetter(name)}
+                                </UniversalLink>
                             </li>
                         );
                     })}
