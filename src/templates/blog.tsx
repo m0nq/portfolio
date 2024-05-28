@@ -6,7 +6,10 @@ import { type PageProps } from 'gatsby';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { findLink } from '@utils/find-link';
 
-const Blog: React.FC<PageProps> = () => {
+// Blog listing (indexing)
+const Blog: React.FC<PageProps> = ({ data }) => {
+    console.log('data ->', data);
+
     return (
         <main>Soon... 👀</main>
     );
@@ -21,7 +24,15 @@ export const Head = ({ data: { site: { siteMetadata } } }): ReactElement => {
 };
 
 export const query = graphql`
-    query HomePageQuery {
+    query AllWPPostQuery($skip: Int!, $limit: Int!) {
+        allWpPost(sort: { date: DESC }, skip: $skip, limit: $limit) {
+            edges {
+                node {
+                    databaseId
+                    uri
+                }
+            }
+        }
         site {
             siteMetadata {
                 title

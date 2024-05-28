@@ -3,7 +3,8 @@
  */
 import type { PluginRef } from 'gatsby';
 import type { GatsbyConfig } from 'gatsby';
-import * as path from 'node:path';
+import * as path from 'path';
+import * as process from 'process';
 
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`
@@ -99,6 +100,12 @@ const config: GatsbyConfig = {
                 develop: {
                     //caches media files outside of Gatsby's default cache, allowing them to persist through a cache reset.
                     hardCacheMediaFiles: true
+                },
+                type: {
+                    Post: {
+                        // We don't need more than 50 posts in development, or 5000 in production
+                        limit: process.env.NODE_ENV === 'development' ? 50 : 5000
+                    }
                 }
             }
         }
