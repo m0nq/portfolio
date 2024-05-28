@@ -94,8 +94,12 @@ const config: GatsbyConfig = {
         {
             resolve: 'gatsby-source-wordpress',
             options: {
-                url: process.env.WORDPRESS_URL || 'http://localhost:8080/graphql',
-                verbose: true
+                url: `${process.env.WORDPRESS_URL || 'http://wp-portfolio.local'}/graphql`,
+                verbose: true,
+                develop: {
+                    //caches media files outside of Gatsby's default cache, allowing them to persist through a cache reset.
+                    hardCacheMediaFiles: true
+                }
             }
         }
     ].filter(Boolean) as Array<PluginRef>

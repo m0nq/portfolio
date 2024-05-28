@@ -7,6 +7,7 @@ import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
 import { ContactContext } from '@contexts/Contact.context';
 import { ScrollContext } from '@contexts/Scroll.context';
+import { UniversalLink } from '@components/utils/UniversalLink';
 
 export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element => {
     const { setIsOpen } = useContext(ContactContext);
@@ -18,9 +19,9 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element =>
 
     return (
         <header>
-            <Link to="/" className="profile-link">
+            <UniversalLink to="/" activeClassName="profile-link">
                 <StaticImage src="../../images/smiling_monk.jpeg" alt="Smiling Monk" className="profile-image" />
-            </Link>
+            </UniversalLink>
             <nav className="primary-navigation">
                 <ul>
                     <li key="contact">
