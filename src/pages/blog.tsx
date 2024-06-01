@@ -7,13 +7,8 @@ import { findLink } from '@utils/find-link';
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import { BlogPosts } from '@components/posts/BlogPosts';
-// import { Pagination } from '@components/utils/Pagination';
 
 // Blog listing (indexing)
-// const Blog = ({ data: { postQuery: { edges: posts } }, pageContext }: {
-//     data: any,
-//     pageContext: any
-// }): JSX.Element => {
 const Blog = ({ data: { allImages: { nodes: images } } }): JSX.Element => {
 
     const image = images.find(image => image.original.src.includes('macbook-closeup'));
@@ -24,12 +19,17 @@ const Blog = ({ data: { allImages: { nodes: images } } }): JSX.Element => {
                 <div className="item-list-wrapper">
                     <div className="item-list">
                         <Section classes="banner" data-testid="banner">
-                            <Banner image={image} />
+                            <Banner image={image}>
+                                <div className="banner-container">
+                                    <div className="banner-content">
+                                        <h1>BLOG<span>.</span></h1>
+                                    </div>
+                                </div>
+                            </Banner>
                         </Section>
                         <Section classes="blog-posts" data-testid="blog-posts">
                             <BlogPosts />
                         </Section>
-                        {/*<Pagination pageContext={pageContext} />*/}
                     </div>
                 </div>
             </main>

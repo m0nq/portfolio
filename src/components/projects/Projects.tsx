@@ -16,7 +16,7 @@ export const Projects = () => {
                         Some highlights of the recent projects I've worked on.
                     </p>
                 </div>
-                <section className="project-details">
+                <section className="blog-details">
                     <div>
                         <h4>First</h4>
                         <p>Some of the basic content you will find...</p>
