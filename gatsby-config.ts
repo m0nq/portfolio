@@ -59,7 +59,7 @@ const config: GatsbyConfig = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'images',
-                path: './src/images/'
+                path: `${__dirname}/src/images`
             },
             __key: 'images'
         },
@@ -91,24 +91,38 @@ const config: GatsbyConfig = {
                     families: ['Quicksand:300,400,500,600,700', 'Montserrat:100,200,300,400,500,600,700,800,900']
                 }
             }
-        },
-        {
-            resolve: 'gatsby-source-wordpress',
-            options: {
-                url: `${process.env.WORDPRESS_URL || 'http://wp-portfolio.local'}/graphql`,
-                verbose: true,
-                develop: {
-                    //caches media files outside of Gatsby's default cache, allowing them to persist through a cache reset.
-                    hardCacheMediaFiles: true
-                },
-                type: {
-                    Post: {
-                        // We don't need more than 50 posts in development, or 5000 in production
-                        limit: process.env.NODE_ENV === 'development' ? 50 : 5000
-                    }
-                }
-            }
         }
+        // {
+        //     resolve: 'gatsby-source-wordpress',
+        //     options: {
+        //         url: `${process.env.WORDPRESS_URL || 'http://wp-portfolio.local'}/graphql`,
+        //         verbose: true,
+        //         production: {
+        //             hardCacheMediaFiles: true,
+        //             allow404Images: true
+        //         },
+        //         develop: {
+        //             //caches media files outside of Gatsby's default cache, allowing them to persist through a cache reset.
+        //             hardCacheMediaFiles: true,
+        //             hardCacheData: true
+        //         },
+        //         html: {
+        //             useGatsbyImage: true
+        //         },
+        //         debug: {
+        //             graphql: {
+        //                 writeQueriesToDisk: true
+        //             }
+        //         }
+        //         // This is when your posts grow to more than 50 or 100.
+        //         // type: {
+        //         //     Post: {
+        //         //         // We don't need more than 50 posts in development, or 5000 in production
+        //         //         limit: process.env.NODE_ENV === 'development' ? 50 : 5000
+        //         //     }
+        //         // },
+        //     }
+        // }
     ].filter(Boolean) as Array<PluginRef>
 };
 

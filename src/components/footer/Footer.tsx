@@ -1,11 +1,11 @@
 import React from 'react';
 import { ReactElement } from 'react';
 
-import { useSiteMetadata } from '@hooks/use-site-metadata';
+import { useSiteQueryData } from '@hooks/use-site-query-data';
 import { UniversalLink } from '@components/utils/UniversalLink';
 
 export const Footer = (): ReactElement => {
-    const { author } = useSiteMetadata();
+    const { site: { siteMetadata: { author } } } = useSiteQueryData();
 
     return (
         <footer>

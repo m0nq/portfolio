@@ -5,14 +5,22 @@ import { Banner } from '@components/banner/Banner';
 import { Skills } from '@components/skills/Skills';
 import { Projects } from '@components/projects/Projects';
 import { About } from '@components/about/About';
+import { BannerContent } from '@components/banner/BannerContent';
+import { useSiteQueryData } from '@hooks/use-site-query-data';
 
 export const Main = () => {
+    const { allImages: { nodes: images } } = useSiteQueryData();
+
+    const image = images.find(image => image.original.src.includes('macbook-color'));
+
     return (
         <main className="main-wrapper">
             <div className="item-list-wrapper">
                 <div className="item-list">
                     <Section classes="banner" data-testid="banner">
-                        <Banner />
+                        <Banner image={image}>
+                            <BannerContent />
+                        </Banner>
                     </Section>
                     <Section classes="about" data-testid="about">
                         <About />
