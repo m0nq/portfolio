@@ -20,13 +20,19 @@ const Blog = ({ data: { allImages: { nodes: images } } }): JSX.Element => {
 
     return (
         <>
-            <Section classes="banner" data-testid="banner">
-                <Banner image={image} />
-            </Section>
-            <Section classes="blog-posts" data-testid="blog-posts">
-                <BlogPosts />
-            </Section>
-            {/*<Pagination pageContext={pageContext} />*/}
+            <main className="main-wrapper">
+                <div className="item-list-wrapper">
+                    <div className="item-list">
+                        <Section classes="banner" data-testid="banner">
+                            <Banner image={image} />
+                        </Section>
+                        <Section classes="blog-posts" data-testid="blog-posts">
+                            <BlogPosts />
+                        </Section>
+                        {/*<Pagination pageContext={pageContext} />*/}
+                    </div>
+                </div>
+            </main>
         </>
     );
 };
