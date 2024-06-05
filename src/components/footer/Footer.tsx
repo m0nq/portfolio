@@ -1,16 +1,19 @@
 import React from 'react';
 import { ReactElement } from 'react';
 
-import { useSiteMetadata } from '@hooks/use-site-metadata';
+import { useSiteQueryData } from '@hooks/use-site-query-data';
+import { UniversalLink } from '@components/utils/UniversalLink';
 
 export const Footer = (): ReactElement => {
-    const { author } = useSiteMetadata();
+    const { site: { siteMetadata: { author } } } = useSiteQueryData();
 
     return (
         <footer>
-            <div>@ {new Date().getFullYear()} by <a href="https://github.com/m0nq"
-                target="_blank"
-                className="footer-link">{author}</a></div>
+            <div>@ {new Date().getFullYear()} by{' '}
+                <UniversalLink to="https://github.com/m0nq" activeClassName="footer-link">
+                    {author}
+                </UniversalLink>
+            </div>
         </footer>
     );
 };

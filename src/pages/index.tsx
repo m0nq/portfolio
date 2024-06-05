@@ -2,6 +2,7 @@ import React from 'react';
 import { ReactElement } from 'react';
 import type { PageProps } from 'gatsby';
 import { graphql } from 'gatsby';
+
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { findLink } from '@utils/find-link';
 import { Main } from '@components/main/Main';

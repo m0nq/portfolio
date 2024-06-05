@@ -1,38 +1,25 @@
 import React from 'react';
-import { useContext } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { FaReact } from 'react-icons/fa';
+import { ReactElement } from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { type IGatsbyImageData } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
 
-import { ContactContext } from '@contexts/Contact.context';
-
-export const Banner = () => {
-    const { setIsOpen } = useContext(ContactContext);
+export const Banner = ({ image: { gatsbyImageData }, children = null }: {
+    image: { gatsbyImageData: IGatsbyImageData },
+    children?: React.ReactNode
+}): ReactElement => {
+    // GatsbyImage is needed as a workaround for the limitations of passing dynamic images
+    // as props to StaticImage, even though the image is local file. :?
+    // See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#restrictions-on-using-staticimage
 
     return (
         <>
-            <div className="banner-image-container">
-                <StaticImage src="../../images/macbook-color.webp"
+            <div className="banner-image-container" data-testid="banner-image">
+                <GatsbyImage image={getImage(gatsbyImageData) as IGatsbyImageData}
                     alt="Illuminated MacBook laptop"
                     className="banner-image" />
             </div>
-            <div className="banner-container">
-                <div className="banner-content">
-                    <h1>MONK WELLINGTON<span>.</span></h1>
-                    <div className="strong-emphasis">
-                        <p>
-                            Empathy to code.
-                        </p>
-                        <p>
-                            Front-End Web Developer <FaReact /> React Specialist.
-                        </p>
-                    </div>
-                    <div className="banner-btn-container">
-                        <button className="banner-button" onClick={() => setIsOpen(true)}>
-                            Get in touch!
-                        </button>
-                    </div>
-                </div>
-            </div>
+            {children}
         </>
     );
 };

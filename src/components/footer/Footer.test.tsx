@@ -3,17 +3,12 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Footer } from './Footer';
-import { useSiteMetadata } from '@hooks/use-site-metadata';
 
-jest.mock('@hooks/use-site-metadata', () => ({
-    useSiteMetadata: jest.fn()
+jest.mock('@hooks/use-site-query-data', () => ({
+    useSiteQueryData: () => ({ site: { siteMetadata: { author: 'John Doe' } } })
 }));
 
 describe('Footer', () => {
-    beforeEach(() => {
-        (useSiteMetadata as jest.Mock).mockReturnValue({ author: 'John Doe' });
-    });
-
     it('renders the footer with the correct author name', () => {
         render(<Footer />);
         const authorLink = screen.getByRole('link', { name: 'John Doe' });

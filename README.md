@@ -241,9 +241,9 @@ This is an example of how to list things you need to use the software and how to
 
 Always use clean coding
 standards [JS](https://github.com/ryanmcdermott/clean-code-javascript), [TS](https://github.com/labs42io/clean-code-typescript)
-JS: Use [Google style guide](https://google.github.io/styleguide/jsguide.html)
+- JS: Use [Google style guide](https://google.github.io/styleguide/jsguide.html)
 or [JS Semistandard](https://github.com/standard/semistandard)
-TS: Use [Google style guide](https://google.github.io/styleguide/tsguide.html)
+- TS: Use [Google style guide](https://google.github.io/styleguide/tsguide.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

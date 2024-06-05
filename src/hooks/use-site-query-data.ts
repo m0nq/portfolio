@@ -1,8 +1,8 @@
 import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
 
-export const useSiteMetadata = () => {
-  const { site } = useStaticQuery(graphql`
+export const useSiteQueryData = () => {
+  const result = useStaticQuery(graphql`
       query SiteMetadataQuery {
           site {
               siteMetadata {
@@ -20,8 +20,16 @@ export const useSiteMetadata = () => {
                   siteLanguage
               }
           }
+          allImages: allImageSharp {
+              nodes {
+                  original {
+                      src
+                  }
+                  gatsbyImageData
+              }
+          }
       }
   `);
 
-    return site.siteMetadata;
+    return result;
 };

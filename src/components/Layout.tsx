@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Header } from '@components/header/Header';
 import { Footer } from '@components/footer/Footer';
-import { useSiteMetadata } from '@hooks/use-site-metadata';
+import { useSiteQueryData } from '@hooks/use-site-query-data';
 import { Contact } from '@components/contact/Contact';
 
 export const Layout = ({ children }) => {
-    const { menuLinks } = useSiteMetadata();
+    const { site: { siteMetadata: { menuLinks } } } = useSiteQueryData();
 
     return (
         <>

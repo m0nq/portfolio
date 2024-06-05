@@ -3,7 +3,8 @@
  */
 import type { PluginRef } from 'gatsby';
 import type { GatsbyConfig } from 'gatsby';
-import * as path from 'node:path';
+import * as path from 'path';
+import * as process from 'process';
 
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`
@@ -57,16 +58,16 @@ const config: GatsbyConfig = {
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                'name': 'images',
-                'path': './src/images/'
+                name: 'images',
+                path: `${__dirname}/src/images`
             },
             __key: 'images'
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                'name': 'pages',
-                'path': './src/pages/'
+                name: 'pages',
+                path: './src/pages/'
             },
             __key: 'pages'
         },
@@ -122,6 +123,37 @@ const config: GatsbyConfig = {
         //         // },
         //     }
         }
+        // {
+        //     resolve: 'gatsby-source-wordpress',
+        //     options: {
+        //         url: `${process.env.WORDPRESS_URL || 'http://wp-portfolio.local'}/graphql`,
+        //         verbose: true,
+        //         production: {
+        //             hardCacheMediaFiles: true,
+        //             allow404Images: true
+        //         },
+        //         develop: {
+        //             //caches media files outside of Gatsby's default cache, allowing them to persist through a cache reset.
+        //             hardCacheMediaFiles: true,
+        //             hardCacheData: true
+        //         },
+        //         html: {
+        //             useGatsbyImage: true
+        //         },
+        //         debug: {
+        //             graphql: {
+        //                 writeQueriesToDisk: true
+        //             }
+        //         }
+        //         // This is when your posts grow to more than 50 or 100.
+        //         // type: {
+        //         //     Post: {
+        //         //         // We don't need more than 50 posts in development, or 5000 in production
+        //         //         limit: process.env.NODE_ENV === 'development' ? 50 : 5000
+        //         //     }
+        //         // },
+        //     }
+        // }
     ].filter(Boolean) as Array<PluginRef>
 };
 

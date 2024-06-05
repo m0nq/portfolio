@@ -19,8 +19,8 @@ jest.mock('@components/contact/Contact', () => ({
     Contact: () => <div data-testid="contact">Contact</div>
 }));
 
-jest.mock('@hooks/use-site-metadata', () => ({
-    useSiteMetadata: () => ({ site: { menuLinks: [] } })
+jest.mock('@hooks/use-site-query-data', () => ({
+    useSiteQueryData: () => ({ site: { siteMetadata: { menuLinks: [] } } })
 }));
 
 describe('Layout component', () => {
