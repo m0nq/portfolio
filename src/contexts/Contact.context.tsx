@@ -1,7 +1,7 @@
 'use client';
-import React from 'react';
 import { createContext } from 'react';
 import { useState } from 'react';
+import { Props } from '@data-types/data-props';
 
 type ContactContext = {
     isOpen: boolean;
@@ -10,7 +10,7 @@ type ContactContext = {
 
 export const ContactContext = createContext({} as ContactContext);
 
-export const ContactProvider = ({ children }) => {
+export const ContactProvider = ({ children }: Props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (

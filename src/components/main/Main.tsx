@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import { Skills } from '@components/skills/Skills';

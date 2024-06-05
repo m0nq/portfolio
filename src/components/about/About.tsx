@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { UniversalLink } from '@components/utils/UniversalLink';
 
 export const About = () => {
@@ -10,7 +8,8 @@ export const About = () => {
                     <p>
                         Monk started his career at <UniversalLink to="https://www.industriallogic.com/">Industrial
                         Logic</UniversalLink>, where he learned the ropes of Extreme Programming and how to build
-                        software that&apos;s robust and maintainable with agile methodologies. Working with <UniversalLink
+                        software that&apos;s robust and maintainable with agile methodologies. Working
+                        with <UniversalLink
                         to="https://www.ford.com/">Ford Motors</UniversalLink> he had the opportunity to collaborate
                         across multiple teams. There, he contributed to the development of a high-functioning,
                         user-focused website that streamlined the process for customers to find the right car
@@ -32,7 +31,8 @@ export const About = () => {
                         and bringing innovative ideas to life.
                         <br />
                         <br />
-                        Throughout his experiences, he&apos;s cultivated a versatile skill set that allows him to approach
+                        Throughout his experiences, he&apos;s cultivated a versatile skill set that allows him to
+                        approach
                         projects with a user-centric mindset, translating empathy to code. This dedication to
                         exceeding expectations is fueled by a desire to merge a keen eye for detail with creative
                         intuition.
@@ -51,7 +51,8 @@ export const About = () => {
                         </li>
                         <li>
                             <span className="strong-emphasis">Creative Industries:</span> Having a background in
-                            creative fields himself, Monk understands the needs of artists and creators. He&apos;s eager to
+                            creative fields himself, Monk understands the needs of artists and creators. He&apos;s eager
+                            to
                             create opportunities for collaboration, developing tools and platforms that will showcase
                             their work and help them connect with audiences.
                         </li>

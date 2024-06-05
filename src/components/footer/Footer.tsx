@@ -1,4 +1,3 @@
-import React from 'react';
 import { ReactElement } from 'react';
 
 import { UniversalLink } from '@components/utils/UniversalLink';

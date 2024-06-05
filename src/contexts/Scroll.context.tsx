@@ -1,8 +1,9 @@
 'use client';
-import React from 'react';
 import { RefObject } from 'react';
 import { useRef } from 'react';
 import { createContext } from 'react';
+
+import { Props } from '@data-types/data-props';
 
 interface ScrollContextProps {
     elementRef: RefObject<HTMLDivElement> | null;
@@ -14,7 +15,7 @@ export const ScrollContext = createContext<ScrollContextProps>({
     handleScroll: () => {}
 });
 
-export const ScrollProvider = ({ children }) => {
+export const ScrollProvider = ({ children }: Props) => {
     const elementRef = useRef<HTMLDivElement>(null);
 
     const handleScroll = () => {
