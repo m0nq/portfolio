@@ -18,11 +18,22 @@ const Page = (): ReactElement => {
                                 <div className="banner-container">
                                     <div className="banner-content">
                                         <h1>BLOG<span>.</span></h1>
+                                        <div className="strong-emphasis">
+                                            <p>
+                                                Where I share some thoughts...
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </Banner>
                         </Section>
                         <Section classes="blog-posts" data-testid="blog-posts">
+                            <div className="intro-area">
+                                <h2>Latest Projects</h2>
+                                {/*<p>*/}
+                                {/*    Some highlights of the recent projects I&apos;ve worked on.*/}
+                                {/*</p>*/}
+                            </div>
                             <BlogPostCard />
                         </Section>
                     </div>
