@@ -8,9 +8,6 @@ import { BannerContent } from '@components/banner/BannerContent';
 import macBookColorImage from '@public/macbook-color.webp';
 
 export const Main = () => {
-    // const { allImages: { nodes: images } } = useSiteQueryData();
-
-    // const image = images.find(image => image.original.src.includes('macbook-color'));
 
     return (
         <main className="main-wrapper">

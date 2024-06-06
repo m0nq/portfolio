@@ -27,7 +27,6 @@ export const Contact = (): ReactElement | null => {
     const [formErrors, setFormErrors] = useState<FormValues>(initialValues);
     const [isSubmit, setIsSubmit] = useState(false);
     const [state, handleSubmit] = useForm('xdoqjkon');
-    // const { isOpen, setIsOpen, handleKeyDown } = useContactContext();
     const { isOpen, setIsOpen } = useContactContext();
 
     useEffect(() => {
@@ -43,6 +42,7 @@ export const Contact = (): ReactElement | null => {
             }
         };
         window.addEventListener('keydown', close);
+
         return () => window.removeEventListener('keydown', close);
     }, [setIsOpen]);
 
