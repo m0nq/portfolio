@@ -1,23 +1,19 @@
 'use client';
-import { useEffect } from 'react';
 import { useContext } from 'react';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
 import { ContactContext } from '@contexts/Contact.context';
 import { ScrollContext } from '@contexts/Scroll.context';
 import { UniversalLink } from '@components/utils/UniversalLink';
+import smilingMonkImage from '@public/smiling_monk.png';
 
 export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element => {
+    const pathname: string = usePathname();
     const { setIsOpen } = useContext(ContactContext);
     const { handleScroll } = useContext(ScrollContext);
-    let url: string;
-
-    useEffect(() => {
-        (() => {
-            url = window?.location?.href || '';
-        })();
-    }, []);
 
     const filteredMenuLinks = menuLinks
         .filter((link: MenuLink) => link.name !== 'home')
@@ -26,8 +22,7 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element =>
     return (
         <header>
             <UniversalLink to="/" activeClassName="profile-link">
-                {/*<StaticImage src="../../images/smiling_monk.jpeg" alt="Smiling Monk" className="profile-image" />*/}
-                <span className="profile-name">Image goes here...</span>
+                <Image src={smilingMonkImage} alt="Smiling Monk" className="profile-image" />
             </UniversalLink>
             <nav className="primary-navigation">
                 <ul>
@@ -37,7 +32,7 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element =>
                     {filteredMenuLinks.map(({ name, link }) => {
                         return name.includes('projects') ? (
                             <li key={name}>
-                                {url?.endsWith('/') ? (
+                                {pathname?.endsWith('/') ? (
                                     <button className="nav-link" onClick={handleScroll}>
                                         {capitalizeFirstLetter(name)}
                                     </button>

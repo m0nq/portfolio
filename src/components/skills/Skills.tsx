@@ -1,3 +1,7 @@
+import Image from 'next/image';
+
+import abstractBuildingImage from '@public/abstract-building.webp';
+
 export const Skills = () => {
     return (
         <>
@@ -33,9 +37,9 @@ export const Skills = () => {
                     </aside>
                 </div>
             </div>
-            {/*<StaticImage src="../../images/abstract-building.webp"*/}
-            {/*    alt="Abstract building"*/}
-            {/*    className="skills-image" />*/}
+            <Image src={abstractBuildingImage}
+                alt="Abstract building"
+                className="skills-image" />
         </>
     );
 };

@@ -1,16 +1,16 @@
 import { ReactElement } from 'react';
+import { ReactNode } from 'react';
+import Image from 'next/image';
 
 export const Banner = ({ image, children = null }: {
-    image?: any,
-    children?: React.ReactNode
+    image: any,
+    children?: ReactNode
 }): ReactElement => {
 
     return (
         <>
             <div className="banner-image-container" data-testid="banner-image">
-                {/*<GatsbyImage image={getImage(gatsbyImageData) as IGatsbyImageData}*/}
-                {/*    alt="Illuminated MacBook laptop"*/}
-                {/*    className="banner-image" />*/}
+                <Image src={image} alt="Illuminated MacBook laptop" className="banner-image" />
             </div>
             {children}
         </>

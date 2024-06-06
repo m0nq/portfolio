@@ -5,6 +5,8 @@ import { Projects } from '@components/projects/Projects';
 import { About } from '@components/about/About';
 import { BannerContent } from '@components/banner/BannerContent';
 
+import macBookColorImage from '@public/macbook-color.webp';
+
 export const Main = () => {
     // const { allImages: { nodes: images } } = useSiteQueryData();
 
@@ -15,7 +17,7 @@ export const Main = () => {
             <div className="item-list-wrapper">
                 <div className="item-list">
                     <Section classes="banner" data-testid="banner">
-                        <Banner>
+                        <Banner image={macBookColorImage}>
                             <BannerContent />
                         </Banner>
                     </Section>

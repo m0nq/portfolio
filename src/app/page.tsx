@@ -1,6 +1,8 @@
+import { FC } from 'react';
+
 import { Main } from '@components/main/Main';
 
-const IndexPage: React.FC = () => <Main />;
+const IndexPage: FC = () => <Main />;
 
 export default IndexPage;
 

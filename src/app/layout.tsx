@@ -4,7 +4,7 @@ import './globals.css';
 import { Header } from '@components/header/Header';
 import { Footer } from '@components/footer/Footer';
 import { Contact } from '@components/contact/Contact';
-import { MenuLink } from '@data-types/menu-link.type';
+import { type MenuLink } from '@data-types/menu-link.type';
 
 const menuLinks: MenuLink[] = [
     {
