@@ -1,12 +1,11 @@
 'use client';
 import { ReactElement } from 'react';
-import { useContext } from 'react';
 import { FaReact } from 'react-icons/fa';
 
-import { ContactContext } from '@contexts/Contact.context';
+import { useContactContext } from '@contexts/Contact.context';
 
 export const BannerContent = (): ReactElement => {
-    const { setIsOpen } = useContext(ContactContext);
+    const { setIsOpen } = useContactContext();
 
     return (
         <>

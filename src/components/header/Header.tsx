@@ -1,15 +1,15 @@
 'use client';
-import { useContext } from 'react';
 import Image from 'next/image';
+import { ReactElement } from 'react';
 
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
-import { ContactContext } from '@contexts/Contact.context';
+import { useContactContext } from '@contexts/Contact.context';
 import { UniversalLink } from '@components/utils/UniversalLink';
 import smilingMonkImage from '@public/smiling_monk.png';
 
-export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element => {
-    const { setIsOpen } = useContext(ContactContext);
+export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement => {
+    const { setIsOpen } = useContactContext();
 
     const filteredMenuLinks = menuLinks
         .filter((link: MenuLink) => link.name !== 'home')

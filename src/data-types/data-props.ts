@@ -1,16 +1,7 @@
 import { ReactNode } from 'react';
 
-import { MenuLink } from '@data-types/menu-link.type';
-
 export interface Props {
+    params?: { id: string }
+    searchParams?: { [key: string]: string | string[] | undefined }
     children?: ReactNode;
-}
-
-export type DataProps = {
-    site: {
-        siteMetadata: {
-            title: string;
-            menuLinks: MenuLink[];
-        }
-    }
 }

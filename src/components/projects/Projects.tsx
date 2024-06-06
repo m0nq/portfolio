@@ -1,15 +1,12 @@
 'use client';
-import { useContext } from 'react';
 
-import { ScrollContext } from '@contexts/Scroll.context';
 import { UniversalLink } from '@components/utils/UniversalLink';
 
 export const Projects = () => {
-    const { elementRef } = useContext(ScrollContext) || {};
 
     return (
         <>
-            <div id="projects" className="projects-container" ref={elementRef}>
+            <div id="projects" className="projects-container">
                 <div className="intro-area">
                     <h2>Latest Projects</h2>
                     <p>
