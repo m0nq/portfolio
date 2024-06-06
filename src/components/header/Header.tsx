@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
 import { ReactElement } from 'react';
+import Link from 'next/link';
 
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
 import { useContactContext } from '@contexts/Contact.context';
-import { UniversalLink } from '@components/utils/UniversalLink';
 import smilingMonkImage from '@public/smiling_monk.png';
 
 export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement => {
@@ -17,9 +17,12 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement =
 
     return (
         <header>
-            <UniversalLink to="/" activeClassName="profile-link">
-                <Image src={smilingMonkImage} alt="Smiling Monk" className="profile-image" />
-            </UniversalLink>
+            <Link href="/" className="profile-link">
+                <Image src={smilingMonkImage}
+                    alt="Smiling Monk"
+                    className="profile-image"
+                    data-testid="mock-static-image" />
+            </Link>
             <nav className="primary-navigation">
                 <ul>
                     <li key="contact">
@@ -28,15 +31,15 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement =
                     {filteredMenuLinks.map(({ name, link }) => {
                         return name.includes('projects') ? (
                             <li key={name}>
-                                <UniversalLink to="/#projects" activeClassName="nav-link">
+                                <Link href={`${link}/#projects`} className="nav-link">
                                     {capitalizeFirstLetter(name)}
-                                </UniversalLink>
+                                </Link>
                             </li>
                         ) : (
                             <li key={name}>
-                                <UniversalLink to={link} activeClassName="nav-link">
+                                <Link href={link} className="nav-link">
                                     {capitalizeFirstLetter(name)}
-                                </UniversalLink>
+                                </Link>
                             </li>
                         );
                     })}

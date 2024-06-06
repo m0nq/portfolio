@@ -5,7 +5,7 @@ import { useContext } from 'react';
 
 import { Props } from '@data-types/data-props';
 
-type ContactContext = {
+export type ContactContext = {
     isOpen: boolean;
     setIsOpen: (isOpen: boolean) => void;
 }

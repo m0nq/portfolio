@@ -10,7 +10,7 @@ export const Skills = () => {
                 <div className="skills-content">
                     <aside className="skill-list">
                         <h3>Technical</h3>
-                        <ul>
+                        <ul data-testid="technical-skills-list">
                             <li>JavaScript/TypeScript</li>
                             <li>React</li>
                             <li>GatsbyJS</li>
@@ -25,7 +25,7 @@ export const Skills = () => {
                     <span className="skills-span">X</span>
                     <aside className="skill-list">
                         <h3>Soft</h3>
-                        <ul>
+                        <ul data-testid="soft-skills-list">
                             <li>Clear Communication</li>
                             <li>Time Management</li>
                             <li>Attention to detail</li>

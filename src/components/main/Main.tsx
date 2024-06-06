@@ -11,8 +11,8 @@ export const Main = () => {
 
     return (
         <main className="main-wrapper">
-            <div className="item-list-wrapper">
-                <div className="item-list">
+            <div className="item-list-wrapper" data-testid="item-list-wrapper">
+                <div className="item-list" data-testid="item-list">
                     <Section classes="banner" data-testid="banner">
                         <Banner image={macBookColorImage}>
                             <BannerContent />
