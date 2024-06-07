@@ -1,6 +1,5 @@
 'use client';
-
-import { UniversalLink } from '@components/utils/UniversalLink';
+import Link from 'next/link';
 
 export const Projects = () => {
 
@@ -18,7 +17,7 @@ export const Projects = () => {
                         <h4>First</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <UniversalLink to="#" activeClassName="blog-styles">Read More</UniversalLink>
+                            <Link href="#" className="blog-styles">Read More</Link>
                             {/* image? */}
                             <p>May 7th, 2024</p>
                         </div>
@@ -27,7 +26,7 @@ export const Projects = () => {
                         <h4>Second</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <UniversalLink to="#" activeClassName="blog-styles">Read More</UniversalLink>
+                            <Link href="#" className="blog-styles">Read More</Link>
                             {/* image? */}
                             <p>May 7th, 2024</p>
                         </div>
@@ -36,14 +35,14 @@ export const Projects = () => {
                         <h4>Third</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <UniversalLink to="#" activeClassName="blog-styles">Read More</UniversalLink>
+                            <Link href="#" className="blog-styles">Read More</Link>
                             {/* image? */}
                             <p>May 7th, 2024</p>
                         </div>
                     </div>
                 </section>
                 <div className="learn-more">
-                    <UniversalLink to="#" activeClassName="blog-link">All Projects</UniversalLink>
+                    <Link href="#" className="blog-link">All Projects</Link>
                     {/* image? */}
                 </div>
             </div>

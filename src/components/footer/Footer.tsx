@@ -1,16 +1,13 @@
 import { ReactElement } from 'react';
-
-import { UniversalLink } from '@components/utils/UniversalLink';
+import Link from 'next/link';
 
 export const Footer = (): ReactElement => {
-    const author: string = 'm0nq';
-
     return (
         <footer>
             <div>@ {new Date().getFullYear()} by{' '}
-                <UniversalLink to="https://github.com/m0nq" activeClassName="footer-link">
-                    {author}
-                </UniversalLink>
+                <Link href="https://github.com/m0nq" className="footer-link" target="_blank">
+                    m0nq
+                </Link>
             </div>
         </footer>
     );

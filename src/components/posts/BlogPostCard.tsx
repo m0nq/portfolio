@@ -1,6 +1,5 @@
 import { ReactElement } from 'react';
-
-import { UniversalLink } from '@components/utils/UniversalLink';
+import Link from 'next/link';
 
 export const BlogPostCard = (): ReactElement => {
     // allWpPost query here:
@@ -20,7 +19,7 @@ export const BlogPostCard = (): ReactElement => {
                         <h4>First</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <UniversalLink to="#" activeClassName="blog-styles">Read More</UniversalLink>
+                            <Link href="#" className="blog-styles">Read More</Link>
                             <p>May 7th, 2024</p>
                         </div>
                     </div>

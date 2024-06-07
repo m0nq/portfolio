@@ -6,16 +6,16 @@ export const About = () => {
             <div className="about-container">
                 <div>
                     <p>
-                        Monk started his career at <Link href="https://www.industriallogic.com/">Industrial
-                        Logic</Link>, where he learned the ropes of Extreme Programming and how to build
-                        software that&apos;s robust and maintainable with agile methodologies. Working
-                        with <Link href="https://www.ford.com/">Ford Motors</Link> he had the opportunity to collaborate
-                        across multiple teams. There, he contributed to the development of a high-functioning,
-                        user-focused website that streamlined the process for customers to find the right car
-                        configuration.
+                        Monk started his career at <Link href="https://www.industriallogic.com/" target="_blank">Industrial
+                        Logic</Link>, where he learned the ropes of Extreme Programming and how to build software
+                        that&apos;s robust and maintainable with agile methodologies. Working with <Link
+                        href="https://www.ford.com/" target="_blank">Ford Motors</Link> he had the opportunity to
+                        collaborate across multiple teams. There, he contributed to the development of a
+                        high-functioning, user-focused website that streamlined the process for customers to find the
+                        right car configuration.
                         <br />
                         <br />
-                        At <Link href="https://reflexion.com/">RefleXion Medical</Link>, he dedicated
+                        At <Link href="https://reflexion.com/" target="_blank">RefleXion Medical</Link>, he dedicated
                         several years to creating an intuitive Electron based user interface that allowed doctors to
                         interact seamlessly with cutting-edge cancer treatment and research tech. This experience
                         deepened his appreciation for the transformative power of technology.
