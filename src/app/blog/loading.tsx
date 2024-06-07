@@ -1,12 +1,5 @@
-const Loading = () => {
-    // return (
-    //     <div className="loading">
-    //         <div className="loading-container">
-    //             <div className="loading-circle"></div>
-    //         </div>
-    //     </div>
-    // );
-    return 'Loading...';
-};
+import { Loading } from '@components/loading/Loading';
 
-export default Loading;
+const BlogLoader = () => <Loading />;
+
+export default BlogLoader;

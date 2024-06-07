@@ -1,12 +1,14 @@
+import { Suspense } from 'react';
+
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import { Skills } from '@components/skills/Skills';
 import { Projects } from '@components/projects/Projects';
 import { About } from '@components/about/About';
 import { BannerContent } from '@components/banner/BannerContent';
+import { Loading } from '@components/loading/Loading';
 
 import macBookColorImage from '@public/macbook-color.webp';
-import { Suspense } from 'react';
 
 export const Main = () => {
 
@@ -26,7 +28,7 @@ export const Main = () => {
                         <Skills />
                     </Section>
                     <Section classes="projects" data-testid="projects">
-                        <Suspense fallback={<p>Loading...</p>}>
+                        <Suspense fallback={<Loading />}>
                             <Projects />
                         </Suspense>
                     </Section>

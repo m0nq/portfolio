@@ -1,11 +1,70 @@
-'use client';
 import Link from 'next/link';
+import { Suspense } from 'react';
+import moment from 'moment';
 
-export const Projects = () => {
-    // Get the list of projects from WP
+import { Loading } from '@components/loading/Loading';
+
+type QueryString = string;
+
+type PostResult = {
+    excerpt: string;
+    date: string;
+    databaseId: number;
+    featuredImage: {
+        node: {
+            altText: string;
+            link: string;
+            slug: string;
+            srcSet: string;
+            sourceUrl: string;
+        };
+    };
+    uri: string;
+    title: string;
+};
+
+// TODO: move this get call to separate api file/hook
+const getPosts = async (): Promise<PostResult[]> => {
+
     // Filter the list by projects
-    // Loop through and display the first 4
-    // Ensure slug is used to link to blog post
+    // posts(first: 5, where: { tag: "projects" }) {
+    const postsQuery: QueryString = `{
+            posts {
+                nodes {
+                    date
+                    excerpt
+                    featuredImage {
+                        node {
+                            altText
+                            link
+                            mediaItemUrl
+                            sourceUrl
+                            srcSet
+                        }
+                    }
+                title
+                uri
+                databaseId
+            }
+        }
+    }`;
+
+    const res = await fetch(
+        `${process.env.WORDPRESS_API_URL}?query=${encodeURIComponent(postsQuery)}`,
+        {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            cache: 'no-store'
+        }
+    );
+
+    const { data } = await res.json();
+
+    return data?.posts?.nodes || [];
+};
+
+export const Projects = async () => {
+    const posts = await getPosts();
 
     return (
         <>
@@ -16,38 +75,25 @@ export const Projects = () => {
                         Some highlights of the recent projects I&apos;ve worked on.
                     </p>
                 </div>
-                <section className="blog-details">
-                    <div>
-                        <h4>First</h4>
-                        <p>Some of the basic content you will find...</p>
-                        <div className="blog-item">
-                            {/* image? */}
-                            <Link href="/blog/1" className="blog-styles">Read More</Link>
-                            <p>May 7th, 2024</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h4>Second</h4>
-                        <p>Some of the basic content you will find...</p>
-                        <div className="blog-item">
-                            {/* image? */}
-                            <Link href="/blog/2" className="blog-styles">Read More</Link>
-                            <p>May 7th, 2024</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h4>Third</h4>
-                        <p>Some of the basic content you will find...</p>
-                        <div className="blog-item">
-                            {/* image? */}
-                            <Link href="/blog/3" className="blog-styles">Read More</Link>
-                            <p>May 7th, 2024</p>
-                        </div>
-                    </div>
-                </section>
+                <Suspense fallback={<Loading />}>
+                    <section className="blog-details">
+                        {posts.map((post: PostResult) => {
+                            return (
+                                <div key={post.databaseId}>
+                                    <h4>{post.title}</h4>
+                                    <p dangerouslySetInnerHTML={{ __html: post.excerpt }}></p>
+                                    <div className="blog-item">
+                                        {/* image? */}
+                                        <Link href={`/blog${post.uri}`} className="blog-styles">Read More</Link>
+                                        <p>{moment(post.date).format('MMMM Do, YYYY')}</p>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </section>
+                </Suspense>
                 <div className="learn-more">
-                    <Link href="#" className="blog-link">All Projects</Link>
-                    {/* image? */}
+                    <Link href={'/blog'} className="blog-link">All Projects</Link>
                 </div>
             </div>
         </>
