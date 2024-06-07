@@ -8,7 +8,7 @@ const Post = ({ params }: { params: { post: string } }) => {
     console.log('params ->', params);
     return (
         <>
-            <main>This is post #{params.post}</main>
+            <main>Soon... 👀</main>
         </>
     );
 };
