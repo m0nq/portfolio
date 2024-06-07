@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
 import { useContactContext } from '@contexts/Contact.context';
-import smilingMonkImage from '@public/smiling_monk.png';
+import smilingMonkImage from '@public/smiling_monk.jpeg';
 
 export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement => {
     const { setIsOpen } = useContactContext();
@@ -31,7 +31,7 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement =
                     {filteredMenuLinks.map(({ name, link }) => {
                         return name.includes('projects') ? (
                             <li key={name}>
-                                <Link href={`${link}/#projects`} className="nav-link">
+                                <Link href="/#projects" className="nav-link">
                                     {capitalizeFirstLetter(name)}
                                 </Link>
                             </li>

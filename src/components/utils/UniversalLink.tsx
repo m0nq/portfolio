@@ -27,8 +27,8 @@ export const UniversalLink = ({
     }
 
     return (
-        <a href={to} className={activeClassName} {...other} target="_blank">
+        <Link href={to} className={activeClassName} {...other} target="_blank">
             {children}
-        </a>
+        </Link>
     );
 };
