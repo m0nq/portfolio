@@ -11,6 +11,7 @@ import { Contact } from '@components/contact/Contact';
 
 const quicksand = Quicksand({
     subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700'],
     variable: '--quicksand-font-family'
 });
 
