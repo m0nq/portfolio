@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  basePath: '',
-  output: 'export',
+  output: process.env.GITHUB_ACTION ? 'export' : undefined,
   images: {
-    // formats: ['image/avif', 'image/webp'],
     unoptimized: true
   },
   reactStrictMode: true

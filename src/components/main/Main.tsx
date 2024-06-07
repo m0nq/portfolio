@@ -6,6 +6,7 @@ import { About } from '@components/about/About';
 import { BannerContent } from '@components/banner/BannerContent';
 
 import macBookColorImage from '@public/macbook-color.webp';
+import { Suspense } from 'react';
 
 export const Main = () => {
 
@@ -25,7 +26,9 @@ export const Main = () => {
                         <Skills />
                     </Section>
                     <Section classes="projects" data-testid="projects">
-                        <Projects />
+                        <Suspense fallback={<p>Loading...</p>}>
+                            <Projects />
+                        </Suspense>
                     </Section>
                 </div>
             </div>

@@ -2,6 +2,10 @@
 import Link from 'next/link';
 
 export const Projects = () => {
+    // Get the list of projects from WP
+    // Filter the list by projects
+    // Loop through and display the first 4
+    // Ensure slug is used to link to blog post
 
     return (
         <>
@@ -17,8 +21,8 @@ export const Projects = () => {
                         <h4>First</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <Link href="#" className="blog-styles">Read More</Link>
                             {/* image? */}
+                            <Link href="/blog/1" className="blog-styles">Read More</Link>
                             <p>May 7th, 2024</p>
                         </div>
                     </div>
@@ -26,8 +30,8 @@ export const Projects = () => {
                         <h4>Second</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <Link href="#" className="blog-styles">Read More</Link>
                             {/* image? */}
+                            <Link href="/blog/2" className="blog-styles">Read More</Link>
                             <p>May 7th, 2024</p>
                         </div>
                     </div>
@@ -35,8 +39,8 @@ export const Projects = () => {
                         <h4>Third</h4>
                         <p>Some of the basic content you will find...</p>
                         <div className="blog-item">
-                            <Link href="#" className="blog-styles">Read More</Link>
                             {/* image? */}
+                            <Link href="/blog/3" className="blog-styles">Read More</Link>
                             <p>May 7th, 2024</p>
                         </div>
                     </div>
