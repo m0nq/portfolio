@@ -1,12 +1,12 @@
-import { UniversalLink } from '@components/utils/UniversalLink';
+import Link from 'next/link';
 
-export const CatList = ({ postObject }) => {
+export const CatList = ({ postObject }: any) => {
     return (
         <div className="text-center">
-            {postObject.categories.nodes.map(category => (
-                <UniversalLink key={category.name} to={category.link}>
+            {postObject.categories.nodes.map((category: any) => (
+                <Link key={category.name} href={category.link}>
                     {category.name}
-                </UniversalLink>
+                </Link>
             )).join(', ')}
         </div>
     );
