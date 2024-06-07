@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
-import { Quicksand } from 'next/font/google';
 import './globals.css';
 
 import { Header } from '@components/header/Header';
@@ -9,8 +8,6 @@ import { menuLinks } from '@data-types/menu-link.type';
 import { ContactProvider } from '@contexts/Contact.context';
 import { Contact } from '@components/contact/Contact';
 
-const quicksand = Quicksand({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
     title: 'Monk Wellington',
     description: 'Monk Wellington is a front-end web developer based in the San Francisco Bay Area.'
@@ -18,7 +15,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
     <html lang="en">
-        <body className={quicksand.className}>
+        <body>
             <ContactProvider>
                 <div className="outer-wrapper">
                     <div className="inner-container">

@@ -9,7 +9,7 @@ const config: Config = {
     ],
     theme: {
         fontFamily: {
-            sans: ['Quicksand', 'Montserrat', ...defaultTheme.fontFamily.sans]
+            sans: ['Quicksand', ...defaultTheme.fontFamily.sans]
         },
         extend: {
             backgroundImage: {
