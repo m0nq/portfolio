@@ -1,4 +1,3 @@
-import React from 'react';
 import { DetailedHTMLProps } from 'react';
 import { HTMLAttributes } from 'react';
 import { ReactNode } from 'react';

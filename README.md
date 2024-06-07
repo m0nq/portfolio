@@ -113,10 +113,8 @@ Feel free to message me if you have any questions or concerns about the code tha
 
 ### Built With
 
-[//]: # (* [![Next][Next.js]][Next-url])
-
 * [![React][React.js]][React-url]
-* [![Gatsby][Gatsby.js]][Gatsby-url]
+* [![Next.js][Next.js]][Next-url]
 * [![TailwindCSS][TailwindCSS]][Tailwind-url]
 
 [//]: # (* [![Vue][Vue.js]][Vue-url])
@@ -241,8 +239,9 @@ This is an example of how to list things you need to use the software and how to
 
 Always use clean coding
 standards [JS](https://github.com/ryanmcdermott/clean-code-javascript), [TS](https://github.com/labs42io/clean-code-typescript)
+
 - JS: Use [Google style guide](https://google.github.io/styleguide/jsguide.html)
-or [JS Semistandard](https://github.com/standard/semistandard)
+  or [JS Semistandard](https://github.com/standard/semistandard)
 - TS: Use [Google style guide](https://google.github.io/styleguide/tsguide.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

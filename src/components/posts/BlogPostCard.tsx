@@ -1,9 +1,8 @@
-import React from 'react';
 import { ReactElement } from 'react';
 
 import { UniversalLink } from '@components/utils/UniversalLink';
 
-export const BlogPosts = (): ReactElement => {
+export const BlogPostCard = (): ReactElement => {
     // allWpPost query here:
     // - title
     // - excerpt

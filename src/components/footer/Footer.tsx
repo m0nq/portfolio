@@ -1,11 +1,9 @@
-import React from 'react';
 import { ReactElement } from 'react';
 
-import { useSiteQueryData } from '@hooks/use-site-query-data';
 import { UniversalLink } from '@components/utils/UniversalLink';
 
 export const Footer = (): ReactElement => {
-    const { site: { siteMetadata: { author } } } = useSiteQueryData();
+    const author: string = 'm0nq';
 
     return (
         <footer>

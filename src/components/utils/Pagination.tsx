@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { UniversalLink } from '@components/utils/UniversalLink';
 
 export const Pagination = ({ pageContext }) => {

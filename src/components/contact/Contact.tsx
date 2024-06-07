@@ -1,18 +1,18 @@
-import React from 'react';
+'use client';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useContext } from 'react';
 import { ReactElement } from 'react';
-import ReactDom from 'react-dom';
+import { SyntheticEvent } from 'react';
 import { useForm } from '@formspree/react';
 import { ValidationError } from '@formspree/react';
 
-import { ContactContext } from '@contexts/Contact.context';
+import { useContactContext } from '@contexts/Contact.context';
 
 type FormValues = {
     name: string;
     _replyto: string;
     message: string;
+    [key: string]: string; // Index signature
 }
 
 const initialValues: FormValues = {
@@ -23,24 +23,35 @@ const initialValues: FormValues = {
 };
 
 export const Contact = (): ReactElement | null => {
-    const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState(initialValues);
+    const [formValues, setFormValues] = useState<FormValues>(initialValues);
+    const [formErrors, setFormErrors] = useState<FormValues>(initialValues);
     const [isSubmit, setIsSubmit] = useState(false);
     const [state, handleSubmit] = useForm('xdoqjkon');
-    const { isOpen, setIsOpen } = useContext(ContactContext);
+    const { isOpen, setIsOpen } = useContactContext();
 
     useEffect(() => {
-        if (Object.keys(formErrors).every(field => !formErrors[field]) && isSubmit) {
+        if (Object.keys(formErrors).every((field: string): boolean => !formErrors[field]) && isSubmit) {
             handleSubmit(formValues);
         }
-    }, [formErrors]);
+    }, [formErrors, isSubmit, formValues, handleSubmit]);
 
-    const handleFormChange = (e: React.SyntheticEvent) => {
+    useEffect(() => {
+        const close = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setIsOpen(false);
+            }
+        };
+        window.addEventListener('keydown', close);
+
+        return () => window.removeEventListener('keydown', close);
+    }, [setIsOpen]);
+
+    const handleFormChange = (e: SyntheticEvent) => {
         const { name, value } = e.target as HTMLInputElement;
         setFormValues({ ...formValues, [name]: value });
     };
 
-    const handleFormSubmit = (e: React.SyntheticEvent) => {
+    const handleFormSubmit = (e: SyntheticEvent) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
@@ -74,22 +85,21 @@ export const Contact = (): ReactElement | null => {
 
     if (!isOpen) return null;
 
-    return ReactDom.createPortal(
+    return (
         <>
-            <div className="modal-overlay" onClick={() => setIsOpen(!isOpen)}>
+            <div className="modal-overlay" onClick={() => setIsOpen(false)}>
                 <div className="contact" onClick={e => e.stopPropagation()}>
                     {state.succeeded ? (
                         <div className="success-message">
                             <p>Thanks for the message!</p>
                             <br />
                             <p>I should get back to you within 24 hours.</p>
-                            <button onClick={() => setIsOpen(false)}
-                                style={{
-                                    border: '1px solid white',
-                                    borderRadius: '0.25rem',
-                                    padding: '0.5rem 1.75rem',
-                                    marginTop: '0.75rem'
-                                }}>
+                            <button onClick={() => setIsOpen(false)} style={{
+                                border: '1px solid white',
+                                borderRadius: '0.25rem',
+                                padding: '0.5rem 1.75rem',
+                                marginTop: '0.75rem'
+                            }}>
                                 ← Thanks!
                             </button>
                         </div>
@@ -134,7 +144,7 @@ export const Contact = (): ReactElement | null => {
                     )}
                 </div>
             </div>
-        </>,
-        document.querySelector('#portal') as HTMLDivElement
-    );
+        </>
+    )
+        ;
 };

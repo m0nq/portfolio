@@ -1,17 +1,13 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Footer } from './Footer';
-
-jest.mock('@hooks/use-site-query-data', () => ({
-    useSiteQueryData: () => ({ site: { siteMetadata: { author: 'John Doe' } } })
-}));
 
 describe('Footer', () => {
     it('renders the footer with the correct author name', () => {
         render(<Footer />);
-        const authorLink = screen.getByRole('link', { name: 'John Doe' });
+        const authorLink = screen.getByRole('link', { name: 'm0nq' });
         expect(authorLink).toBeInTheDocument();
     });
 

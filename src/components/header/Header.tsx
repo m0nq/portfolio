@@ -1,24 +1,15 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useContext } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+'use client';
+import Image from 'next/image';
+import { ReactElement } from 'react';
+import Link from 'next/link';
 
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
-import { ContactContext } from '@contexts/Contact.context';
-import { ScrollContext } from '@contexts/Scroll.context';
-import { UniversalLink } from '@components/utils/UniversalLink';
+import { useContactContext } from '@contexts/Contact.context';
+import smilingMonkImage from '@public/smiling_monk.jpeg';
 
-export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element => {
-    const { setIsOpen } = useContext(ContactContext);
-    const { handleScroll } = useContext(ScrollContext);
-    let url: string;
-
-    useEffect(() => {
-        (() => {
-            url = window?.location?.href || '';
-        })();
-    }, []);
+export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement => {
+    const { setIsOpen } = useContactContext();
 
     const filteredMenuLinks = menuLinks
         .filter((link: MenuLink) => link.name !== 'home')
@@ -26,9 +17,12 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element =>
 
     return (
         <header>
-            <UniversalLink to="/" activeClassName="profile-link">
-                <StaticImage src="../../images/smiling_monk.jpeg" alt="Smiling Monk" className="profile-image" />
-            </UniversalLink>
+            <Link href="/" className="profile-link">
+                <Image src={smilingMonkImage}
+                    alt="Smiling Monk"
+                    className="profile-image"
+                    data-testid="mock-static-image" />
+            </Link>
             <nav className="primary-navigation">
                 <ul>
                     <li key="contact">
@@ -37,21 +31,15 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): JSX.Element =>
                     {filteredMenuLinks.map(({ name, link }) => {
                         return name.includes('projects') ? (
                             <li key={name}>
-                                {url?.endsWith('/') ? (
-                                    <button className="nav-link" onClick={handleScroll}>
-                                        {capitalizeFirstLetter(name)}
-                                    </button>
-                                ) : (
-                                    <UniversalLink to="/#projects" activeClassName="nav-link">
-                                        {capitalizeFirstLetter(name)}
-                                    </UniversalLink>
-                                )}
+                                <Link href="/#projects" className="nav-link">
+                                    {capitalizeFirstLetter(name)}
+                                </Link>
                             </li>
                         ) : (
                             <li key={name}>
-                                <UniversalLink to={link} activeClassName="nav-link">
+                                <Link href={link} className="nav-link">
                                     {capitalizeFirstLetter(name)}
-                                </UniversalLink>
+                                </Link>
                             </li>
                         );
                     })}

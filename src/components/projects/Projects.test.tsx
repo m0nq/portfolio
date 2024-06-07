@@ -1,20 +1,7 @@
-import React from 'react';
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import { Projects } from './Projects';
-
-// Mock the ScrollContext
-const mockScrollContext = {
-    elementRef: jest.fn()
-};
-
-jest.mock('@contexts/Scroll.context', () => ({
-    ScrollContext: {
-        Consumer: ({ children }) => children({ ...mockScrollContext })
-    }
-}));
 
 describe('Projects', () => {
     it('renders the intro area', () => {

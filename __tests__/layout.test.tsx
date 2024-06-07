@@ -1,11 +1,10 @@
-import React from 'react';
 import { Matcher } from '@testing-library/react';
 import { render } from '@testing-library/react';
 import { SelectorMatcherOptions } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { Layout } from '@components/Layout';
+import Layout from '@app/layout';
 
 jest.mock('@components/header/Header', () => ({
     Header: () => <div data-testid="header">Header</div>
@@ -17,10 +16,6 @@ jest.mock('@components/footer/Footer', () => ({
 
 jest.mock('@components/contact/Contact', () => ({
     Contact: () => <div data-testid="contact">Contact</div>
-}));
-
-jest.mock('@hooks/use-site-query-data', () => ({
-    useSiteQueryData: () => ({ site: { siteMetadata: { menuLinks: [] } } })
 }));
 
 describe('Layout component', () => {

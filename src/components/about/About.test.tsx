@@ -1,9 +1,7 @@
-import React from 'react';
-import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { screen } from '@testing-library/react';
 
-import { About } from './About';
+import { About } from '@components/about/About';
 
 describe('About component', () => {
     it('renders the component', () => {
