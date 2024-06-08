@@ -1,11 +1,20 @@
-export const dynamicParams = false;
+import { getPosts } from '@components/utils/api';
+import { PostResult } from '@components/utils/api';
+import { getPost } from '@components/utils/api';
 
-export const generateStaticParams = async () => {
-    return [{ post: '1' }, { post: '2' }, { post: '3' }];
+// TODO: Get this to work.
+// export const dynamicParams = false;
+
+export const generateStaticParams = async (): Promise<{ post: string }[]> => {
+    const posts = await getPosts();
+
+    return posts.map(({ uri }: PostResult) => ({ post: uri }));
 };
 
-const Post = ({ params }: { params: { post: string } }) => {
-    console.log('params ->', params);
+const BlogPost = async ({ params: { post: postUri } }: { params: { post: string } }) => {
+    const post = await getPost(postUri);
+
+    console.log('params ->', post);
     return (
         <>
             <main>Soon... 👀</main>
@@ -13,4 +22,4 @@ const Post = ({ params }: { params: { post: string } }) => {
     );
 };
 
-export default Post;
+export default BlogPost;
