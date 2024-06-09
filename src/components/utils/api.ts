@@ -20,12 +20,20 @@ export type PostResult = {
     title: string;
 };
 
-const getQuery = async (postQuery: string) => {
+const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> => {
+    const variables = {
+        uri
+    };
+
     const res = await fetch(
-        `${WORDPRESS_API_URL}?query=${encodeURIComponent(postQuery)}`,
+        `${WORDPRESS_API_URL}`,
         {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            next: {
+                revalidate: 60
+            },
+            body: JSON.stringify({ query: postQuery, variables })
         }
     );
 
@@ -41,7 +49,7 @@ const getQuery = async (postQuery: string) => {
 export const getPosts = async (): Promise<PostResult[]> => {
     // Filter the list by projects
     // posts(first: 5, where: { tag: "projects" }) {
-    const postsQuery: QueryString = `{
+    const postsQuery: QueryString = `query WPAllPostQuery {
             posts {
                 nodes {
                     date
@@ -61,7 +69,7 @@ export const getPosts = async (): Promise<PostResult[]> => {
 };
 
 export const getPost = async (uri: string): Promise<PostResult> => {
-    const postQuery: QueryString = `{
+    const postQuery: QueryString = `query WPPostQuery {
             post(id: "${uri}", idType: URI) {
                 content
                 date
@@ -76,7 +84,7 @@ export const getPost = async (uri: string): Promise<PostResult> => {
               }
             }`;
 
-    const res = await getQuery(postQuery);
+    const res = await getQuery(postQuery, uri);
 
     const { data } = await res.json();
 
