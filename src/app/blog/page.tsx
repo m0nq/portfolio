@@ -12,36 +12,32 @@ const BlogPage = async (): Promise<ReactElement> => {
     const posts = await getPosts();
 
     return (
-        <main className="main-wrapper">
-            <div className="item-list-wrapper">
-                <div className="item-list">
-                    <Section classes="banner" data-testid="banner">
-                        <Banner image={macbookCloseupImage}>
-                            <div className="banner-container">
-                                <div className="banner-content">
-                                    <h1>BLOG<span>.</span></h1>
-                                    <div className="strong-emphasis">
-                                        <p>Some thoughts on a few topics</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Banner>
-                    </Section>
-                    <Section classes="blog-posts" data-testid="blog-posts">
-                        <div className="px-8 my-14 mx-auto">
-                            {/* limit to 10, paginate posts */}
-                            <div>
-                                <section className="blog-details">
-                                    {posts.map((post: PostResult) => (
-                                        <BlogCardDetails key={post.databaseId} post={post} />
-                                    ))}
-                                </section>
+        <>
+            <Section classes="banner" data-testid="banner">
+                <Banner image={macbookCloseupImage}>
+                    <div className="banner-container">
+                        <div className="banner-content">
+                            <h1>BLOG<span>.</span></h1>
+                            <div className="strong-emphasis">
+                                <p>Some thoughts on a few topics</p>
                             </div>
                         </div>
-                    </Section>
+                    </div>
+                </Banner>
+            </Section>
+            <Section classes="blog-posts" data-testid="blog-posts">
+                <div className="px-8 my-14 mx-auto">
+                    {/* limit to 10, paginate posts */}
+                    <div>
+                        <section className="blog-details">
+                            {posts.map((post: PostResult) => (
+                                <BlogCardDetails key={post.databaseId} post={post} />
+                            ))}
+                        </section>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </Section>
+        </>
     );
 };
 

@@ -36,7 +36,13 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
                 <div className="outer-wrapper">
                     <div className="inner-container">
                         <Header menuLinks={menuLinks} />
-                        {children}
+                        <main className="main-wrapper">
+                            <div className="outer-content-wrapper" data-testid="outer-content-wrapper">
+                                <div className="inner-content-wrapper" data-testid="inner-content-wrapper">
+                                    {children}
+                                </div>
+                            </div>
+                        </main>
                         <Footer />
                     </div>
                 </div>

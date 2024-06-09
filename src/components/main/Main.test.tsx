@@ -33,13 +33,13 @@ xdescribe('Main', () => {
 
     it('renders the item list wrapper', () => {
         render(<Main />);
-        const itemListWrapper = screen.getByTestId('item-list-wrapper');
+        const itemListWrapper = screen.getByTestId('main-content-wrapper');
         expect(itemListWrapper).toBeInTheDocument();
     });
 
     it('renders the item list', () => {
         render(<Main />);
-        const itemList = screen.getByTestId('item-list');
+        const itemList = screen.getByTestId('inner-content-wrapper');
         expect(itemList).toBeInTheDocument();
     });
 });
