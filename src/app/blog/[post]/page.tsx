@@ -1,6 +1,5 @@
 import moment from 'moment';
 import Link from 'next/link';
-import DOMPurify from 'isomorphic-dompurify';
 
 import { getPosts } from '@components/utils/api';
 import { PostResult } from '@components/utils/api';
@@ -18,21 +17,19 @@ export const generateStaticParams = async (): Promise<{ post: string }[]> => {
 
 const BlogPost = async ({ params: { post: postUri } }: { params: { post: string } }) => {
     const post: PostResult = await getPost(postUri);
-    const cleanedContent = DOMPurify.sanitize(post.content || '', { ALLOWED_TAGS: ['a'] });
 
     return (
-        <Section classes="">
-            {/*<article className="blog-post">*/}
-            <article className="">
-                <h1>{post.title}</h1>
-                <p>{moment(post.date).format('MMMM Do, YYYY')}</p>
-                <article>
+        <Section>
+            <article className="blog-post">
+                <h1 className="blog-post-title">{post.title}</h1>
+                <p className="blog-post-date">{moment(post.date).format('MMMM Do, YYYY')}</p>
+                <article className="blog-post-content">
                     <div>
-                        <p dangerouslySetInnerHTML={{ __html: cleanedContent }}></p>
+                        <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
                     </div>
                     <br />
                     <div>
-                        <Link href={'/blog'}>← Go Back</Link>
+                        <Link href={'/blog'} className="back-to-blog">← Back to Blog</Link>
                     </div>
                 </article>
             </article>

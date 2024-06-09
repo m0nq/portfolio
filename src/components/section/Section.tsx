@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 export const Section = ({ styles = {}, classes = '', children, ...props }: {
     styles?: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
-    classes: string,
+    classes?: string,
     children: ReactNode
 }) => {
     return (

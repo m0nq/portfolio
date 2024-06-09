@@ -71,7 +71,7 @@ export const getPosts = async (): Promise<PostResult[]> => {
 export const getPost = async (uri: string): Promise<PostResult> => {
     const postQuery: QueryString = `query WPPostQuery {
             post(id: "${uri}", idType: URI) {
-                content
+                content(format: RENDERED)
                 date
                 featuredImage {
                   node {
