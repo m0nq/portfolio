@@ -119,6 +119,11 @@ export const getPosts = async (
 
     const { data } = await res.json();
 
+    // There's a bug in WPGraphQL where it sometimes returns null values for both cursors
+    if (!data?.posts?.pageInfo?.hasNextPage && !data?.posts?.pageInfo?.hasPreviousPage) {
+        return await getPosts();
+    }
+
     return {
         posts: data?.posts?.edges || [],
         pageInfo: data?.posts?.pageInfo || {

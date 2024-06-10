@@ -30,7 +30,7 @@ const BlogPost = async ({ params: { post: postUri } }: { params: { post: string 
                     </div>
                     <br />
                     <div>
-                        <BackButton className="back-to-blog">← Back to Blog</BackButton>
+                        <BackButton className="back-to-blog">← Back</BackButton>
                     </div>
                 </article>
             </article>

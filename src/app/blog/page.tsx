@@ -36,7 +36,7 @@ const BlogPage = (): ReactElement => {
                         <div className="banner-content">
                             <h1>BLOG<span>.</span></h1>
                             <div className="strong-emphasis">
-                                <p>Just a few thoughts...</p>
+                                <p>A few thoughts...</p>
                             </div>
                         </div>
                     </div>

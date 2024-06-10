@@ -4,7 +4,7 @@ import { Post } from '@components/utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 
 export const Projects = async () => {
-    const { posts } = await getPosts();
+    const { posts } = await getPosts(4);
 
     return (
         <>
