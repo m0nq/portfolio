@@ -1,22 +1,23 @@
 import moment from 'moment';
-import Link from 'next/link';
 
 import { getPosts } from '@components/utils/api';
-import { PostResult } from '@components/utils/api';
+import { Post } from '@components/utils/api';
 import { getPost } from '@components/utils/api';
+import { PostResult } from '@components/utils/api';
 import { Section } from '@components/section/Section';
+import { BackButton } from '@components/utils/BackButton';
 
 // TODO: Get this to work.
 // export const dynamicParams = false;
 
 export const generateStaticParams = async (): Promise<{ post: string }[]> => {
-    const posts = await getPosts();
+    const { posts } = await getPosts();
 
-    return posts.map(({ uri }: PostResult) => ({ post: uri }));
+    return posts.map(({ node: { uri } }: PostResult) => ({ post: uri }));
 };
 
 const BlogPost = async ({ params: { post: postUri } }: { params: { post: string } }) => {
-    const post: PostResult = await getPost(postUri);
+    const post: Post = await getPost(postUri);
 
     return (
         <Section>
@@ -29,7 +30,7 @@ const BlogPost = async ({ params: { post: postUri } }: { params: { post: string 
                     </div>
                     <br />
                     <div>
-                        <Link href={'/blog'} className="back-to-blog">← Back to Blog</Link>
+                        <BackButton className="back-to-blog">← Back to Blog</BackButton>
                     </div>
                 </article>
             </article>

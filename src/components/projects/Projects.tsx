@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { getPosts } from '@components/utils/api';
-import { PostResult } from '@components/utils/api';
+import { Post } from '@components/utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 
 export const Projects = async () => {
-    const posts = await getPosts();
+    const { posts } = await getPosts();
 
     return (
         <>
@@ -16,7 +16,7 @@ export const Projects = async () => {
                     </p>
                 </div>
                 <section className="blog-details">
-                    {posts.map((post: PostResult) => (
+                    {posts.map(({ node: post }: { node: Post }) => (
                         <BlogCardDetails key={post.databaseId} post={post} />
                     ))}
                 </section>

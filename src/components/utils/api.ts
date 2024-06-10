@@ -1,8 +1,26 @@
-const WORDPRESS_API_URL = process.env.WORDPRESS_API_URL;
+const WORDPRESS_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
 
 export type QueryString = string;
 
+export type CursorType = string | null;
+
+export type PageInfo = {
+    hasNextPage: boolean;
+    endCursor: CursorType;
+    hasPreviousPage: boolean;
+    startCursor: CursorType;
+}
+
+export type WhereClause = {
+    tag?: string;
+    category?: string;
+}
+
 export type PostResult = {
+    node: Post;
+};
+
+export type Post = {
     excerpt?: string;
     content?: string;
     date: string;
@@ -18,6 +36,11 @@ export type PostResult = {
     };
     uri: string;
     title: string;
+    categories?: {
+        nodes: {
+            name: string;
+        }[];
+    };
 };
 
 const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> => {
@@ -46,29 +69,68 @@ const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> 
 };
 
 // Take a filter param to filter projects?
-export const getPosts = async (): Promise<PostResult[]> => {
+export const getPosts = async (
+    first: number = 10,
+    cursorInfo?: { before?: CursorType, after?: CursorType },
+    filter: WhereClause = {}
+): Promise<{ posts: PostResult[], pageInfo: PageInfo }> => {
+
     // Filter the list by projects
-    // posts(first: 5, where: { tag: "projects" }) {
     const postsQuery: QueryString = `query WPAllPostQuery {
-            posts {
-                nodes {
-                    date
-                    databaseId
-                    excerpt
-                    title
-                    uri
-                }
+        posts(
+            first: ${first},
+            before: "${cursorInfo?.before || null}",
+            after: "${cursorInfo?.after || null}",
+            where: {
+                orderby: {field: DATE, order: DESC},
+                tag: "${filter.tag || ''}",
+                categoryName: "${filter.category || ''}"
             }
+        ) {
+            pageInfo {
+              hasNextPage
+              endCursor
+              hasPreviousPage
+              startCursor
+            }
+            edges {
+              node {
+                categories {
+                  nodes {
+                    name
+                  }
+                }
+                databaseId
+                date
+                excerpt(format: RENDERED)
+                tags {
+                  nodes {
+                    name
+                  }
+                }
+                title(format: RENDERED)
+                uri
+              }
+            }
+          }
         }`;
 
     const res = await getQuery(postsQuery);
 
     const { data } = await res.json();
 
-    return data?.posts?.nodes || [];
+    return {
+        posts: data?.posts?.edges || [],
+        pageInfo: data?.posts?.pageInfo || {
+            hasNextPage: false,
+            endCursor: null,
+            hasPreviousPage: false,
+            startCursor: null
+        }
+    };
 };
 
-export const getPost = async (uri: string): Promise<PostResult> => {
+export const getPost = async (uri: string): Promise<Post> => {
     const postQuery: QueryString = `query WPPostQuery {
             post(id: "${uri}", idType: URI) {
                 content(format: RENDERED)

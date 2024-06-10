@@ -2,10 +2,10 @@ import Link from 'next/link';
 import moment from 'moment';
 import { Suspense } from 'react';
 
-import { PostResult } from '@components/utils/api';
+import { Post } from '@components/utils/api';
 import { Loading } from '@components/loading/Loading';
 
-export const BlogCardDetails = ({ post }: { post: PostResult }) => {
+export const BlogCardDetails = ({ post }: { post: Post }) => {
 
     return (
         <Suspense fallback={<Loading />}>
