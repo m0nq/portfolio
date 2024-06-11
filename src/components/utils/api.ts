@@ -1,47 +1,12 @@
+import { WhereClause } from '@data-types/data-props';
+import { PageInfo } from '@data-types/data-props';
+import { QueryString } from '@data-types/data-props';
+import { Post } from '@data-types/data-props';
+import { CursorInfo } from '@data-types/data-props';
+import { DataResponse } from '@data-types/data-props';
+import { PostEdges } from '@data-types/data-props';
+
 const WORDPRESS_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
-
-export type QueryString = string;
-
-export type CursorType = string | null;
-
-export type PageInfo = {
-    hasNextPage: boolean;
-    endCursor: CursorType;
-    hasPreviousPage: boolean;
-    startCursor: CursorType;
-}
-
-export type WhereClause = {
-    tag?: string;
-    category?: string;
-}
-
-export type PostResult = {
-    node: Post;
-};
-
-export type Post = {
-    excerpt?: string;
-    content?: string;
-    date: string;
-    databaseId: number;
-    featuredImage?: {
-        node: {
-            altText: string;
-            link: string;
-            slug: string;
-            srcSet: string;
-            sourceUrl: string;
-        };
-    };
-    uri: string;
-    title: string;
-    categories?: {
-        nodes: {
-            name: string;
-        }[];
-    };
-};
 
 const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> => {
     const variables = {
@@ -71,9 +36,9 @@ const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> 
 // Take a filter param to filter projects?
 export const getPosts = async (
     first: number = 10,
-    cursorInfo?: { before?: CursorType, after?: CursorType },
+    cursorInfo?: CursorInfo,
     filter: WhereClause = {}
-): Promise<{ posts: PostResult[], pageInfo: PageInfo }> => {
+): Promise<{ posts: PostEdges[], pageInfo: PageInfo }> => {
 
     // Filter the list by projects
     const postsQuery: QueryString = `query WPAllPostQuery {
@@ -94,7 +59,7 @@ export const getPosts = async (
               startCursor
             }
             edges {
-              node {
+              post: node {
                 categories {
                   nodes {
                     name
@@ -117,12 +82,12 @@ export const getPosts = async (
 
     const res = await getQuery(postsQuery);
 
-    const { data } = await res.json();
+    const { data }: DataResponse = await res.json();
 
     // There's a bug in WPGraphQL where it sometimes returns null values for both cursors
-    if (!data?.posts?.pageInfo?.hasNextPage && !data?.posts?.pageInfo?.hasPreviousPage) {
-        return await getPosts();
-    }
+    // if (!data?.posts?.pageInfo?.hasNextPage && !data?.posts?.pageInfo?.hasPreviousPage) {
+    //     return await getPosts();
+    // }
 
     return {
         posts: data?.posts?.edges || [],

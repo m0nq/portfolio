@@ -2,14 +2,14 @@ import Link from 'next/link';
 import moment from 'moment';
 import { Suspense } from 'react';
 
-import { Post } from '@components/utils/api';
+import { Post } from '@data-types/data-props';
 import { Loading } from '@components/loading/Loading';
 
 export const BlogCardDetails = ({ post }: { post: Post }) => {
 
     return (
         <Suspense fallback={<Loading />}>
-            <div>
+            <div className="blog-card-content">
                 <h4>{post.title}</h4>
                 <div dangerouslySetInnerHTML={{ __html: post.excerpt || '' }}></div>
                 <div className="blog-item">

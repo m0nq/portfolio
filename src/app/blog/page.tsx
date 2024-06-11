@@ -8,24 +8,24 @@ import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import macbookCloseupImage from '@public/macbook-closeup.webp';
 import { getPosts } from '@components/utils/api';
-import { Post } from '@components/utils/api';
-import { CursorType } from '@components/utils/api';
-import { PageInfo } from '@components/utils/api';
-import { PostResult } from '@components/utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
+import { Post } from '@data-types/data-props';
+import { PageInfo } from '@data-types/data-props';
+import { CursorType } from '@data-types/data-props';
+import { PostEdges } from '@data-types/data-props';
 
 // Blog listing (indexing)
 const BlogPage = (): ReactElement => {
-    const [{ posts, pageInfo }, setPostState] = useState({} as { posts: PostResult[], pageInfo: PageInfo });
+    const [{ posts, pageInfo }, setPosts] = useState({} as { posts: PostEdges[], pageInfo: PageInfo });
 
     useEffect(() => {
         (async () => {
-            setPostState(await getPosts());
+            setPosts(await getPosts());
         })();
     }, []);
 
     const handlePageChange = useCallback(async (cursor: { before?: CursorType, after?: CursorType }) => {
-        setPostState(await getPosts(10, cursor));
+        setPosts(await getPosts(10, cursor));
     }, []);
 
     return (
@@ -46,7 +46,7 @@ const BlogPage = (): ReactElement => {
                 <div className="px-8 my-14 mx-auto">
                     <div>
                         <section className="blog-details">
-                            {posts?.map(({ node: post }: { node: Post }) => (
+                            {posts?.map(({ post }: { post: Post }) => (
                                 <BlogCardDetails key={post.databaseId} post={post} />
                             ))}
                         </section>

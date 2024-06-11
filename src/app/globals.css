@@ -328,6 +328,10 @@
     @apply text-[#afc2cb] mt-2 mb-4;
   }
 
+  .blog-card-content {
+    @apply flex flex-col justify-between;
+  }
+
   .blog-item {
     @apply flex flex-col items-start gap-5 mt-auto;
   }

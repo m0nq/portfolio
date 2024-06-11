@@ -1,9 +1,9 @@
 import moment from 'moment';
 
 import { getPosts } from '@components/utils/api';
-import { Post } from '@components/utils/api';
 import { getPost } from '@components/utils/api';
-import { PostResult } from '@components/utils/api';
+import { Post } from '@data-types/data-props';
+import { PostEdges } from '@data-types/data-props';
 import { Section } from '@components/section/Section';
 import { BackButton } from '@components/utils/BackButton';
 
@@ -11,9 +11,9 @@ import { BackButton } from '@components/utils/BackButton';
 // export const dynamicParams = false;
 
 export const generateStaticParams = async (): Promise<{ post: string }[]> => {
-    const { posts } = await getPosts();
+    const { posts }: { posts: PostEdges[] } = await getPosts();
 
-    return posts.map(({ node: { uri } }: PostResult) => ({ post: uri }));
+    return posts.map(({ post: { uri } }: { post: Post }) => ({ post: uri }));
 };
 
 const BlogPost = async ({ params: { post: postUri } }: { params: { post: string } }) => {
