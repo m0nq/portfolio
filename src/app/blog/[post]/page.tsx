@@ -7,8 +7,6 @@ import { PostEdges } from '@data-types/data-props';
 import { Section } from '@components/section/Section';
 import { BackButton } from '@components/utils/BackButton';
 
-// TODO: Get this to work.
-// export const dynamicParams = false;
 export const dynamic = 'force-static';
 
 export const generateStaticParams = async (): Promise<{ post: string }[]> => {
