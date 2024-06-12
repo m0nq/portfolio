@@ -9,6 +9,7 @@ import { BackButton } from '@components/utils/BackButton';
 
 // TODO: Get this to work.
 // export const dynamicParams = false;
+export const dynamic = 'force-static';
 
 export const generateStaticParams = async (): Promise<{ post: string }[]> => {
     const { posts }: { posts: PostEdges[] } = await getPosts();
@@ -22,7 +23,7 @@ const BlogPost = async ({ params: { post: postUri } }: { params: { post: string 
     return (
         <Section>
             <article className="blog-post">
-                <h1 className="blog-post-title">{post.title}</h1>
+                <h1 className="blog-post-title">{post.title}<span>.</span></h1>
                 <p className="blog-post-date">{moment(post.date).format('MMMM Do, YYYY')}</p>
                 <article className="blog-post-content">
                     <div>
