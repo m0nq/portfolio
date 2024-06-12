@@ -1,22 +1,22 @@
+'use client';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { ReactElement } from 'react';
 import moment from 'moment';
 
-import { getPosts } from '@components/utils/api';
-import { getPost } from '@components/utils/api';
 import { Post } from '@data-types/data-props';
-import { PostEdges } from '@data-types/data-props';
 import { Section } from '@components/section/Section';
 import { BackButton } from '@components/utils/BackButton';
+import { getPost } from '@components/utils/api';
 
-export const dynamic = 'force-static';
+const BlogPost = ({ params: { post: postUri } }: { params: { post: string } }): ReactElement => {
+    const [post, setPost] = useState({} as Post);
 
-export const generateStaticParams = async (): Promise<{ post: string }[]> => {
-    const { posts }: { posts: PostEdges[] } = await getPosts();
-
-    return posts.map(({ post: { uri } }: { post: Post }) => ({ post: uri }));
-};
-
-const BlogPost = async ({ params: { post: postUri } }: { params: { post: string } }) => {
-    const post: Post = await getPost(postUri);
+    useEffect(() => {
+        (async () => {
+            setPost(await getPost(postUri));
+        })();
+    }, [postUri]);
 
     return (
         <Section>
