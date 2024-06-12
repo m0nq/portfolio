@@ -1,22 +1,19 @@
-'use client';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { ReactElement } from 'react';
 import moment from 'moment';
-
-import { Post } from '@data-types/data-props';
 import { Section } from '@components/section/Section';
 import { BackButton } from '@components/utils/BackButton';
 import { getPost } from '@components/utils/api';
+import { getPosts } from '@components/utils/api';
 
-const BlogPost = ({ params: { post: postUri } }: { params: { post: string } }): ReactElement => {
-    const [post, setPost] = useState({} as Post);
+export const generateStaticParams = async () => {
+    const { posts } = await getPosts(4);
 
-    useEffect(() => {
-        (async () => {
-            setPost(await getPost(postUri));
-        })();
-    }, [postUri]);
+    return posts.map(({ post: { uri } }) => ({ post: uri }));
+};
+
+const BlogPost = async ({ params: { post: postUri } }: { params: { post: string } }): Promise<ReactElement> => {
+
+    const post = await getPost(postUri);
 
     return (
         <Section>

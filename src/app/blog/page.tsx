@@ -1,8 +1,4 @@
-'use client';
 import { ReactElement } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useCallback } from 'react';
 
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
@@ -10,23 +6,11 @@ import macbookCloseupImage from '@public/macbook-closeup.webp';
 import { getPosts } from '@components/utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 import { Post } from '@data-types/data-props';
-import { PageInfo } from '@data-types/data-props';
-import { CursorInfo } from '@data-types/data-props';
-import { PostEdges } from '@data-types/data-props';
 
 // Blog listing (indexing)
-const BlogPage = (): ReactElement => {
-    const [{ posts, pageInfo }, setPosts] = useState({} as { posts: PostEdges[], pageInfo: PageInfo });
+const BlogPage = async (): Promise<ReactElement> => {
 
-    useEffect(() => {
-        (async () => {
-            setPosts(await getPosts());
-        })();
-    }, []);
-
-    const handlePageChange = useCallback(async (cursor: CursorInfo) => {
-        setPosts(await getPosts(10, cursor));
-    }, []);
+    const { posts, pageInfo } = await getPosts();
 
     return (
         <>
@@ -56,13 +40,17 @@ const BlogPage = (): ReactElement => {
             <nav className="pagination-wrapper">
                 <div>
                     {pageInfo?.hasPreviousPage &&
-                      <button onClick={() => handlePageChange({ before: pageInfo?.startCursor })}>
+                        // <button onClick={() => handlePageChange({ before: pageInfo?.startCursor })}>
+                      <button onClick={async () => {
+                          await getPosts(10, { before: pageInfo?.startCursor });
+                      }}>
                         ← Newer Posts
                       </button>}
                 </div>
                 <div>
                     {pageInfo?.hasNextPage &&
-                      <button onClick={() => handlePageChange({ after: pageInfo?.endCursor })}>
+                        // <button onClick={() => handlePageChange({ after: pageInfo?.endCursor })}>
+                      <button onClick={async () => await getPosts(10, { after: pageInfo?.startCursor })}>
                         Older Posts →
                       </button>}
                 </div>
