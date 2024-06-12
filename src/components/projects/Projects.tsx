@@ -1,11 +1,28 @@
+// 'use client';
+// import { useState } from 'react';
+// import { useEffect } from 'react';
 import Link from 'next/link';
+
 import { getPosts } from '@components/utils/api';
 import { Post } from '@data-types/data-props';
+// import { PostEdges } from '@data-types/data-props';
+// import { PageInfo } from '@data-types/data-props';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 
 export const Projects = async () => {
 
     const { posts } = await getPosts(4);
+    // export const Projects = () => {
+    //     const [{ posts }, setPosts] = useState({
+    //         posts: [] as PostEdges[],
+    //         pageInfo: {} as PageInfo
+    //     });
+    //
+    //     useEffect(() => {
+    //         (async () => {
+    //             setPosts(await getPosts(4));
+    //         })();
+    //     }, []);
 
     return (
         <>

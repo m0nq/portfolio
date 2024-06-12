@@ -1,4 +1,3 @@
-'use server';
 import { WhereClause } from '@data-types/data-props';
 import { PageInfo } from '@data-types/data-props';
 import { QueryString } from '@data-types/data-props';

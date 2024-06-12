@@ -1,9 +1,12 @@
 import { ReactElement } from 'react';
 import moment from 'moment';
+
 import { Section } from '@components/section/Section';
 import { BackButton } from '@components/utils/BackButton';
 import { getPost } from '@components/utils/api';
 import { getPosts } from '@components/utils/api';
+
+export const dynamic = 'force-static';
 
 export const generateStaticParams = async () => {
     const { posts } = await getPosts(4);
