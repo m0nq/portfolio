@@ -11,7 +11,7 @@ import { getPosts } from '@components/utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 import { Post } from '@data-types/data-props';
 import { PageInfo } from '@data-types/data-props';
-import { CursorType } from '@data-types/data-props';
+import { CursorInfo } from '@data-types/data-props';
 import { PostEdges } from '@data-types/data-props';
 
 // Blog listing (indexing)
@@ -24,7 +24,7 @@ const BlogPage = (): ReactElement => {
         })();
     }, []);
 
-    const handlePageChange = useCallback(async (cursor: { before?: CursorType, after?: CursorType }) => {
+    const handlePageChange = useCallback(async (cursor: CursorInfo) => {
         setPosts(await getPosts(10, cursor));
     }, []);
 
