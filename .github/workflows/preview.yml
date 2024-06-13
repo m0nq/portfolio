@@ -1,11 +1,14 @@
 # To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
 #
-name: CI/CD Pipeline
+name: CI/CD Preview
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [ "main" ]
+    branches: [ "staging" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -58,14 +61,6 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          #      - name: Setup Pages
-          #        uses: actions/configure-pages@v5
-          #        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-      #          static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -86,12 +81,6 @@ jobs:
           echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Create .nojekyll
-        run: touch ./out/.nojekyll
-      - name: Upload Artifact 📡
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
 
 
   # Jest job
@@ -110,13 +99,22 @@ jobs:
 
   # Deployment job
   deploy:
-    name: Deploy 🚀
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    name: Deploy (Preview) 🚀
     needs: [ build, test ]
+    runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Set Environment Variables
+        env:
+          NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
+        run: |
+          echo "" > .env.production
+          echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
