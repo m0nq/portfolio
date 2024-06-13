@@ -105,7 +105,7 @@ jobs:
 
   # Deployment job
   deploy:
-    name: Deploy (Production) 🚀
+    name: Deploy (Preview) 🚀
     needs: [ build, test ]
     runs-on: ubuntu-latest
     steps:
