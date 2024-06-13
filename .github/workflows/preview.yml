@@ -1,6 +1,6 @@
 # To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
 #
-name: CI/CD Pipeline
+name: CI/CD Preview
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
