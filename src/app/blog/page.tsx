@@ -1,8 +1,5 @@
-// 'use client';
 import { ReactElement } from 'react';
-// import { useState } from 'react';
-// import { useEffect } from 'react';
-// import { useCallback } from 'react';
+
 import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import macbookCloseupImage from '@public/macbook-closeup.webp';
@@ -10,22 +7,9 @@ import { getPosts } from '@components/utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 import { Post } from '@data-types/data-props';
 
-// Blog listing (indexing)
 const BlogPage = async (): Promise<ReactElement> => {
 
     const { posts, pageInfo } = await getPosts();
-    // const BlogPage = (): ReactElement => {
-    //     const [{ posts, pageInfo }, setPosts] = useState({} as { posts: PostEdges[], pageInfo: PageInfo });
-    //
-    //     useEffect(() => {
-    //         (async () => {
-    //             setPosts(await getPosts());
-    //         })();
-    //     }, []);
-    //
-    //     const handlePageChange = useCallback(async (cursor: CursorInfo) => {
-    //         setPosts(await getPosts(10, cursor));
-    //     }, []);
 
     return (
         <>
