@@ -81,10 +81,6 @@ jobs:
           echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Upload Artifact 📡
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
 
 
   # Jest job

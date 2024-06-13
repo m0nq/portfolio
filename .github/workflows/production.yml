@@ -83,10 +83,6 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Create .nojekyll
         run: touch ./out/.nojekyll
-      - name: Upload Artifact 📡
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
 
 
   # Jest job
