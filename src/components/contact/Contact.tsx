@@ -149,7 +149,9 @@ export const Contact = (): ReactElement | null => {
                                     className="honey-pot"
                                     name="_gotcha"
                                     maxLength={0} />
-                                {state.errors && <p style={{ color: 'white' }}>{state.errors.message}</p>}
+                                {state.errors &&
+                                  <p style={{ color: 'red' }}>Sorry... there was a network error.{' '}
+                                    Maybe refresh and try again?</p>}
                             </fieldset>
                             <button className="contact-cancel-btn" onClick={() => setIsOpen(false)}>Cancel</button>
                             <button type="submit" className="contact-send-btn">Send</button>
