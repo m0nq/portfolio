@@ -426,7 +426,7 @@
   }
 
   .spinner {
-    @apply mx-auto motion-safe:animate-spin;
+    @apply mx-auto animate-spin;
   }
 
   .success-message {
