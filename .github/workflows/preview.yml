@@ -76,6 +76,10 @@ jobs:
       - name: Set Environment Variables
         env:
           NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_SEND_TO: ${{ secrets.EMAIL_SEND_TO }}
         run: |
           echo "" > .env.production
           echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
