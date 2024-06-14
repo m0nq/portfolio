@@ -3,22 +3,30 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { ReactElement } from 'react';
 import { SyntheticEvent } from 'react';
-import { useForm } from '@formspree/react';
-import { ValidationError } from '@formspree/react';
 
 import { useContactContext } from '@contexts/Contact.context';
+import { FormValues } from '@data-types/data-props';
+import { EmailResponse } from '@data-types/data-props';
 
-type FormValues = {
-    name: string;
-    _replyto: string;
-    message: string;
-    [key: string]: string; // Index signature
-}
+const sendEmail = async (form: FormValues): Promise<EmailResponse> => {
+    // send form to /api/contact as a post request
+    const res: Response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+    });
+
+    const { success, errors } = await res.json();
+
+    return { success, errors };
+};
 
 const initialValues: FormValues = {
     name: '',
-    // email field renamed for formspree
-    _replyto: '',
+    email: '',
+    subject: '',
     message: ''
 };
 
@@ -26,14 +34,16 @@ export const Contact = (): ReactElement | null => {
     const [formValues, setFormValues] = useState<FormValues>(initialValues);
     const [formErrors, setFormErrors] = useState<FormValues>(initialValues);
     const [isSubmit, setIsSubmit] = useState(false);
-    const [state, handleSubmit] = useForm('xdoqjkon');
+    const [state, setState] = useState({ success: false } as EmailResponse);
     const { isOpen, setIsOpen } = useContactContext();
 
     useEffect(() => {
-        if (Object.keys(formErrors).every((field: string): boolean => !formErrors[field]) && isSubmit) {
-            handleSubmit(formValues);
-        }
-    }, [formErrors, isSubmit, formValues, handleSubmit]);
+        (async () => {
+            if (Object.keys(formErrors).every((field: string): boolean => !formErrors[field]) && isSubmit) {
+                setState(await sendEmail({ ...formValues }));
+            }
+        })();
+    }, [formErrors, isSubmit, formValues]);
 
     useEffect(() => {
         const close = (e: KeyboardEvent) => {
@@ -60,9 +70,10 @@ export const Contact = (): ReactElement | null => {
     const validate = (values: FormValues) => {
         const errors: FormValues = {
             name: '',
-            _replyto: '',
+            email: '',
             message: ''
         };
+
         const emailRegex = /^[^\s@]+@[^\s@]{2,}$/i;
         const nameRegex = /^[a-z ,'-]+$/i;
 
@@ -72,8 +83,8 @@ export const Contact = (): ReactElement | null => {
             errors.name = 'You trying to be funny...?';
         }
 
-        if (!values._replyto || !values._replyto.match(emailRegex)) {
-            errors._replyto = 'That doesn\'t look right...';
+        if (!values.email || !values.email.match(emailRegex)) {
+            errors.email = 'That doesn\'t look right...';
         }
 
         if (!values.message) {
@@ -89,7 +100,7 @@ export const Contact = (): ReactElement | null => {
         <>
             <div className="modal-overlay" onClick={() => setIsOpen(false)}>
                 <div className="contact" onClick={e => e.stopPropagation()}>
-                    {state.succeeded ? (
+                    {state.success ? (
                         <div className="success-message">
                             <p>Thanks for the message!</p>
                             <br />
@@ -104,8 +115,7 @@ export const Contact = (): ReactElement | null => {
                             </button>
                         </div>
                     ) : (
-                        <form method="POST" action="https://formspree.io/f/xdoqjkon" id="contact-form"
-                            onSubmit={handleFormSubmit}>
+                        <form id="contact-form" onSubmit={handleFormSubmit}>
                             <fieldset id="contact-form-group" className="contact-form">
                                 <label htmlFor="full-name">Name</label>
                                 <input type="text"
@@ -117,12 +127,12 @@ export const Contact = (): ReactElement | null => {
                                 {formErrors.name && <p style={{ color: 'red' }}>{formErrors.name}</p>}
                                 <label htmlFor="email-address">Email</label>
                                 <input type="email"
-                                    name="_replyto"
+                                    name="email"
                                     id="email-address"
                                     placeholder="something@email.com"
-                                    value={formValues._replyto}
+                                    value={formValues.email}
                                     onChange={handleFormChange} />
-                                {formErrors._replyto && <p style={{ color: 'red' }}>{formErrors._replyto}</p>}
+                                {formErrors.email && <p style={{ color: 'red' }}>{formErrors.email}</p>}
                                 <label htmlFor="message">Message</label>
                                 <textarea rows={5}
                                     name="message"
@@ -131,12 +141,15 @@ export const Contact = (): ReactElement | null => {
                                     value={formValues.message}
                                     onChange={handleFormChange} />
                                 {formErrors.message && <p style={{ color: 'red' }}>{formErrors.message}</p>}
-                                <ValidationError prefix="Message"
-                                    field="message"
-                                    errors={state.errors} />
-                                <input type="hidden" name="_subject" id="email-subject"
+                                <input type="hidden"
+                                    name="subject"
+                                    id="email-subject"
                                     value="Porfolio Contact Form Submission" />
-                                <input type="text" name="_gotcha" style={{ display: 'none' }} />
+                                <input type="text"
+                                    className="honey-pot"
+                                    name="_gotcha"
+                                    maxLength={0} />
+                                {state.errors && <p style={{ color: 'white' }}>{state.errors.message}</p>}
                             </fieldset>
                             <button className="contact-cancel-btn" onClick={() => setIsOpen(false)}>Cancel</button>
                             <button type="submit" className="contact-send-btn">Send</button>

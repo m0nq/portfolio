@@ -421,6 +421,10 @@
     @apply mt-3 mx-4 px-8 py-3 border rounded border-white transition-all duration-200 ease-linear hover:bg-primary hover:no-underline;
   }
 
+  .honey-pot {
+    @apply absolute opacity-0 top-0 left-0 w-0 h-0 z-[-1];
+  }
+
   .success-message {
     @apply flex flex-col mx-auto items-center my-12;
   }

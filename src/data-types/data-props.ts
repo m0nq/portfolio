@@ -64,3 +64,18 @@ export interface Props {
     searchParams?: { [key: string]: string | string[] | undefined };
     children?: ReactNode;
 }
+
+export type FormValues = {
+    name: string;
+    email: string;
+    message: string;
+    [key: string]: string; // Index signature
+}
+
+export type EmailResponse = {
+    success: boolean;
+    errors?: { message: any };
+    response?: any;
+}
+
+
