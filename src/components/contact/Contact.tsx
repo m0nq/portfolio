@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { ReactElement } from 'react';
 import { SyntheticEvent } from 'react';
+import { ImSpinner10 } from 'react-icons/im';
 
 import { useContactContext } from '@contexts/Contact.context';
 import { FormValues } from '@data-types/data-props';
@@ -40,12 +41,12 @@ export const Contact = (): ReactElement | null => {
     useEffect(() => {
         (async () => {
             if (Object.keys(formErrors).every((field: string): boolean => !formErrors[field]) && isSubmit) {
-                setState(await sendEmail({ ...formValues }));
-                setFormValues(initialValues);
-                setFormErrors(initialValues);
+                setState({ ...await sendEmail({ ...formValues }), isPending: false });
+            } else {
+                setState({ success: false, isPending: false });
             }
         })();
-    }, [formErrors, isSubmit, formValues]);
+    }, [formErrors, isSubmit]);
 
     useEffect(() => {
         const close = (e: KeyboardEvent) => {
@@ -66,12 +67,14 @@ export const Contact = (): ReactElement | null => {
     const handleFormSubmit = (e: SyntheticEvent) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
+        setState({ isPending: true });
         setIsSubmit(true);
     };
 
     const handleAppreciation = () => {
         setFormValues(initialValues);
         setFormErrors(initialValues);
+        setIsSubmit(false);
         setIsOpen(false);
     };
 
@@ -112,13 +115,8 @@ export const Contact = (): ReactElement | null => {
                         <div className="success-message">
                             <p>Thanks for the message!</p>
                             <br />
-                            <p>I should get back to you within 24 hours.</p>
-                            <button onClick={handleAppreciation} style={{
-                                border: '1px solid white',
-                                borderRadius: '0.25rem',
-                                padding: '0.5rem 1.75rem',
-                                marginTop: '0.75rem'
-                            }}>
+                            <p>I should get back to you within a business day.</p>
+                            <button className="contact-send-btn" onClick={handleAppreciation}>
                                 ← Thanks!
                             </button>
                         </div>
@@ -157,9 +155,10 @@ export const Contact = (): ReactElement | null => {
                                     className="honey-pot"
                                     name="_gotcha"
                                     maxLength={0} />
-                                {state.errors &&
-                                  <p style={{ color: 'red' }}>Sorry... there was a network error.{' '}
-                                    Maybe refresh and try again?</p>}
+                                {state.errors && <p style={{ color: 'red' }}>
+                                  Sorry... there was a network error. Maybe refresh and try again?
+                                </p>}
+                                {state.isPending && <ImSpinner10 className="spinner" />}
                             </fieldset>
                             <button className="contact-cancel-btn" onClick={() => setIsOpen(false)}>Cancel</button>
                             <button type="submit" className="contact-send-btn">Send</button>
@@ -168,6 +167,5 @@ export const Contact = (): ReactElement | null => {
                 </div>
             </div>
         </>
-    )
-        ;
+    );
 };

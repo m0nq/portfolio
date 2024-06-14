@@ -8,9 +8,9 @@ export const POST = async (req: Request): Promise<NextResponse> => {
 
     const mailOptions: nodemailer.SendMailOptions = {
         ...emailOptions,
-        subject: `Contact form message from ${request.name}`, // Subject line
+        subject: `Portfolio Message from ${request.name}`, // Subject line
         text: request.message, // plain text body
-        html: `<h1>You have a message!</h1><div>${request.message}</div>` // html body
+        html: `<div>${request.message}</div>` // html body
     };
 
     try {

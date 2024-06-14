@@ -10,7 +10,7 @@ export const Banner = ({ image, children = null }: {
     return (
         <>
             <div className="banner-image-container" data-testid="banner-image">
-                <Image src={image} alt="Illuminated MacBook laptop" className="banner-image" />
+                <Image src={image} alt="Illuminated MacBook laptop" className="banner-image" priority={true} />
             </div>
             {children}
         </>

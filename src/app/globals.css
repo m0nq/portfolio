@@ -425,6 +425,10 @@
     @apply absolute opacity-0 top-0 left-0 w-0 h-0 z-[-1];
   }
 
+  .spinner {
+    @apply mx-auto motion-safe:animate-spin;
+  }
+
   .success-message {
     @apply flex flex-col mx-auto items-center my-12;
   }

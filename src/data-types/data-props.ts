@@ -73,7 +73,8 @@ export type FormValues = {
 }
 
 export type EmailResponse = {
-    success: boolean;
+    success?: boolean;
+    isPending?: boolean;
     errors?: { message: any };
     response?: any;
 }
