@@ -1,26 +1,16 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { emailOptions } from '@components/utils/nodemailer';
+import { transporter } from '@components/utils/nodemailer';
 
 export const POST = async (req: Request): Promise<NextResponse> => {
     const request = await req.json();
 
-    const transporter: nodemailer.Transporter = nodemailer.createTransport({
-        service: process.env.EMAIL_HOST,
-        // host: process.env.EMAIL_HOST,
-        // port: 465,
-        // secure: true,
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
-        }
-    });
-
     const mailOptions: nodemailer.SendMailOptions = {
-        from: request.email, // sender address
-        to: process.env.EMAIL_SEND_TO, // receiver address
-        subject: `Message from ${request.name} (${request.email})`, // Subject line
+        ...emailOptions,
+        subject: `Contact form message from ${request.name}`, // Subject line
         text: request.message, // plain text body
-        html: `<div>${request.message}</div>` // html body
+        html: `<h1>You have a message!</h1><div>${request.message}</div>` // html body
     };
 
     try {

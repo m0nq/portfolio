@@ -7,13 +7,7 @@ import userEvent from '@testing-library/user-event';
 import { Contact } from './Contact';
 import { ContactContext } from '@contexts/Contact.context';
 
-jest.mock('@formspree/react', () => ({
-    ValidationError: () => null,
-    useForm: () => [{ succeeded: false }, mockHandleSubmit]
-}));
-
 const mockSetIsOpen = jest.fn();
-const mockHandleSubmit = jest.fn().mockReturnValue({ succeeded: true });
 
 describe('Contact', () => {
     it('should render the contact form', () => {

@@ -18,9 +18,9 @@ const sendEmail = async (form: FormValues): Promise<EmailResponse> => {
         body: JSON.stringify(form)
     });
 
-    const { success, errors } = await res.json();
+    const { success, errors, response } = await res.json();
 
-    return { success, errors };
+    return { success, errors, response };
 };
 
 const initialValues: FormValues = {
@@ -41,6 +41,8 @@ export const Contact = (): ReactElement | null => {
         (async () => {
             if (Object.keys(formErrors).every((field: string): boolean => !formErrors[field]) && isSubmit) {
                 setState(await sendEmail({ ...formValues }));
+                setFormValues(initialValues);
+                setFormErrors(initialValues);
             }
         })();
     }, [formErrors, isSubmit, formValues]);
@@ -65,6 +67,12 @@ export const Contact = (): ReactElement | null => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
+    };
+
+    const handleAppreciation = () => {
+        setFormValues(initialValues);
+        setFormErrors(initialValues);
+        setIsOpen(false);
     };
 
     const validate = (values: FormValues) => {
@@ -105,7 +113,7 @@ export const Contact = (): ReactElement | null => {
                             <p>Thanks for the message!</p>
                             <br />
                             <p>I should get back to you within 24 hours.</p>
-                            <button onClick={() => setIsOpen(false)} style={{
+                            <button onClick={handleAppreciation} style={{
                                 border: '1px solid white',
                                 borderRadius: '0.25rem',
                                 padding: '0.5rem 1.75rem',
