@@ -8,7 +8,7 @@ env:
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [ "staging" ]
+    branches-ignore: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -76,9 +76,17 @@ jobs:
       - name: Set Environment Variables
         env:
           NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_SEND_TO: ${{ secrets.EMAIL_SEND_TO }}
         run: |
           echo "" > .env.production
           echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
+          echo EMAIL_HOST="$EMAIL_HOST" >> .env.production
+          echo EMAIL_USER="$EMAIL_USER" >> .env.production
+          echo EMAIL_PASS="$EMAIL_PASS" >> .env.production
+          echo EMAIL_SEND_TO="$EMAIL_SEND_TO" >> .env.production
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
@@ -111,9 +119,17 @@ jobs:
       - name: Set Environment Variables
         env:
           NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_SEND_TO: ${{ secrets.EMAIL_SEND_TO }}
         run: |
           echo "" > .env.production
           echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
+          echo EMAIL_HOST="$EMAIL_HOST" >> .env.production
+          echo EMAIL_USER="$EMAIL_USER" >> .env.production
+          echo EMAIL_PASS="$EMAIL_PASS" >> .env.production
+          echo EMAIL_SEND_TO="$EMAIL_SEND_TO" >> .env.production
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
