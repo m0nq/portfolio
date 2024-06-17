@@ -6,9 +6,9 @@ export const About = () => {
             <div className="about-container">
                 <div>
                     <p>
-                        Monk started his career at <Link href="https://www.industriallogic.com/" target="_blank">Industrial
-                        Logic</Link>, where he learned the ropes of Extreme Programming and how to build software
-                        that&apos;s robust and maintainable with agile methodologies. Working with <Link
+                        Monk started his career at <Link href="https://www.industriallogic.com/" target="_blank">
+                        Industrial Logic</Link> where he learned the ropes of Extreme Programming and how to build
+                        software that&apos;s robust and maintainable with agile methodologies. Working with <Link
                         href="https://www.ford.com/" target="_blank">Ford Motors</Link> he had the opportunity to
                         collaborate across multiple teams. There, he contributed to the development of a
                         high-functioning, user-focused website that streamlined the process for customers to find the

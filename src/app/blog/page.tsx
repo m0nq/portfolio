@@ -26,7 +26,7 @@ const BlogPage = async (): Promise<ReactElement> => {
                 </Banner>
             </Section>
             <Section classes="blog-posts" data-testid="blog-posts">
-                <div className="px-8 my-14 mx-auto">
+                <div className="px-6 my-14 mx-auto">
                     <div>
                         <section className="blog-details">
                             {posts?.map(({ post }: { post: Post }) => (
