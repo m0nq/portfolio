@@ -24,7 +24,7 @@ const GlobalError = ({ error, reset }: { error: Error, reset: () => void }) => {
             <body>
                 <div>
                     <h2>Something went wrong!</h2>
-                    <button onClick={() => reset()}>↩ Something went wrong. Try again?</button>
+                    <button onClick={() => reset()}>↩ Whoa... Something weird happened. Try again?</button>
                 </div>
             </body>
         </html>

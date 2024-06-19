@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Quicksand } from 'next/font/google';
 import DOMPurify from 'isomorphic-dompurify';
-import './globals.css';
 
+import './globals.css';
 import { Header } from '@components/header/Header';
 import { Footer } from '@components/footer/Footer';
 import { menuLinks } from '@data-types/menu-link.type';
