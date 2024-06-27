@@ -141,9 +141,10 @@ Fork &/or clone this repo get a local copy. To get up and running, follow these 
 
 This is an example of how to list things you need to use the software and how to install them.
 
-* npm
+* yarn
   ```sh
-  npm install npm@latest -g
+  corepack enable
+  yarn set version stable
   ```
 
 ### Installation
@@ -154,9 +155,9 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/m0nq/portfolio.git
    ```
-2. Install NPM packages
+2. Install Packages
    ```sh
-   npm install
+   yarn install
    ```
 
 [//]: # (3. Enter your API in `config.js`)
