@@ -101,7 +101,7 @@ jobs:
         with:
           node-version: '20'
       - run: yarn install
-      - run: yarn cache clean
+#      - run: yarn cache clean
       - run: yarn run test
 
   # Deployment job
