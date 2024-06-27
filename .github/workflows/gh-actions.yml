@@ -55,7 +55,6 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-
       - name: Setup Node.js 🏗️
         uses: actions/setup-node@v4
         with:
@@ -101,9 +100,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm ci
-      - run: npm cache verify
-      - run: npm run test
+      - run: yarn install --frozen-lockfile
+      - run: yarn cache clean
+      - run: yarn run test
 
   # Deployment job
   deploy:
