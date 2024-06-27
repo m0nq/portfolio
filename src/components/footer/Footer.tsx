@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const Footer = (): ReactElement => {
     return (
         <footer>
-            <div>@ {new Date().getFullYear()} by{' '}
+            <div>&copy; {new Date().getFullYear()} by{' '}
                 <Link href="https://github.com/m0nq" className="footer-link" target="_blank">
                     m0nq
                 </Link>

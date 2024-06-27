@@ -44,5 +44,5 @@
         "ts-node": "^10.9.2",
         "typescript": "^5"
     },
-    "packageManager": "yarn@3.3.0+sha256.bbfc6cc3362afbcb0ce39ee8f36fb2b62ce9834b20d6aeee5c1f481269b52238"
+    "packageManager": "yarn@4.3.1"
 }

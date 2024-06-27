@@ -14,7 +14,7 @@ describe('Footer', () => {
     it('renders the footer with the current year', () => {
         render(<Footer />);
         const currentYear = new Date().getFullYear();
-        const yearElement = screen.getByText(`@ ${currentYear.toString()} by`);
+        const yearElement = screen.getByText(`© ${currentYear.toString()} by`);
         expect(yearElement).toBeInTheDocument();
     });
 });

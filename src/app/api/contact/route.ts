@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+
 import { emailOptions } from '@components/utils/nodemailer';
 import { transporter } from '@components/utils/nodemailer';
 

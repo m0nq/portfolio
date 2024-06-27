@@ -1,7 +1,7 @@
 ---
 name: Epic or User Story
 about: Add an Epic or User Story for feature development
-title: "[Epic]: or [User Story]"
+title: "[Epic]: or [User Story]:"
 labels: epic, user story
 assignees: ''
 
