@@ -74,14 +74,14 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Set Environment Variables
         env:
-          NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
+          WORDPRESS_API_URL: ${{ secrets.WORDPRESS_API_URL }}
           EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_SEND_TO: ${{ secrets.EMAIL_SEND_TO }}
         run: |
           echo "" > .env.production
-          echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
+          echo WORDPRESS_API_URL="$WORDPRESS_API_URL" >> .env.production
           echo EMAIL_HOST="$EMAIL_HOST" >> .env.production
           echo EMAIL_USER="$EMAIL_USER" >> .env.production
           echo EMAIL_PASS="$EMAIL_PASS" >> .env.production
@@ -116,14 +116,14 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Set Environment Variables
         env:
-          NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
+          WORDPRESS_API_URL: ${{ secrets.WORDPRESS_API_URL }}
           EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_SEND_TO: ${{ secrets.EMAIL_SEND_TO }}
         run: |
           echo "" > .env.production
-          echo NEXT_PUBLIC_WORDPRESS_API_URL="$NEXT_PUBLIC_WORDPRESS_API_URL" >> .env.production
+          echo WORDPRESS_API_URL="$WORDPRESS_API_URL" >> .env.production
           echo EMAIL_HOST="$EMAIL_HOST" >> .env.production
           echo EMAIL_USER="$EMAIL_USER" >> .env.production
           echo EMAIL_PASS="$EMAIL_PASS" >> .env.production

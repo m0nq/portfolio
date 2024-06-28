@@ -10,6 +10,10 @@ export const menuLinks: MenuLink[] = [
         link: '/contact'
     },
     {
+        name: 'about',
+        link: '/about'
+    },
+    {
         name: 'projects',
         link: '/projects'
     },

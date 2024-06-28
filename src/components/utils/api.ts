@@ -6,7 +6,7 @@ import { CursorInfo } from '@data-types/data-props';
 import { DataResponse } from '@data-types/data-props';
 import { PostEdges } from '@data-types/data-props';
 
-const WORDPRESS_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
+const WORDPRESS_API_URL = process.env.WORDPRESS_API_URL;
 
 const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> => {
     const variables = {
