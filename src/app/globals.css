@@ -201,8 +201,8 @@
     @apply z-[1] h-full w-full top-0 left-0 absolute;
   }
 
-  .about {
-    @apply py-[6.5rem] px-6 md:px-20 flex content-center;
+  .services {
+    @apply py-14 px-6 md:px-20 flex content-center;
   }
 
   .about-container {

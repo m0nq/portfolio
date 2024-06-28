@@ -7,9 +7,9 @@ jest.mock('@components/projects/Projects', () => require('../../../__mocks__/Pro
 
 // TODO: Get this to work with the mock projects component
 xdescribe('Main', () => {
-    it('renders the About component', () => {
+    it('renders the Services component', () => {
         render(<Main />);
-        const aboutSection = screen.getByTestId('about');
+        const aboutSection = screen.getByTestId('services');
         expect(aboutSection).toBeInTheDocument();
     });
 

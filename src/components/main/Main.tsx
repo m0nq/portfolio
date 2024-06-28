@@ -4,7 +4,7 @@ import { Section } from '@components/section/Section';
 import { Banner } from '@components/banner/Banner';
 import { Skills } from '@components/skills/Skills';
 import { Projects } from '@components/projects/Projects';
-import { About } from '@components/about/About';
+import { Services } from '@components/services/services';
 import { BannerContent } from '@components/banner/BannerContent';
 import { Loading } from '@components/loading/Loading';
 
@@ -19,8 +19,8 @@ export const Main = () => {
                     <BannerContent />
                 </Banner>
             </Section>
-            <Section classes="about" data-testid="about">
-                <About />
+            <Section classes="services" data-testid="services">
+                <Services />
             </Section>
             <Section classes="skills" data-testid="skills">
                 <Skills />
