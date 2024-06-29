@@ -11,7 +11,7 @@ export const Services = () => {
                 <ul>
                     <li>
                         <span className="strong-emphasis">An Informational Site:</span> Minimal turn-around time. A
-                        great looking site that showcases your information and services.
+                        great looking site that showcases your information and services
                     </li>
                     <li>
                         <span className="strong-emphasis">A Customized Site:</span> A site with a few more moving parts,
@@ -21,10 +21,10 @@ export const Services = () => {
                     <li>
                         <span className="strong-emphasis">Monthly Site Maintenance:</span> Ongoing management and
                         maintenance by a dedicated developer for continuous optimization and bug fixes for your site.
-                        This is also offered as an add-on service for my site building packages.
+                        This is also offered as an add-on service for a customized site
                     </li>
                     <li>
-                        <span className="strong-emphasis">Non-Profit Projects:</span> I also offer discounted prices for
+                        <span className="strong-emphasis">Non-Profit Projects:</span> Discounted prices are offered for
                         non-profit and projects with social impact
                     </li>
                 </ul>
