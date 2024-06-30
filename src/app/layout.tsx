@@ -8,7 +8,7 @@ import { Header } from '@components/header/header';
 import { Footer } from '@components/footer/footer';
 import { menuLinks } from '@data-types/menu-link.type';
 import { ContactProvider } from '@contexts/contact.context';
-import { Contact } from '@components/contact/Contact';
+import { Contact } from '@components/contact/contact';
 
 const quicksand = Quicksand({
     subsets: ['latin'],

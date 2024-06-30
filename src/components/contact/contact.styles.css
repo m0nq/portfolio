@@ -1,0 +1,48 @@
+.modal-overlay {
+  @apply fixed top-0 left-0 right-0 bottom-0 bg-black/75 z-50 w-screen h-screen flex justify-center items-center overflow-y-auto;
+}
+
+.contact {
+  @apply bg-dark rounded-lg shadow-md p-8 w-11/12 z-50 sm:my-auto lg:w-2/5;
+}
+
+.success-message {
+  @apply flex flex-col mx-auto items-center my-12;
+}
+
+.contact-confirm-btn {
+  @apply mt-3 mx-4 px-8 py-3 border rounded border-white transition-all duration-200 ease-linear hover:bg-primary hover:no-underline;
+}
+
+form {
+  @apply text-center w-full;
+}
+
+.contact-form {
+  @apply flex flex-col gap-2 border-none w-4/5 mx-auto;
+}
+
+.contact-form label {
+  @apply bg-transparent w-full mt-1 flex self-start;
+}
+
+.contact-form input, textarea {
+  @apply align-middle rounded mb-6 py-3 px-4 w-full text-black shadow-inner shadow-black;
+}
+
+.contact-form p {
+  @apply mt-[-1.75rem] self-start text-red-500;
+}
+
+.contact-cancel-btn {
+  @apply mt-3 mx-4 px-8 py-3 border rounded border-white transition-all duration-200 ease-linear hover:bg-secondary hover:no-underline;
+}
+
+.honey-pot {
+  @apply absolute opacity-0 top-0 left-0 w-0 h-0 z-[-1];
+}
+
+.spinner {
+  @apply mx-auto animate-spin;
+}
+

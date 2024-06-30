@@ -5,6 +5,7 @@ import { ReactElement } from 'react';
 import { SyntheticEvent } from 'react';
 import { ImSpinner10 } from 'react-icons/im';
 
+import './contact.styles.css';
 import { useContactContext } from '@contexts/contact.context';
 import { FormValues } from '@data-types/data-props';
 import { EmailResponse } from '@data-types/data-props';
@@ -74,7 +75,6 @@ export const Contact = (): ReactElement | null => {
     const handleAppreciation = () => {
         setFormValues(initialValues);
         setFormErrors(initialValues);
-        setIsSubmit(false);
         setIsOpen(false);
     };
 
@@ -85,7 +85,7 @@ export const Contact = (): ReactElement | null => {
             message: ''
         };
 
-        const emailRegex = /^[^\s@]+@[^\s@]{2,}$/i;
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
         const nameRegex = /^[a-z ,'-]+$/i;
 
         if (!values.name) {
@@ -116,7 +116,7 @@ export const Contact = (): ReactElement | null => {
                             <p>Thanks for the message!</p>
                             <br />
                             <p>I should get back to you within a business day.</p>
-                            <button className="contact-send-btn" onClick={handleAppreciation}>
+                            <button className="contact-confirm-btn" onClick={handleAppreciation}>
                                 ← Thanks!
                             </button>
                         </div>
@@ -130,15 +130,15 @@ export const Contact = (): ReactElement | null => {
                                     placeholder="First and Last"
                                     value={formValues.name}
                                     onChange={handleFormChange} />
-                                {formErrors.name && <p style={{ color: 'red' }}>{formErrors.name}</p>}
+                                {formErrors.name && <p>{formErrors.name}</p>}
                                 <label htmlFor="email-address">Email</label>
-                                <input type="email"
+                                <input type="text"
                                     name="email"
                                     id="email-address"
                                     placeholder="something@email.com"
                                     value={formValues.email}
                                     onChange={handleFormChange} />
-                                {formErrors.email && <p style={{ color: 'red' }}>{formErrors.email}</p>}
+                                {formErrors.email && <p>{formErrors.email}</p>}
                                 <label htmlFor="message">Message</label>
                                 <textarea rows={5}
                                     name="message"
@@ -146,7 +146,7 @@ export const Contact = (): ReactElement | null => {
                                     placeholder="Fashion axe fanny pack migas cliche kinfolk. Mukbang selfies palo santo post-ironic DIY. Tacos gochujang mumblecore whatever. Bicycle rights tousled tumblr DIY. Cray solarpunk master cleanse pug live-edge, helvetica XOXO. Pour-over fam bruh typewriter mixtape, thundercats twee listicle raw denim lomo yes plz XOXO artisan jean shorts. Quinoa ugh grailed jawn tumeric yr jianbing."
                                     value={formValues.message}
                                     onChange={handleFormChange} />
-                                {formErrors.message && <p style={{ color: 'red' }}>{formErrors.message}</p>}
+                                {formErrors.message && <p>{formErrors.message}</p>}
                                 <input type="hidden"
                                     name="subject"
                                     id="email-subject"
@@ -155,13 +155,13 @@ export const Contact = (): ReactElement | null => {
                                     className="honey-pot"
                                     name="_gotcha"
                                     maxLength={0} />
-                                {state.errors && <p style={{ color: 'red' }}>
-                                  Sorry... there was a network error. Maybe refresh and try again?
+                                {state.errors && <p>
+                                    Sorry... there was a network error. Maybe refresh and try again?
                                 </p>}
                                 {state.isPending && <ImSpinner10 className="spinner" />}
                             </fieldset>
                             <button className="contact-cancel-btn" onClick={() => setIsOpen(false)}>Cancel</button>
-                            <button type="submit" className="contact-send-btn">Send</button>
+                            <button type="submit" className="contact-confirm-btn">Send</button>
                         </form>
                     )}
                 </div>
