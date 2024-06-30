@@ -1,7 +1,7 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
-import { Skills } from './Skills';
+import { Skills } from './skills';
 
 // Mock the imported image
 jest.mock('@public/abstract-building.webp', () => 'mock-image.webp');

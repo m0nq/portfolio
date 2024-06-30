@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import { Main } from './Main';
 
-jest.mock('@components/projects/Projects', () => require('../../../__mocks__/Projects'));
+jest.mock('@components/projects/projects', () => require('../../../__mocks__/Projects'));
 
 // TODO: Get this to work with the mock projects component
 xdescribe('Main', () => {

@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 
-import { Section } from '@components/section/Section';
+import { Section } from '@components/utils/section';
 import { Banner } from '@components/banner/Banner';
-import { Skills } from '@components/skills/Skills';
-import { Projects } from '@components/projects/Projects';
-import { Services } from '@components/services/services';
+import { Skills } from '@components/skills/skills';
+import { Projects } from '@components/projects/projects';
+import { Offerings } from '@components/offerings/offerings';
 import { BannerContent } from '@components/banner/BannerContent';
 import { Loading } from '@components/loading/Loading';
 
@@ -20,7 +20,7 @@ export const Main = () => {
                 </Banner>
             </Section>
             <Section classes="services" data-testid="services">
-                <Services />
+                <Offerings />
             </Section>
             <Section classes="skills" data-testid="skills">
                 <Skills />

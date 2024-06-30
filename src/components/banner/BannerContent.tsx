@@ -2,7 +2,7 @@
 import { ReactElement } from 'react';
 import { FaReact } from 'react-icons/fa';
 
-import { useContactContext } from '@contexts/Contact.context';
+import { useContactContext } from '@contexts/contact.context';
 
 export const BannerContent = (): ReactElement => {
     const { setIsOpen } = useContactContext();

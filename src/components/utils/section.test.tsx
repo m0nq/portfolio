@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
 
-import { Section } from './Section';
+import { Section } from './section';
 
 describe('Section component tests', () => {
     it('renders with default props', () => {

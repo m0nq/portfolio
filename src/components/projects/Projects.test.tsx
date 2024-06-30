@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
 import { waitFor } from '@testing-library/react';
-// import { Projects } from './Projects';
 // describe('Projects', () => {
 //     it('renders the intro area', () => {
 //         render(<Projects />);
@@ -26,7 +25,7 @@ import { waitFor } from '@testing-library/react';
 //         expect(learnMoreLink).toBeInTheDocument();
 //     });
 // });
-import { Projects } from '@components/projects/Projects';
+import { Projects } from '@components/projects/projects';
 
 // Mock the fetch function
 global.fetch = jest.fn(() =>

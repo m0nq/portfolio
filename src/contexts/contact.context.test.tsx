@@ -4,8 +4,8 @@ import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { ContactProvider } from '@contexts/Contact.context';
-import { ContactContext } from '@contexts/Contact.context';
+import { ContactProvider } from '@contexts/contact.context';
+import { ContactContext } from '@contexts/contact.context';
 
 jest.mock('react', () => ({
     ...jest.requireActual('react'),

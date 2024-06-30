@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { Section } from '@components/section/Section';
+import { Section } from '@components/utils/section';
 import { About } from '@components/about/About';
 import { Article } from '@components/article/article';
 

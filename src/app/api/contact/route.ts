@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-import { emailOptions } from '@components/utils/nodemailer';
-import { transporter } from '@components/utils/nodemailer';
+import { emailOptions } from '@utils/nodemailer';
+import { transporter } from '@utils/nodemailer';
 
 export const POST = async (req: Request): Promise<NextResponse> => {
     const request = await req.json();

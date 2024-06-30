@@ -5,7 +5,7 @@ import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Contact } from './Contact';
-import { ContactContext } from '@contexts/Contact.context';
+import { ContactContext } from '@contexts/contact.context';
 
 const mockSetIsOpen = jest.fn();
 

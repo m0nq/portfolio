@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
 
-import { Section } from '@components/section/Section';
+import { Section } from '@components/utils/section';
 import { Banner } from '@components/banner/Banner';
 import macbookCloseupImage from '@public/macbook-closeup.webp';
-import { getPosts } from '@components/utils/api';
+import { getPosts } from '@utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 import { Post } from '@data-types/data-props';
 

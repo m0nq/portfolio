@@ -1,4 +1,4 @@
-export const Services = () => {
+export const Offerings = () => {
     return (
         <div className="about-container">
             <div>

@@ -5,7 +5,7 @@ import { ReactElement } from 'react';
 import { SyntheticEvent } from 'react';
 import { ImSpinner10 } from 'react-icons/im';
 
-import { useContactContext } from '@contexts/Contact.context';
+import { useContactContext } from '@contexts/contact.context';
 import { FormValues } from '@data-types/data-props';
 import { EmailResponse } from '@data-types/data-props';
 

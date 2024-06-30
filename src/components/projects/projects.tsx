@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { getPosts } from '@components/utils/api';
+import { getPosts } from '@utils/api';
 import { Post } from '@data-types/data-props';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 

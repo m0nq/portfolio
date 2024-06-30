@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 
-import { Section } from '@components/section/Section';
-import { getPost } from '@components/utils/api';
-import { getPosts } from '@components/utils/api';
+import { Section } from '@components/utils/section';
+import { getPost } from '@utils/api';
+import { getPosts } from '@utils/api';
 import { Article } from '@components/article/article';
 
 export const generateStaticParams = async () => {

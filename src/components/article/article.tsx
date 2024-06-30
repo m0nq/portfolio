@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { BackButton } from '@components/utils/BackButton';
+import { BackButton } from '@components/utils/back-button';
 
 export const Article = ({ title, children }: { title: string, children: ReactNode }): JSX.Element => {
 

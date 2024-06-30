@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import './skills.styles.css';
 import abstractBuildingImage from '@public/abstract-building.webp';
 
 export const Skills = () => {

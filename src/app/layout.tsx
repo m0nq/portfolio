@@ -7,7 +7,7 @@ import './globals.css';
 import { Header } from '@components/header/Header';
 import { Footer } from '@components/footer/Footer';
 import { menuLinks } from '@data-types/menu-link.type';
-import { ContactProvider } from '@contexts/Contact.context';
+import { ContactProvider } from '@contexts/contact.context';
 import { Contact } from '@components/contact/Contact';
 
 const quicksand = Quicksand({
