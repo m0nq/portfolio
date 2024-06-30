@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
 import { Section } from '@components/utils/section';
-import { Banner } from '@components/banner/Banner';
+import { Banner } from '@components/banner/banner';
 import macbookCloseupImage from '@public/macbook-closeup.webp';
 import { getPosts } from '@utils/api';
 import { BlogCardDetails } from '@components/utils/blog/blog-card-details';

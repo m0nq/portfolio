@@ -2,6 +2,8 @@ import { ReactElement } from 'react';
 import { ReactNode } from 'react';
 import Image from 'next/image';
 
+import './banner.styles.css';
+
 export const Banner = ({ image, children = null }: {
     image: any,
     children?: ReactNode

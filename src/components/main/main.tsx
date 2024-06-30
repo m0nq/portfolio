@@ -2,11 +2,11 @@ import { Suspense } from 'react';
 
 import './main.styles.css';
 import { Section } from '@components/utils/section';
-import { Banner } from '@components/banner/Banner';
+import { Banner } from '@components/banner/banner';
 import { Skills } from '@components/skills/skills';
 import { Projects } from '@components/projects/projects';
 import { Offerings } from '@components/offerings/offerings';
-import { BannerContent } from '@components/banner/BannerContent';
+import { BannerContent } from '@components/banner/banner-content';
 import { Loading } from '@components/loading/loading';
 
 import macBookColorImage from '@public/macbook-color.webp';

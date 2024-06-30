@@ -2,6 +2,7 @@
 import { ReactElement } from 'react';
 import { FaReact } from 'react-icons/fa';
 
+import './banner.styles.css';
 import { useContactContext } from '@contexts/contact.context';
 
 export const BannerContent = (): ReactElement => {

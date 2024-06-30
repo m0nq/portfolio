@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Banner } from './Banner';
+import { Banner } from './banner';
 
 describe('Banner', () => {
   const mockImageSrc = '/path/to/mock/image.jpg';
