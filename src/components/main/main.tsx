@@ -15,18 +15,18 @@ export const Main = () => {
 
     return (
         <>
-            <Section classes="banner" data-testid="banner">
+            <Section className="banner" data-testid="banner">
                 <Banner image={macBookColorImage}>
                     <BannerContent />
                 </Banner>
             </Section>
-            <Section classes="offerings" data-testid="services">
+            <Section className="offerings" data-testid="services">
                 <Offerings />
             </Section>
-            <Section classes="skills" data-testid="skills">
+            <Section className="skills" data-testid="skills">
                 <Skills />
             </Section>
-            <Section classes="projects" data-testid="projects">
+            <Section className="projects" data-testid="projects">
                 <Suspense fallback={<Loading />}>
                     <Projects />
                 </Suspense>

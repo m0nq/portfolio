@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { Section } from '@components/utils/section';
 import { getPost } from '@utils/api';
 import { getPosts } from '@utils/api';
-import { Article } from '@components/article/article';
+import { Article } from '@components/utils/article/article';
 
 export const generateStaticParams = async () => {
     const { posts } = await getPosts(4);

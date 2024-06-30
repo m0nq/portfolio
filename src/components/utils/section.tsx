@@ -2,14 +2,14 @@ import { DetailedHTMLProps } from 'react';
 import { HTMLAttributes } from 'react';
 import { ReactNode } from 'react';
 
-export const Section = ({ styles = {}, classes = '', children, ...props }: {
+export const Section = ({ styles = {}, className = '', children, ...props }: {
     styles?: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
-    classes?: string,
+    className?: string,
     children: ReactNode
 }) => {
     return (
         <>
-            <section style={styles} className={classes} {...props}>{children}</section>
+            <section style={styles} className={className} {...props}>{children}</section>
         </>
     );
 };

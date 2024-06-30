@@ -1,12 +1,13 @@
 import { ReactElement } from 'react';
 
+import './blog.styles.css';
 import { Section } from '@components/utils/section';
 import { Banner } from '@components/banner/banner';
 import macbookCloseupImage from '@public/macbook-closeup.webp';
 import { getPosts } from '@utils/api';
 import { BlogCardDetails } from '@components/utils/blog/blog-card-details';
 import { Post } from '@data-types/data-props';
-import { BackButton } from '@components/utils/back-button';
+import { BackButton } from '@components/utils/back-button/back-button';
 
 const BlogPage = async (): Promise<ReactElement> => {
 
@@ -14,7 +15,7 @@ const BlogPage = async (): Promise<ReactElement> => {
 
     return (
         <>
-            <Section classes="banner" data-testid="banner">
+            <Section className="banner" data-testid="banner">
                 <Banner image={macbookCloseupImage}>
                     <div className="banner-container">
                         <div className="banner-content">
@@ -26,10 +27,10 @@ const BlogPage = async (): Promise<ReactElement> => {
                     </div>
                 </Banner>
             </Section>
-            <Section classes="blog-posts" data-testid="blog-posts">
-                <div className="px-6 my-14 mx-auto">
+            <Section className="blog-posts" data-testid="blog-posts">
+                <div>
                     <div>
-                        <Section classes="blog-details">
+                        <Section className="blog-details">
                             {posts?.map(({ post }: { post: Post }) => (
                                 <BlogCardDetails key={post.databaseId} post={post} />
                             ))}
@@ -51,7 +52,7 @@ const BlogPage = async (): Promise<ReactElement> => {
                         </button>}
                 </div>
             </nav>
-            <BackButton className="back-to-blog">← Back</BackButton>
+            <BackButton>← Back</BackButton>
         </>
     );
 };

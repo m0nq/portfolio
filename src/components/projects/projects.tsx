@@ -19,7 +19,7 @@ export const Projects = async () => {
                         Some highlights of the recent projects I&apos;ve worked on.
                     </p>
                 </div>
-                <Section classes="project-details">
+                <Section className="project-details">
                     {posts.map(({ post }: { post: Post }) => (
                         <BlogCardDetails key={post.databaseId} post={post} />
                     ))}

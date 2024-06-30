@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 
-import { About } from '@components/about/About';
+import { About } from '@components/about/about';
 
 describe('About component', () => {
     it('renders the component', () => {

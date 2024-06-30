@@ -6,7 +6,7 @@ import { Section } from './section';
 
 describe('Section component tests', () => {
     it('renders with default props', () => {
-        render(<Section classes="">Children</Section>);
+        render(<Section className="">Children</Section>);
         const sectionElement = screen.getByText('Children');
         expect(sectionElement).toBeInTheDocument();
         expect(sectionElement.tagName).toBe('SECTION');
@@ -15,7 +15,7 @@ describe('Section component tests', () => {
     it('renders with custom styles and classes', () => {
         const styles = { backgroundColor: 'red', color: 'white' };
         render(
-            <Section styles={styles} classes="custom-class">
+            <Section styles={styles} className="custom-class">
                 Children
             </Section>
         );
@@ -29,7 +29,7 @@ describe('Section component tests', () => {
 
     it('renders children', () => {
         render(
-            <Section classes="">
+            <Section className="">
                 <div>Child 1</div>
                 <div>Child 2</div>
             </Section>
