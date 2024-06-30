@@ -5,7 +5,7 @@ import DOMPurify from 'isomorphic-dompurify';
 
 import './globals.css';
 import { Header } from '@components/header/header';
-import { Footer } from '@components/footer/Footer';
+import { Footer } from '@components/footer/footer';
 import { menuLinks } from '@data-types/menu-link.type';
 import { ContactProvider } from '@contexts/contact.context';
 import { Contact } from '@components/contact/Contact';

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ReactElement } from 'react';
 import Link from 'next/link';
 
+import './header.styles.css';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
 import { useContactContext } from '@contexts/contact.context';

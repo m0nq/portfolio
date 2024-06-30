@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
 
-import { Footer } from './Footer';
+import { Footer } from './footer';
 
 describe('Footer', () => {
     it('renders the footer with the correct author name', () => {

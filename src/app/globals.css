@@ -25,46 +25,32 @@
  */
 @tailwind variants;
 
-@layer base {
-  /*@font-face {*/
-  /*  font-family: 'Quicksand', sans-serif;*/
-  /*  !*font-optical-sizing: auto;*!*/
-  /*  font-stretch: auto;*/
-  /*  font-style: normal;*/
-  /*  font-weight: 400;*/
-  /*  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap') format('woff2');*/
-  /*}*/
-  body {
-    @apply bg-dark text-base font-light font-sans text-white scroll-smooth;
-  }
-
-  .inner-container {
-    @apply grid grid-cols-1 xl:grid-cols-[375px_1fr] lg:grid-cols-[320px_1fr] md:grid-cols-1 sm:grid-cols-1;
-  }
-
-  header, footer {
-    @apply text-white relative z-40 w-full p-4 bg-dark sm:w-full sm:p-4 md:w-full lg:fixed lg:w-[320px] xl:w-[375px];
-  }
-
-  header {
-    @apply h-full flex flex-row items-center text-white justify-between sticky top-0
-    sm:flex-row sm:content-center sm:justify-between
-    sm:px-8 md:flex-row md:content-center md:justify-between
-    lg:p-8 lg:fixed lg:z-0 lg:flex-col lg:items-start lg:justify-start;
-  }
-
-  main {
-    @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
-  }
-
-  footer {
-    @apply bottom-0 text-sm md:p-4;
-  }
-
-  a, button {
-    @apply cursor-pointer;
-  }
+/*@layer base {*/
+/*@font-face {*/
+/*  font-family: 'Quicksand', sans-serif;*/
+/*  !*font-optical-sizing: auto;*!*/
+/*  font-stretch: auto;*/
+/*  font-style: normal;*/
+/*  font-weight: 400;*/
+/*  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap') format('woff2');*/
+/*}*/
+body {
+  @apply bg-dark text-base font-light font-sans text-white scroll-smooth;
 }
+
+.inner-container {
+  @apply grid grid-cols-1 xl:grid-cols-[375px_1fr] lg:grid-cols-[320px_1fr] md:grid-cols-1 sm:grid-cols-1;
+}
+
+main {
+  @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
+}
+
+a, button {
+  @apply cursor-pointer;
+}
+
+/*}*/
 
 @layer components {
   .main-wrapper {
@@ -98,29 +84,6 @@
 
   .banner-content > h1 > span {
     @apply text-primary;
-  }
-
-  .profile-link {
-    @apply w-12 sm:w-16 md:w-[4.5rem] lg:w-32 lg:self-center;
-  }
-
-  .profile-image {
-    @apply m-2 w-full rounded-full md:w-24 lg:w-32 shadow-[0_0_4rem_#000] shadow-black hover:shadow-secondary
-    transition-shadow duration-500 ease-out;
-  }
-
-  .primary-navigation > ul {
-    @apply my-8 mx-0 p-0 list-disc;
-  }
-
-  .primary-navigation > ul li {
-    @apply list-none inline-block sm:inline-block md:inline-block lg:block lg:py-2;
-  }
-
-  .nav-link {
-    @apply ml-[0.5rem] text-base sm:ml-4 sm:text-[1.25rem] md:ml-4 md:text-2xl lg:ml-0 lg:text-3xl
-    relative after:bg-primary after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full
-    after:transition-all after:duration-300 cursor-pointer;
   }
 
   .banner-image-container {
@@ -378,11 +341,6 @@
 
   .pagination-wrapper {
     @apply flex my-12 mx-auto py-0 px-16 justify-between;
-  }
-
-  .footer-link {
-    @apply relative after:bg-primary after:absolute after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full
-    after:transition-all after:duration-300 cursor-pointer;
   }
 }
 

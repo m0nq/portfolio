@@ -1,6 +1,8 @@
 import { ReactElement } from 'react';
 import Link from 'next/link';
 
+import './footer.styles.css';
+
 export const Footer = (): ReactElement => {
     return (
         <footer>
