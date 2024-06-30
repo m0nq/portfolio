@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
 
-import { Main } from './Main';
+import { Main } from './main';
 
 jest.mock('@components/projects/projects', () => require('../../../__mocks__/Projects'));
 

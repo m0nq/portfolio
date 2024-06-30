@@ -1,8 +1,10 @@
+import './offerings.styles.css';
+
 export const Offerings = () => {
     return (
-        <div className="about-container">
+        <div className="offerings-container">
             <div>
-                <h2 className="text-3xl strong-emphasis">Offerings</h2>
+                <h2 className="strong-emphasis">Offerings</h2>
                 <br />
                 <p>
                     Reach out to me if you feel like you need:

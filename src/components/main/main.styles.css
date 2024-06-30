@@ -1,0 +1,17 @@
+.banner {
+  @apply relative p-7 h-auto sm:h-screen;
+}
+
+.offerings {
+  @apply py-14 px-6 md:px-20 flex content-center;
+}
+
+.skills {
+  grid-template-areas: 'content';
+  @apply grid max-h-[31rem] my-6 max-w-fit md:max-w-full;
+}
+
+.projects {
+  @apply py-[6.5rem] px-6;
+}
+

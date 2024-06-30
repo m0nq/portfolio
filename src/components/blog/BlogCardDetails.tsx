@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Suspense } from 'react';
 
 import { Post } from '@data-types/data-props';
-import { Loading } from '@components/loading/Loading';
+import { Loading } from '@components/loading/loading';
 
 export const BlogCardDetails = ({ post }: { post: Post }) => {
 

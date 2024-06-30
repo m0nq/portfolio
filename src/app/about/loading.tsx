@@ -1,4 +1,4 @@
-import { Loading } from '@components/loading/Loading';
+import { Loading } from '@components/loading/loading';
 
 const PostLoader = () => <Loading />;
 

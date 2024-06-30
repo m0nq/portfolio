@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { render } from '@testing-library/react';
 
-import { Header } from './Header';
+import { Header } from './header';
 
 describe('Header', () => {
     it('renders Header component with menuLinks', () => {
