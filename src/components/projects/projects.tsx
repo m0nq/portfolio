@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 import './projects.styles.css';
 import { getPosts } from '@utils/api';
-import { Post } from '@data-types/data-props';
-import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 import { Section } from '@components/utils/section';
+import { Post } from '@data-types/data-props';
+import { BlogCardDetails } from '@components/utils/blog/blog-card-details';
 
 export const Projects = async () => {
 
-    const { posts } = await getPosts(4);
+    const { posts } = await getPosts(4, { category: 'projects' });
 
     return (
         <>

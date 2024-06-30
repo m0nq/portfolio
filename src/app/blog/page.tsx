@@ -4,7 +4,7 @@ import { Section } from '@components/utils/section';
 import { Banner } from '@components/banner/Banner';
 import macbookCloseupImage from '@public/macbook-closeup.webp';
 import { getPosts } from '@utils/api';
-import { BlogCardDetails } from '@components/blog/BlogCardDetails';
+import { BlogCardDetails } from '@components/utils/blog/blog-card-details';
 import { Post } from '@data-types/data-props';
 import { BackButton } from '@components/utils/back-button';
 
@@ -29,24 +29,24 @@ const BlogPage = async (): Promise<ReactElement> => {
             <Section classes="blog-posts" data-testid="blog-posts">
                 <div className="px-6 my-14 mx-auto">
                     <div>
-                        <section className="blog-details">
+                        <Section classes="blog-details">
                             {posts?.map(({ post }: { post: Post }) => (
                                 <BlogCardDetails key={post.databaseId} post={post} />
                             ))}
-                        </section>
+                        </Section>
                     </div>
                 </div>
             </Section>
             <nav className="pagination-wrapper">
                 <div>
                     {pageInfo?.hasPreviousPage &&
-                        <button onClick={async () => await getPosts(10, { before: pageInfo?.startCursor })}>
+                        <button onClick={async () => await getPosts(10, {}, { before: pageInfo?.startCursor })}>
                             ← Newer Posts
                         </button>}
                 </div>
                 <div>
                     {pageInfo?.hasNextPage &&
-                        <button onClick={async () => await getPosts(10, { after: pageInfo?.startCursor })}>
+                        <button onClick={async () => await getPosts(10, {}, { after: pageInfo?.startCursor })}>
                             Older Posts →
                         </button>}
                 </div>

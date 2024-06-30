@@ -36,8 +36,8 @@ const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> 
 // Take a filter param to filter projects?
 export const getPosts = async (
     first: number = 10,
+    filter: WhereClause = {},
     cursorInfo?: CursorInfo,
-    filter: WhereClause = {}
 ): Promise<{ posts: PostEdges[], pageInfo: PageInfo }> => {
 
     // Filter the list by projects
