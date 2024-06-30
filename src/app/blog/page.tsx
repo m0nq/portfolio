@@ -6,6 +6,7 @@ import macbookCloseupImage from '@public/macbook-closeup.webp';
 import { getPosts } from '@utils/api';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
 import { Post } from '@data-types/data-props';
+import { BackButton } from '@components/utils/back-button';
 
 const BlogPage = async (): Promise<ReactElement> => {
 
@@ -39,21 +40,18 @@ const BlogPage = async (): Promise<ReactElement> => {
             <nav className="pagination-wrapper">
                 <div>
                     {pageInfo?.hasPreviousPage &&
-                        // <button onClick={() => handlePageChange({ before: pageInfo?.startCursor })}>
-                      <button onClick={async () => {
-                          await getPosts(10, { before: pageInfo?.startCursor });
-                      }}>
-                        ← Newer Posts
-                      </button>}
+                        <button onClick={async () => await getPosts(10, { before: pageInfo?.startCursor })}>
+                            ← Newer Posts
+                        </button>}
                 </div>
                 <div>
                     {pageInfo?.hasNextPage &&
-                        // <button onClick={() => handlePageChange({ after: pageInfo?.endCursor })}>
-                      <button onClick={async () => await getPosts(10, { after: pageInfo?.startCursor })}>
-                        Older Posts →
-                      </button>}
+                        <button onClick={async () => await getPosts(10, { after: pageInfo?.startCursor })}>
+                            Older Posts →
+                        </button>}
                 </div>
             </nav>
+            <BackButton className="back-to-blog">← Back</BackButton>
         </>
     );
 };

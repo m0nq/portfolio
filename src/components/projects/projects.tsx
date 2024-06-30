@@ -1,8 +1,10 @@
 import Link from 'next/link';
 
+import './projects.styles.css';
 import { getPosts } from '@utils/api';
 import { Post } from '@data-types/data-props';
 import { BlogCardDetails } from '@components/blog/BlogCardDetails';
+import { Section } from '@components/utils/section';
 
 export const Projects = async () => {
 
@@ -17,11 +19,11 @@ export const Projects = async () => {
                         Some highlights of the recent projects I&apos;ve worked on.
                     </p>
                 </div>
-                <section className="blog-details">
+                <Section classes="project-details">
                     {posts.map(({ post }: { post: Post }) => (
                         <BlogCardDetails key={post.databaseId} post={post} />
                     ))}
-                </section>
+                </Section>
                 <div className="learn-more">
                     <Link href={'/blog'} className="blog-link">All Posts →</Link>
                 </div>
