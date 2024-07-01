@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import './about.styles.css';
+
 export const About = () => {
     return (
         <div className="about-container">

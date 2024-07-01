@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import { ReactElement } from 'react';
 
 import './article.styles.css';
-import { BackButton } from '@components/utils/back-button/back-button';
 
 export const Article = ({ title, children }: { title: string, children: ReactNode }): ReactElement => {
 
@@ -13,9 +12,6 @@ export const Article = ({ title, children }: { title: string, children: ReactNod
                 <article className="post-content">
                     {children}
                     <br />
-                    <div>
-                        <BackButton>← Back</BackButton>
-                    </div>
                 </article>
             </article>
         </>
