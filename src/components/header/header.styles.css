@@ -19,8 +19,9 @@ header {
   @apply my-8 mx-0 p-0 list-disc;
 }
 
-.primary-navigation > ul li {
-  @apply list-none inline-block sm:inline-block md:inline-block lg:block lg:py-2;
+.primary-navigation > ul > li {
+  @apply list-none inline-block
+  lg:block lg:py-2;
 }
 
 .nav-link {
