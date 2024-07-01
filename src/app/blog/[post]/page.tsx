@@ -29,7 +29,7 @@ const BlogPost = async ({ params: { post: postUri } }: { params: { post: string 
                         className="rounded-3xl mx-auto" />
                 </Section>
             )}
-            <Section>
+            <Section className={post.featuredImage ? 'banner' : 'py-10 mx-auto'}>
                 <Article title={post.title}>
                     <div>
                         <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
