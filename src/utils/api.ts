@@ -109,7 +109,6 @@ export const getPost = async (uri: string): Promise<Post> => {
                   node {
                     altText
                     sourceUrl
-                    srcSet
                   }
                 }
                 title
