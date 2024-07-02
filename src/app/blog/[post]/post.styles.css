@@ -43,3 +43,7 @@ blockquote:before {
 .post-content figure {
   @apply mt-6 mx-auto;
 }
+
+.post-content figcaption {
+  @apply text-center text-[#afc2cb];
+}
