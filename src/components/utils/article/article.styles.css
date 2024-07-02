@@ -10,7 +10,7 @@ article.post {
 }
 
 .post-content {
-  @apply py-10 border-t-2 border-t-primary mx-auto;
+  @apply py-10 border-t-2 border-t-primary mx-auto font-body;
 }
 
 .post-content img, video {

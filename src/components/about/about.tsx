@@ -27,7 +27,7 @@ export const About = () => {
                 </p>
                 <p>
                     I grew to love the creative process having been a dancer at a young age, and that ability to inspire
-                    both intellectual and emotional growth through that process. I&pos;m an advocate for
+                    both intellectual and emotional growth through that process. I&apos;m an advocate for
                     self-empowerment, and believe that anyone – given the right tools, opportunities, and support – can
                     cultivate their own unique creative spark. Web technology tools offer a particularly powerful canvas
                     for reaching people, making connections, and bringing new ideas to life.

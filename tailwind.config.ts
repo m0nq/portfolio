@@ -9,7 +9,8 @@ const config: Config = {
     ],
     theme: {
         fontFamily: {
-            sans: ['var(--quicksand-font-family)', ...defaultTheme.fontFamily.sans]
+            sans: ['var(--quicksand-font-family)', ...defaultTheme.fontFamily.sans],
+            body: ['var(--open-sans-font-family)', ...defaultTheme.fontFamily.sans]
         },
         extend: {
             backgroundImage: {

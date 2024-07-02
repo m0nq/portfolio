@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Quicksand } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 import DOMPurify from 'isomorphic-dompurify';
 
 import './globals.css';
@@ -13,6 +14,11 @@ import { Contact } from '@components/contact/contact';
 const quicksand = Quicksand({
     subsets: ['latin'],
     variable: '--quicksand-font-family'
+});
+
+const openSans = Open_Sans({
+    subsets: ['latin'],
+    variable: '--open-sans-font-family'
 });
 
 export const metadata: Metadata = {
@@ -30,7 +36,7 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
 });
 
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
-    <html lang="en" className={`${quicksand.variable} font-sans`}>
+    <html lang="en" className={`${quicksand.variable} ${openSans.variable} font-sans`}>
         <body>
             <ContactProvider>
                 <div className="outer-wrapper">

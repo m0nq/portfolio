@@ -1,14 +1,14 @@
 .post-content h2 {
-  @apply mb-4 text-4xl font-semibold;
+  @apply mb-4 text-4xl font-semibold font-sans;
 }
 
 .post-content h3 {
-  @apply mb-4 text-2xl font-semibold
+  @apply mb-4 text-2xl font-semibold font-sans
   sm:text-3xl;
 }
 
 .post-content h4 {
-  @apply mb-4 text-xl font-semibold;
+  @apply mb-4 text-xl font-semibold font-sans;
 }
 
 .post-content p {

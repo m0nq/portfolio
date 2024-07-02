@@ -2,6 +2,10 @@
   @apply flex flex-col justify-between;
 }
 
+.blog-card-content > div p:first-child {
+  @apply font-body;
+}
+
 .blog-item {
   @apply flex flex-col items-start gap-5 mt-auto;
 }

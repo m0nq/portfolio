@@ -27,11 +27,11 @@ form {
 }
 
 .contact-form input, textarea {
-  @apply align-middle rounded mb-6 py-3 px-4 w-full text-black shadow-inner shadow-black;
+  @apply align-middle rounded mb-6 py-3 px-4 w-full text-black shadow-inner shadow-black font-body;
 }
 
 .contact-form p {
-  @apply mt-[-1.75rem] self-start text-red-500;
+  @apply mt-[-1.75rem] self-start text-primary/95 font-body;
 }
 
 .contact-cancel-btn {
