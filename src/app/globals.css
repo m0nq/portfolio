@@ -37,7 +37,8 @@ body {
 }
 
 main {
-  @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
+  @apply col-start-1
+  lg:col-start-2;
 }
 
 a, button {
@@ -69,20 +70,21 @@ h2 {
 }
 
 .banner {
-  @apply relative p-7 h-auto
-  sm:h-screen;
+  @apply relative p-7 h-auto;
 }
 
 .inner-container {
-  @apply grid grid-cols-1 xl:grid-cols-[375px_1fr] lg:grid-cols-[320px_1fr] md:grid-cols-1 sm:grid-cols-1;
+  @apply grid grid-cols-1
+  lg:grid-cols-[320px_1fr]
+  xl:grid-cols-[375px_1fr];
 }
 
 .main-wrapper {
   contain: none;
-  @apply col-start-1 sm:col-start-1 md:col-start-1 lg:col-start-2;
+  @apply col-start-1
+  lg:col-start-2;
 }
 
-/* universal */
 .strong-emphasis {
   @apply font-semibold;
 }
