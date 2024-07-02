@@ -25,7 +25,7 @@ export const Projects = async () => {
                     ))}
                 </Section>
                 <div className="learn-more">
-                    <Link href={'/blog'} className="blog-link">All Posts →</Link>
+                    <Link href={'/blog'} className="blog-link">More →</Link>
                 </div>
             </div>
         </>

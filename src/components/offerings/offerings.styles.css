@@ -1,13 +1,9 @@
 .offerings-container {
-  @apply w-full text-[1.25rem] mx-auto flex content-center md:max-w-2xl;
+  @apply w-full text-[1.25rem] mx-auto flex content-center md:max-w-3xl;
 }
 
 .offerings-container h2 {
   @apply text-3xl;
-}
-
-.offerings-container > div {
-  @apply md:text-justify;
 }
 
 .offerings-container a {

@@ -4,10 +4,10 @@ export const Offerings = () => {
     return (
         <div className="offerings-container">
             <div>
-                <h2 className="strong-emphasis">Offerings</h2>
+                <h2 className="strong-emphasis">Services</h2>
                 <br />
                 <p>
-                    Reach out to me if you feel like you need:
+                    I make websites for creatives and professionals who need:
                 </p>
                 <br />
                 <ul>
@@ -17,13 +17,13 @@ export const Offerings = () => {
                     </li>
                     <li>
                         <span className="strong-emphasis">A Customized Site:</span> A site with a few more moving parts,
-                        customizable to your unique needs. (e-commerce site, animations, unique layouts, tool or db
-                        integrations, etc.)
+                        customizable to your needs. (e-commerce, animations, unique layouts, api/tool/db integrations,
+                        etc.)
                     </li>
                     <li>
                         <span className="strong-emphasis">Monthly Site Maintenance:</span> Ongoing management and
-                        maintenance by a dedicated developer for continuous optimization and bug fixes for your site.
-                        This is also offered as an add-on service for a customized site
+                        maintenance by a dedicated developer for continuous optimization and bug fixes. This is also
+                        offered as an additional service for a customized site
                     </li>
                     <li>
                         <span className="strong-emphasis">Non-Profit Projects:</span> Discounted prices are offered for

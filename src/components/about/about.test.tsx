@@ -6,7 +6,7 @@ import { About } from '@components/about/about';
 describe('About component', () => {
     it('renders the component', () => {
         render(<About />);
-        const aboutContainer = screen.getByText(/Monk started his career/i);
+        const aboutContainer = screen.getByText(/I started my career/i);
         expect(aboutContainer).toBeInTheDocument();
     });
 
