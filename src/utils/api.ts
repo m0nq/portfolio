@@ -65,6 +65,12 @@ export const getPosts = async (
                     name
                   }
                 }
+                featuredImage {
+                  node {
+                    altText
+                    sourceUrl
+                  }
+                }
                 databaseId
                 date
                 excerpt(format: RENDERED)

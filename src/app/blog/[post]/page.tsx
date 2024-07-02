@@ -21,7 +21,7 @@ const BlogPost = async ({ params: { post: postUri } }: { params: { post: string 
     return (
         <>
             {post.featuredImage && (
-                <Section className="relative p-7 mx-auto">
+                <Section className="relative p-7 h-auto">
                     <Image src={post.featuredImage.node.sourceUrl}
                         alt={post.featuredImage.node.altText}
                         width={900}
@@ -29,7 +29,7 @@ const BlogPost = async ({ params: { post: postUri } }: { params: { post: string 
                         className="rounded-3xl mx-auto" />
                 </Section>
             )}
-            <Section className="banner">
+            <Section className={post.featuredImage && 'relative p-7 h-auto' || 'banner'}>
                 <Article title={post.title}>
                     <div>
                         <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
