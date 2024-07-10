@@ -8,7 +8,7 @@ import { BlogCardDetails } from '@components/utils/blog/blog-card-details';
 
 export const Projects = async () => {
 
-    const { posts } = await getPosts(4, { category: 'projects' });
+    const { posts } = await getPosts(4, { category: 'projects', tag: 'portfolio' });
 
     return (
         <>

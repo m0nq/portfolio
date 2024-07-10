@@ -1,5 +1,3 @@
-# To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
-#
 name: CI/CD Pipeline
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
