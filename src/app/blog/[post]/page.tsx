@@ -30,7 +30,7 @@ const BlogPost = async ({ params: { post: postUri } }: { params: { post: string 
                 </Section>
             )}
             <Section className={post.featuredImage && 'relative p-7 h-auto' || 'banner'}>
-                <Article title={post.title}>
+                <Article title={post.title} date={post.date}>
                     <div>
                         <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
                     </div>
