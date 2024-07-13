@@ -14,7 +14,7 @@ export const Article = ({ title, children, date }: {
         <>
             <article className="post">
                 <h1 className="post-title">{title}<span>.</span></h1>
-                <div className="posted-on">Posted on {moment(date).format('MMMM Do, YYYY')}</div>
+                {date && <div className="posted-on">Posted on {moment(date).format('MMMM Do, YYYY')}</div>}
                 <article className="post-content">
                     {children}
                     <br />
