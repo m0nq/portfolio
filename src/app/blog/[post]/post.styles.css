@@ -1,18 +1,18 @@
 .post-content h2 {
-  @apply mb-4 text-4xl font-semibold font-sans;
+  @apply mb-4 text-4xl font-semibold font-sans text-left;
 }
 
 .post-content h3 {
-  @apply mb-4 text-2xl font-semibold font-sans
+  @apply mb-4 text-2xl font-semibold font-sans text-left
   sm:text-3xl;
 }
 
 .post-content h4 {
-  @apply mb-4 text-xl font-semibold font-sans;
+  @apply mb-4 text-xl font-semibold font-sans text-left;
 }
 
 .post-content p {
-  @apply w-full text-xl pb-6 py-6 text-justify;
+  @apply w-full text-xl pb-6 py-6;
 }
 
 .post-content a {

@@ -8,7 +8,7 @@ import { BackButton } from '@components/utils/back-button/back-button';
 const BlogPost = async (): Promise<ReactElement> => {
 
     return (
-        <Section className="banner">
+        <Section className="relative p-7 h-auto">
             <Article title="About Me">
                 <About />
             </Article>
