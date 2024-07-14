@@ -18,12 +18,12 @@ export const About = () => {
                     href="https://www.ford.com/" target="_blank">Ford Motors</Link> I had the opportunity to
                     collaborate across multiple teams. There, I contributed to the development of a high-functioning,
                     user-focused website that streamlined the process for customers to find the right car configuration.
-                    <br />
-                    <br />
+                </p>
+                <p>
                     At <Link href="https://reflexion.com/" target="_blank">RefleXion Medical</Link>, I dedicated several
                     years to creating an intuitive Electron based user interface that allowed doctors to interact
                     seamlessly with cutting-edge cancer treatment and research tech. This experience deepened my
-                    appreciation for the transformative power of technology.
+                    appreciation for the transformative power of technology in our lives.
                 </p>
                 <p>
                     I grew to love the creative process having been a dancer at a young age, and that ability to inspire
@@ -31,8 +31,8 @@ export const About = () => {
                     self-empowerment, and believe that anyone – given the right tools, opportunities, and support – can
                     cultivate their own unique creative spark. Web technology tools offer a particularly powerful canvas
                     for reaching people, making connections, and bringing new ideas to life.
-                    <br />
-                    <br />
+                </p>
+                <p>
                     Throughout my experiences, I cultivated a versatile skill set that allows me to
                     approach projects with a user-centric mindset, translating empathy to code. This dedication to
                     exceeding expectations is fueled by a desire to merge a keen eye for detail with creative
