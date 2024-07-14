@@ -3,7 +3,7 @@
 }
 
 .about-container p {
-  @apply w-full py-6 text-justify text-xl leading-7;
+  @apply w-full py-6 text-xl leading-7;
 }
 
 .about-container a {
@@ -12,7 +12,7 @@
 }
 
 .about-container ul {
-  @apply list-disc px-6 text-justify;
+  @apply list-disc px-6;
 }
 
 .about-container li:not(:first-child) {
