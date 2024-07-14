@@ -70,7 +70,8 @@ h2 {
 }
 
 .banner {
-  @apply relative p-7 h-auto;
+  @apply relative p-7 h-auto
+  sm:h-screen;
 }
 
 .inner-container {
