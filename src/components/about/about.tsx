@@ -8,8 +8,8 @@ export const About = () => {
         <div className="about-container">
             <div>
                 <p>
-                    With over {moment().year() - 2017} years of experience in the software industry, I have a passion
-                    for bringing ideas to life with understanding various requirements according to the latest trends.
+                    With over {moment().year() - 2017} years of experience in the software industry, I love bringing
+                    ideas to life with understanding various requirements according to the latest industry trends.
                 </p>
                 <p>
                     I started my career at <Link href="https://www.industriallogic.com/" target="_blank">

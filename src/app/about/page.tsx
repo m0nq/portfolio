@@ -9,7 +9,7 @@ const BlogPost = async (): Promise<ReactElement> => {
 
     return (
         <Section className="banner">
-            <Article title="A Little About Me">
+            <Article title="About Me">
                 <About />
             </Article>
             <BackButton>← Back</BackButton>
