@@ -78,5 +78,3 @@ export type EmailResponse = {
     errors?: { message: any };
     response?: any;
 }
-
-

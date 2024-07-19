@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import DOMPurify from 'isomorphic-dompurify';
 
 import './globals.css';
@@ -25,9 +26,9 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
     }
 });
 
-const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
-    <html lang="en" className={`${quicksand.variable} ${openSans.variable} font-sans`}>
-        <body>
+const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>): Promise<ReactElement> => (
+    <html lang="en">
+        <body className={`${quicksand.variable} ${openSans.variable} font-sans`}>
             <ContactProvider>
                 <div className="outer-wrapper">
                     <div className="inner-container">

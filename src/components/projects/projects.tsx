@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import Link from 'next/link';
 
 import './projects.styles.css';
@@ -6,7 +7,7 @@ import { Section } from '@components/utils/section';
 import { Post } from '@data-types/data-props';
 import { BlogCardDetails } from '@components/utils/blog/blog-card-details';
 
-export const Projects = async () => {
+export const Projects = async (): Promise<ReactElement> => {
 
     const { posts } = await getPosts(4, { category: 'projects', tag: 'portfolio' });
 

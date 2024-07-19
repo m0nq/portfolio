@@ -1,6 +1,8 @@
+import { ReactElement } from 'react';
+
 import './loading.styles.css';
 
-export const Loading = () => {
+export const Loading = (): ReactElement => {
     return (
         <>
             {/*<main className="text-center">*/}

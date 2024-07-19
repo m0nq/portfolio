@@ -8,7 +8,7 @@ import { getPosts } from '@utils/api';
 import { Article } from '@components/utils/article/article';
 import { BackButton } from '@components/utils/back-button/back-button';
 
-export const generateStaticParams = async () => {
+export const generateStaticParams = async (): Promise<{ post: string; }[]> => {
     const { posts } = await getPosts(4, { tag: 'portfolio' });
 
     return posts.map(({ post: { uri } }) => ({ post: uri }));
