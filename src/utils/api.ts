@@ -49,7 +49,7 @@ export const getPosts = async (
             after: "${cursorInfo?.after || null}",
             where: {
                 orderby: {field: DATE, order: DESC},
-                tag: "${filter.tag || ''}",
+                tag: "portfolio${', ' + filter.tag || ''}",
                 categoryName: "${filter.category || ''}"
             }
         ) {
