@@ -1,12 +1,10 @@
-'use client';
 import { ReactElement } from 'react';
 import { FaReact } from 'react-icons/fa';
 
 import './banner.styles.css';
-import { useContactContext } from '@contexts/contact.context';
+import { CTAButton } from '@components/utils/cta/cta-button';
 
 export const BannerContent = (): ReactElement => {
-    const { setIsOpen } = useContactContext();
 
     return (
         <>
@@ -22,9 +20,7 @@ export const BannerContent = (): ReactElement => {
                         </p>
                     </div>
                     <div className="banner-btn-container">
-                        <button className="banner-button" onClick={() => setIsOpen(true)}>
-                            Get in touch!
-                        </button>
+                        <CTAButton className="banner-button">Get in touch!</CTAButton>
                     </div>
                 </div>
             </div>

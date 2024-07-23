@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import './offerings.styles.css';
+import { CTAButton } from '@components/utils/cta/cta-button';
 
 export const Offerings = () => {
     return (
@@ -42,7 +43,10 @@ export const Offerings = () => {
                     </li>
                 </ul>
                 <br />
-                <h2>Let&apos;s chat!</h2>
+                <CTAButton className="call-to-action">
+                    <h2>Let&apos;s chat!</h2>
+                </CTAButton>
+                <br />
                 <br />
                 <p>
                     I believe websites should be more than just online brochures. They should be powerful tools to
