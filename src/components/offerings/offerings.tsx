@@ -33,7 +33,8 @@ export const Offerings = () => {
                     </li>
                     <li>
                         <span className="strong-emphasis">Get Found Online:</span> Enhance your website&apos;s
-                        visibility with strategic SEO and Post-SEO optimization techniques, helping potential customers
+                        visibility with marketing analysis, strategic SEO and Post-SEO optimization techniques, content
+                        writing, email marketing, social media management and advertising, helping potential customers
                         discover your brand.
                     </li>
                     <li>

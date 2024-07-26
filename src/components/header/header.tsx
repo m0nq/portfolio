@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import Link from 'next/link';
@@ -6,11 +5,10 @@ import Link from 'next/link';
 import './header.styles.css';
 import { capitalizeFirstLetter } from '@utils/capitalizeFirstLetter';
 import { MenuLink } from '@data-types/menu-link.type';
-import { useContactContext } from '@contexts/contact.context';
+import { CTAButton } from '@components/utils/cta/cta-button';
 import smilingMonkImage from '@public/smiling_monk.jpeg';
 
 export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement => {
-    const { setIsOpen } = useContactContext();
 
     const filteredMenuLinks = menuLinks
         .filter((link: MenuLink) => link.name !== 'home')
@@ -27,7 +25,7 @@ export const Header = ({ menuLinks }: { menuLinks: MenuLink[] }): ReactElement =
             <nav className="primary-navigation">
                 <ul>
                     <li key="contact">
-                        <button className="nav-link" onClick={() => setIsOpen(true)}>Contact</button>
+                        <CTAButton className="nav-link">Contact</CTAButton>
                     </li>
                     {filteredMenuLinks.map(({ name, link }) => {
                         return name.includes('projects') ? (
