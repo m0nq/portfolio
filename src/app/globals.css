@@ -57,10 +57,10 @@ h1 {
   margin-block-end: 0.67em;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
   @apply text-5xl inline-block mt-0;
-}
 
-h1 > span {
-  @apply text-primary;
+  > span {
+    @apply text-primary;
+  }
 }
 
 h2 {

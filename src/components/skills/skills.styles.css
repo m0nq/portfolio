@@ -1,36 +1,43 @@
 .skills-container {
-  text-shadow: 0 0 50px black;
-  @apply z-[1] font-normal mx-auto flex flex-col items-center bottom-[29rem] w-4/5 justify-start
-  md:justify-center md:items-center lg:gap-10 xl:gap-10;
-}
+  @apply z-[1] font-normal mx-auto flex flex-col items-center bottom-[29rem] w-full justify-start backdrop-blur
+  md:justify-center md:items-center
+  lg:gap-10 xl:gap-10;
 
-.skills-container h2 {
-  @apply md:text-[2.25rem] font-semibold;
-}
+  h2 {
+    @apply font-semibold
+    md:text-[2.25rem];
+  }
 
-.skills-container h3 {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
-  @apply w-full md:text-2xl;
+  h3 {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    @apply w-full md:text-2xl;
+  }
 }
 
 .skills-content {
-  @apply flex flex-col md:flex-row md:gap-28 lg:gap-x-52;
+  @apply flex flex-col gap-2
+  md:flex-row md:gap-x-20
+  lg:gap-x-[5rem]
+  2xl:gap-x-52;
 }
 
 .skill-list {
-  @apply text-center max-w-72 sm:max-w-xs md:grow md:shrink md:basis-1/2 lg:max-w-sm;
-}
+  @apply text-center max-w-72
+  sm:max-w-xs md:grow md:shrink md:basis-1/2 lg:max-w-sm;
 
-.skill-list > h3 {
-  @apply text-2xl sm:text-3xl;
-}
+  > h3 {
+    @apply text-2xl
+    sm:text-3xl;
+  }
 
-.skill-list > ul {
-  @apply lg:text-2xl;
+  > ul {
+    @apply md:text-2xl;
+  }
 }
 
 .skills-span {
-  @apply text-primary text-2xl lg:text-4xl self-center;
+  @apply text-primary text-2xl self-center
+  lg:text-4xl ;
 }
 
 .skills-image {

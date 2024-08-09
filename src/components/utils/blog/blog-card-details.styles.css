@@ -1,17 +1,17 @@
 .blog-card-content {
   @apply flex flex-col justify-between;
-}
 
-.blog-card-content > div p:first-child {
-  @apply font-body;
+  > div p:first-child {
+    @apply font-body;
+  }
 }
 
 .blog-item {
   @apply flex flex-col items-start gap-5 mt-auto;
-}
 
-.blog-item p {
-  @apply text-[rgba(119_119_119)] mt-2 mb-0 font-bold;
+  p {
+    @apply text-[rgba(119_119_119)] mt-2 mb-0 font-bold;
+  }
 }
 
 .blog-styles {

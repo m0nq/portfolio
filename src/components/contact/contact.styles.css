@@ -20,18 +20,18 @@ form {
 
 .contact-form {
   @apply flex flex-col gap-2 border-none w-4/5 mx-auto;
-}
 
-.contact-form label {
-  @apply bg-transparent w-full mt-1 flex self-start;
-}
+  label {
+    @apply bg-transparent w-full mt-1 flex self-start;
+  }
 
-.contact-form input, textarea {
-  @apply align-middle rounded mb-6 py-3 px-4 w-full text-black shadow-inner shadow-black font-body;
-}
+  input, textarea {
+    @apply align-middle rounded mb-6 py-3 px-4 w-full text-black shadow-inner shadow-black font-body;
+  }
 
-.contact-form p {
-  @apply mt-[-1.75rem] self-start text-primary/95 font-body;
+  p {
+    @apply mt-[-1.75rem] self-start text-primary/95 font-body;
+  }
 }
 
 .contact-cancel-btn {
@@ -45,4 +45,3 @@ form {
 .spinner {
   @apply mx-auto animate-spin;
 }
-
