@@ -47,7 +47,7 @@ export const Contact = (): ReactElement | null => {
                 setState({ success: false, isPending: false });
             }
         })();
-    }, [formErrors, isSubmit]);
+    }, [formErrors, isSubmit, formValues]);
 
     useEffect(() => {
         const close = (e: KeyboardEvent) => {
