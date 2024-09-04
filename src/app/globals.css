@@ -87,6 +87,10 @@ h2 {
   lg:col-start-2;
 }
 
+.page-template {
+  @apply animate-fade-in-bottom;
+}
+
 .strong-emphasis {
   @apply font-semibold;
 }

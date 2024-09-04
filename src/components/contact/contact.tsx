@@ -109,7 +109,7 @@ export const Contact = (): ReactElement | null => {
 
     return (
         <>
-            <div className="modal-overlay" onClick={() => setIsOpen(false)}>
+            <div className="modal-overlay animate-fade-in-bottom" onClick={() => setIsOpen(false)}>
                 <div className="contact" onClick={e => e.stopPropagation()}>
                     {state.success ? (
                         <div className="success-message">
