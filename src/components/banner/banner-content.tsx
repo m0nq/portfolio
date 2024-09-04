@@ -10,7 +10,7 @@ export const BannerContent = (): ReactElement => {
         <>
             <div className="banner-container">
                 <div className="banner-content">
-                    <h1>MONK WELLINGTON<span>.</span></h1>
+                    <h1>Monk Wellington<span>.</span></h1>
                     <div className="strong-emphasis">
                         <p>
                             Empathy to code.

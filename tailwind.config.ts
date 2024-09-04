@@ -23,6 +23,21 @@ const config: Config = {
                 'primary': 'hotpink',
                 'secondary': 'dodgerblue'
             }
+        },
+        animation: {
+            'track-in': 'tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both',
+            spin: 'spin 1s linear infinite'
+        },
+        keyframes: {
+            'tracking-in-contract': {
+                '0%': { 'letter-spacing': '0.5rem', opacity: '0' },
+                '40%': { opacity: '0.6' },
+                '100%': { 'letter-spacing': 'normal', opacity: '1' }
+            },
+            spin: {
+                from: { transform: 'rotate(0deg)' },
+                to: { transform: 'rotate(360deg)' }
+            }
         }
     },
     plugins: []
