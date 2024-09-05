@@ -16,7 +16,7 @@ export const BannerContent = (): ReactElement => {
                             Empathy to code.
                         </p>
                         <p>
-                            Front-End Web Developer <FaReact /> React Specialist.
+                            Front-End Web Developer <FaReact size={20} /> React Specialist.
                         </p>
                     </div>
                     <div className="banner-btn-container">

@@ -27,7 +27,8 @@ const config: Config = {
         animation: {
             'track-in': 'tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both',
             spin: 'spin 1s linear infinite',
-            'fade-in-bottom': 'fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
+            'fade-in-bottom': 'fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+            'fade-in-center': 'fade-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'
         },
         keyframes: {
             'tracking-in-contract': {
@@ -42,6 +43,10 @@ const config: Config = {
             'fade-in-bottom': {
                 '0%': { transform: 'translateY(50px)', opacity: '0' },
                 '100%': { transform: 'translateY(0)', opacity: '1' }
+            },
+            'fade-in-center': {
+                '0%': { transform: 'scale(0)', opacity: '1' },
+                '100%': { transform: 'scale(1)', opacity: '1' }
             }
         }
     },

@@ -59,7 +59,7 @@ h1 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
   @apply text-5xl inline-block mt-0 animate-track-in;
 
-  > span {
+  span {
     @apply text-primary;
   }
 }
