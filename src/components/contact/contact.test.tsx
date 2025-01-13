@@ -1,78 +1,74 @@
 import { fireEvent } from '@testing-library/react';
 import { render } from '@testing-library/react';
 import { screen } from '@testing-library/react';
-import { waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import { Contact } from './contact';
 import { ContactContext } from '@contexts/contact.context';
 
 const mockSetIsOpen = jest.fn();
 
+// Mock the Calendly InlineWidget component
+jest.mock('react-calendly', () => ({
+    InlineWidget: () => <div data-testid="calendly-widget">Calendly Widget</div>
+}));
+
 describe('Contact', () => {
-    it('should render the contact form', () => {
+    it('should render the Calendly widget when open', () => {
         render(
             <ContactContext.Provider value={{ isOpen: true, setIsOpen: mockSetIsOpen }}>
                 <Contact />
             </ContactContext.Provider>
         );
 
-        expect(screen.getByLabelText('Name')).toBeInTheDocument();
-        expect(screen.getByLabelText('Email')).toBeInTheDocument();
-        expect(screen.getByLabelText('Message')).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Cancel' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Send' })).toBeInTheDocument();
+        expect(screen.getByTestId('calendly-widget')).toBeInTheDocument();
+        expect(screen.getByLabelText('Close calendar')).toBeInTheDocument();
     });
 
-    it('should show error messages for invalid form inputs', async () => {
+    it('should not render when isOpen is false', () => {
+        render(
+            <ContactContext.Provider value={{ isOpen: false, setIsOpen: mockSetIsOpen }}>
+                <Contact />
+            </ContactContext.Provider>
+        );
+
+        expect(screen.queryByTestId('calendly-widget')).not.toBeInTheDocument();
+    });
+
+    it('should close when clicking the close button', () => {
         render(
             <ContactContext.Provider value={{ isOpen: true, setIsOpen: mockSetIsOpen }}>
                 <Contact />
             </ContactContext.Provider>
         );
 
-        const nameInput = screen.getByLabelText('Name');
-        const emailInput = screen.getByLabelText('Email');
-        const messageInput = screen.getByLabelText('Message');
-        const submitButton = screen.getByRole('button', { name: 'Send' });
+        const closeButton = screen.getByLabelText('Close calendar');
+        fireEvent.click(closeButton);
 
-        userEvent.type(nameInput, 'John');
-        userEvent.type(emailInput, 'invalid-email');
-        userEvent.type(messageInput, '');
-
-        fireEvent.click(submitButton);
-
-        await waitFor(() => {
-            expect(screen.getByText('You need a few more characters here...')).toBeInTheDocument();
-            expect(screen.getByText('That doesn\'t look right...')).toBeInTheDocument();
-            expect(screen.getByText('Nothing to say...? 🤔')).toBeInTheDocument();
-        });
+        expect(mockSetIsOpen).toHaveBeenCalledWith(false);
     });
 
-    // TODO: Figure out why mock isn't returning true for succeeded: true
-    // it('should show success message after form submission', async () => {
-    //     render(
-    //         <ContactContext.Provider value={{ isOpen: true, setIsOpen: mockSetIsOpen }}>
-    //             <Contact />
-    //         </ContactContext.Provider>
-    //     );
-    //
-    //     const nameInput = screen.getByLabelText('Name');
-    //     const emailInput = screen.getByLabelText('Email');
-    //     const messageInput = screen.getByLabelText('Message');
-    //     const submitButton = screen.getByRole('button', { name: 'Send' });
-    //
-    //     await userEvent.type(nameInput, 'john@example.com');
-    //     await userEvent.type(emailInput, 'john@example.com');
-    //     await userEvent.type(messageInput, 'Hello, this is a test message.');
-    //
-    //     await userEvent.click(submitButton);
-    //
-    //     await waitFor(() => {
-    //         expect(mockHandleSubmit).toHaveBeenCalled();
-    //         expect(screen.getByText('Thanks for the message!')).toBeInTheDocument();
-    //         expect(screen.getByText('I should get back to you within 24 hours.')).toBeInTheDocument();
-    //         expect(screen.getByRole('button', { name: '← Thanks!' })).toBeInTheDocument();
-    //     });
-    // });
+    it('should close when clicking outside the modal', () => {
+        render(
+            <ContactContext.Provider value={{ isOpen: true, setIsOpen: mockSetIsOpen }}>
+                <Contact />
+            </ContactContext.Provider>
+        );
+
+        const overlay = screen.getByRole('presentation');
+        fireEvent.click(overlay);
+
+        expect(mockSetIsOpen).toHaveBeenCalledWith(false);
+    });
+
+    it('should close when pressing escape key', () => {
+        render(
+            <ContactContext.Provider value={{ isOpen: true, setIsOpen: mockSetIsOpen }}>
+                <Contact />
+            </ContactContext.Provider>
+        );
+
+        fireEvent.keyDown(window, { key: 'Escape' });
+
+        expect(mockSetIsOpen).toHaveBeenCalledWith(false);
+    });
 });

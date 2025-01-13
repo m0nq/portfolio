@@ -6631,6 +6631,7 @@ __metadata:
     nodemailer: "npm:^6.9.14"
     postcss: "npm:^8.4.41"
     react: "npm:^18.3.1"
+    react-calendly: "npm:^4.3.1"
     react-dom: "npm:^18.3.1"
     react-icons: "npm:^5.3.0"
     sharp: "npm:^0.33.5"
@@ -6896,6 +6897,16 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
+  languageName: node
+  linkType: hard
+
+"react-calendly@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "react-calendly@npm:4.3.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/c4c59df69c9141ab4ea47d09f0b13aa48fdbfa29cc2887ce16df05c543703809cd54e2747d98ccc49fb181d72201be82c281f1947b25379e6e3455efbb02c45c
   languageName: node
   linkType: hard
 

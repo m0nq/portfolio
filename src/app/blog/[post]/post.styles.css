@@ -39,6 +39,10 @@
   figcaption {
     @apply text-center text-[#afc2cb];
   }
+
+  .is-layout-flex {
+    @apply flex;
+  }
 }
 
 blockquote {
