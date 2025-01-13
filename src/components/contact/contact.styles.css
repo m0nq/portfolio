@@ -1,11 +1,11 @@
 .modal-overlay {
   @apply fixed top-0 left-0 right-0 bottom-0 z-50 w-screen h-screen flex justify-center items-center overflow-y-auto
-  bg-black/65 backdrop-blur-md;
+  bg-black/65 backdrop-blur-sm;
 }
 
 .contact {
-  @apply bg-dark rounded-lg shadow-xl w-11/12 h-fit max-h-[90vh] z-50 relative flex flex-col
-  sm:my-auto
+  @apply bg-dark rounded-lg shadow-xl w-11/12 h-[90vh] relative flex flex-col
+  sm:my-auto sm:h-[95vh]
   lg:w-3/5;
 }
 

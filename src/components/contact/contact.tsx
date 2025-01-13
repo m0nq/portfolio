@@ -39,7 +39,7 @@ export const Contact = (): ReactElement | null => {
     if (!isOpen) return null;
 
     return (
-        <div className="modal-overlay animate-fade-in-bottom" onClick={() => setIsOpen(false)} role="presentation">
+        <div className="modal-overlay" onClick={() => setIsOpen(false)} role="presentation">
             <div className="contact" onClick={e => e.stopPropagation()}>
                 <div className="close-button-container">
                     <button className="contact-close-btn" onClick={() => setIsOpen(false)} aria-label="Close calendar">
@@ -49,7 +49,7 @@ export const Contact = (): ReactElement | null => {
                 <InlineWidget
                     url="https://calendly.com/monk-wellington/chat"
                     styles={{
-                        height: 'min(85vh, 650px)',
+                        height: 'calc(100% - 5rem)', // Subtract the height of the close button container
                         width: '100%',
                         margin: 0
                     }}
