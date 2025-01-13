@@ -32,7 +32,6 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:16.0.0"],\
           ["@testing-library/user-event", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:14.5.2"],\
           ["@types/node", "npm:22.4.1"],\
-          ["@types/nodemailer", "npm:6.4.15"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["cypress", "npm:13.13.3"],\
@@ -43,7 +42,6 @@ const RAW_RUNTIME_STATE =
           ["jest-environment-jsdom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:29.7.0"],\
           ["moment", "npm:2.30.1"],\
           ["next", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:14.2.5"],\
-          ["nodemailer", "npm:6.9.14"],\
           ["postcss", "npm:8.4.41"],\
           ["react", "npm:18.3.1"],\
           ["react-calendly", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.3.1"],\
@@ -2063,16 +2061,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@types/node", "npm:22.4.1"],\
           ["undici-types", "npm:6.19.8"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@types/nodemailer", [\
-      ["npm:6.4.15", {\
-        "packageLocation": "../../../.yarn/berry/cache/@types-nodemailer-npm-6.4.15-1f837036d5-10c0.zip/node_modules/@types/nodemailer/",\
-        "packageDependencies": [\
-          ["@types/nodemailer", "npm:6.4.15"],\
-          ["@types/node", "npm:20.14.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7666,15 +7654,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["nodemailer", [\
-      ["npm:6.9.14", {\
-        "packageLocation": "../../../.yarn/berry/cache/nodemailer-npm-6.9.14-907ddc0136-10c0.zip/node_modules/nodemailer/",\
-        "packageDependencies": [\
-          ["nodemailer", "npm:6.9.14"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["nopt", [\
       ["npm:7.2.1", {\
         "packageLocation": "../../../.yarn/berry/cache/nopt-npm-7.2.1-635b7da949-10c0.zip/node_modules/nopt/",\
@@ -8112,7 +8091,6 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:16.0.0"],\
           ["@testing-library/user-event", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:14.5.2"],\
           ["@types/node", "npm:22.4.1"],\
-          ["@types/nodemailer", "npm:6.4.15"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["cypress", "npm:13.13.3"],\
@@ -8123,7 +8101,6 @@ const RAW_RUNTIME_STATE =
           ["jest-environment-jsdom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:29.7.0"],\
           ["moment", "npm:2.30.1"],\
           ["next", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:14.2.5"],\
-          ["nodemailer", "npm:6.9.14"],\
           ["postcss", "npm:8.4.41"],\
           ["react", "npm:18.3.1"],\
           ["react-calendly", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.3.1"],\

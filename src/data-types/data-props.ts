@@ -65,16 +65,7 @@ export interface Props {
     children?: ReactNode;
 }
 
-export type FormValues = {
+export type MenuLink = {
     name: string;
-    email: string;
-    message: string;
-    [key: string]: string; // Index signature
-}
-
-export type EmailResponse = {
-    success?: boolean;
-    isPending?: boolean;
-    errors?: { message: any };
-    response?: any;
+    link: string;
 }
