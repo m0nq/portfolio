@@ -11,6 +11,7 @@ import { ContactProvider } from '@contexts/contact.context';
 import { Contact } from '@components/contact/contact';
 import { quicksand } from '@utils/fonts';
 import { openSans } from '@utils/fonts';
+import HashNavigation from '@components/utils/hash-navigation';
 
 export const metadata: Metadata = {
     title: 'Monk Wellington',
@@ -30,20 +31,22 @@ const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>): Prom
     <html lang="en">
         <body className={`${quicksand.variable} ${openSans.variable} font-sans`}>
             <ContactProvider>
-                <div className="outer-wrapper">
-                    <div className="inner-container">
-                        <Header menuLinks={menuLinks} />
-                        <main className="main-wrapper">
-                            <div className="outer-content-wrapper" data-testid="outer-content-wrapper">
-                                <div className="inner-content-wrapper" data-testid="inner-content-wrapper">
-                                    {children}
+                <HashNavigation>
+                    <div className="outer-wrapper">
+                        <div className="inner-container">
+                            <Header menuLinks={menuLinks} />
+                            <main className="main-wrapper">
+                                <div className="outer-content-wrapper" data-testid="outer-content-wrapper">
+                                    <div className="inner-content-wrapper" data-testid="inner-content-wrapper">
+                                        {children}
+                                    </div>
                                 </div>
-                            </div>
-                        </main>
-                        <Footer />
+                            </main>
+                            <Footer />
+                        </div>
                     </div>
-                </div>
-                <Contact />
+                    <Contact />
+                </HashNavigation>
             </ContactProvider>
         </body>
     </html>
