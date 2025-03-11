@@ -1,3 +1,5 @@
+@reference '../../app/globals.css';
+
 .blog-posts {
   @apply px-6 my-14 mx-auto;
 }

@@ -1,3 +1,5 @@
+@reference '../../globals.css';
+
 .post-content {
   h2 {
     @apply mb-4 text-4xl font-semibold font-sans text-left;

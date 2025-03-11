@@ -1,3 +1,5 @@
+@reference '../../app/globals.css';
+
 .banner-image-container {
   @apply overflow-hidden z-[1] h-full w-full top-0 left-0 absolute;
 

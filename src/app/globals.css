@@ -2,28 +2,107 @@
  * This injects Tailwind's base styles and any base styles registered by
  * plugins.
  */
-@tailwind base;
+@import 'tailwindcss';
+
+@theme {
+  --font-*: initial;
+  --font-sans:
+    var(--quicksand-font-family), ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-body:
+    var(--open-sans-font-family), ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --animate-*: initial;
+  --animate-track-in: tracking-in-contract 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  --animate-spin: spin 1s linear infinite;
+  --animate-fade-in-bottom: fade-in-bottom 0.6s
+    cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  --animate-fade-in-center: fade-in-center 0.5s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  --color-dark: #181a1b;
+  --color-primary: hotpink;
+  --color-secondary: dodgerblue;
+
+  @keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 0.5rem;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes fade-in-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-center {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 /**
  * This injects Tailwind's component classes and any component classes
  * registered by plugins.
  */
-@tailwind components;
 
 /**
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins.
  */
-@tailwind utilities;
 
-/**
- * Use this directive to control where Tailwind injects the hover, focus,
- * responsive, dark mode, and other variants of each class.
- *
- * If omitted, Tailwind will append these classes to the very end of
- * your stylesheet by default.
- */
-@tailwind variants;
 
 /*Variable font stuff...*/
 /*@font-face {*/

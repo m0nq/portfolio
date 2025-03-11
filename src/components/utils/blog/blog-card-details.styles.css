@@ -1,3 +1,5 @@
+@reference '../../../app/globals.css';
+
 .blog-card-content {
   @apply flex flex-col justify-between;
 
