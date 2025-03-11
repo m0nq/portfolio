@@ -1,37 +1,39 @@
 /**
- * This injects Tailwind's base styles and any base styles registered by
- * plugins.
+ * Import Tailwind CSS
  */
 @import 'tailwindcss';
 
+/**
+ * Theme configuration
+ */
 @theme {
   --font-*: initial;
-  --font-sans:
-    var(--quicksand-font-family), ui-sans-serif, system-ui, sans-serif,
+  --font-sans: var(--quicksand-font-family), ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-body:
-    var(--open-sans-font-family), ui-sans-serif, system-ui, sans-serif,
+  --font-body: var(--open-sans-font-family), ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-quicksand: var(--quicksand-font-family), ui-sans-serif, system-ui, sans-serif;
+  --font-open-sans: var(--open-sans-font-family), ui-sans-serif, system-ui, sans-serif;
 
-  --animate-*: initial;
-  --animate-track-in: tracking-in-contract 0.8s
-    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  /* Animations */
+  --animate-track-in: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   --animate-spin: spin 1s linear infinite;
-  --animate-fade-in-bottom: fade-in-bottom 0.6s
-    cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  --animate-fade-in-center: fade-in-center 0.5s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  --animate-fade-in-bottom: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  --animate-fade-in-center: fade-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
+  /* Background images */
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --background-image-gradient-conic: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--tw-gradient-stops)
-  );
+  --background-image-gradient-conic: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
 
+  /* Colors */
   --color-dark: #181a1b;
   --color-primary: hotpink;
   --color-secondary: dodgerblue;
 
+  /* Positioning */
+  --inset-0: 0;
+
+  /* Animation keyframes */
   @keyframes tracking-in-contract {
     0% {
       letter-spacing: 0.5rem;
@@ -75,15 +77,11 @@
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/**
+ * Base styles
+ */
 @layer base {
+  /* Border color compatibility for Tailwind v4 */
   *,
   ::after,
   ::before,
@@ -91,85 +89,149 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
-
-/**
- * This injects Tailwind's component classes and any component classes
- * registered by plugins.
- */
-
-/**
- * This injects Tailwind's utility classes and any utility classes registered
- * by plugins.
- */
-
-
-/*Variable font stuff...*/
-/*@font-face {*/
-/*  font-family: 'Quicksand', sans-serif;*/
-/*  !*font-optical-sizing: auto;*!*/
-/*  font-stretch: auto;*/
-/*  font-style: normal;*/
-/*  font-weight: 400;*/
-/*  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap') format('woff2');*/
-body {
-  @apply antialiased bg-dark text-base font-light font-sans text-white scroll-smooth text-left;
-}
-
-main {
-  @apply col-start-1
-  lg:col-start-2;
-}
-
-a, button {
-  @apply cursor-pointer;
-}
-
-h1, h2 {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 1);
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  @apply mt-2 mb-6 leading-5 w-fit lg:mb-6;
-}
-
-h1 {
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-  @apply text-5xl inline-block mt-0 animate-track-in;
-
-  span {
-    @apply text-primary;
+  
+  body {
+    background-color: var(--color-dark);
+    color: white;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: left;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  main {
+    grid-column-start: 1;
+  }
+  
+  @media (min-width: 1024px) {
+    main {
+      grid-column-start: 2;
+    }
+  }
+  
+  a, button {
+    cursor: pointer;
+  }
+  
+  h1, h2 {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+    width: fit-content;
+  }
+  
+  @media (min-width: 1024px) {
+    h1, h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  h1 {
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    font-size: 3rem;
+    display: inline-block;
+    margin-top: 0;
+    font-family: var(--font-quicksand);
+    animation: var(--animate-track-in);
+  }
+  
+  h1 span {
+    color: var(--color-primary);
+  }
+  
+  h2 {
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 }
 
-h2 {
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  @apply mb-4 text-[1.5rem];
+/**
+ * Component styles
+ */
+@layer components {
+  .banner {
+    position: relative;
+    padding: 1.75rem;
+    height: auto;
+  }
+  
+  @media (min-width: 640px) {
+    .banner {
+      height: 100vh;
+    }
+  }
+  
+  .inner-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 1024px) {
+    .inner-container {
+      grid-template-columns: 320px 1fr;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .inner-container {
+      grid-template-columns: 375px 1fr;
+    }
+  }
+  
+  .main-wrapper {
+    contain: none;
+    grid-column-start: 1;
+  }
+  
+  @media (min-width: 1024px) {
+    .main-wrapper {
+      grid-column-start: 2;
+    }
+  }
+  
+  .page-template {
+    animation: var(--animate-fade-in-bottom);
+  }
+  
+  .strong-emphasis {
+    font-weight: 600;
+  }
 }
 
-.banner {
-  @apply relative p-7 h-auto
-  sm:h-screen;
-}
-
-.inner-container {
-  @apply grid grid-cols-1
-  lg:grid-cols-[320px_1fr]
-  xl:grid-cols-[375px_1fr];
-}
-
-.main-wrapper {
-  contain: none;
-  @apply col-start-1
-  lg:col-start-2;
-}
-
-.page-template {
-  @apply animate-fade-in-bottom;
-}
-
-.strong-emphasis {
-  @apply font-semibold;
+/**
+ * Custom utility classes
+ */
+@layer utilities {
+  .font-quicksand {
+    font-family: var(--font-quicksand);
+  }
+  
+  .font-open-sans {
+    font-family: var(--font-open-sans);
+  }
+  
+  .top-0 {
+    top: var(--inset-0);
+  }
+  
+  .left-0 {
+    left: var(--inset-0);
+  }
+  
+  .right-0 {
+    right: var(--inset-0);
+  }
+  
+  .bottom-0 {
+    bottom: var(--inset-0);
+  }
 }
