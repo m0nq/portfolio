@@ -91,9 +91,15 @@ import { utils } from '../utils';
       etc.
 
 5. Tailwind CSS Rules
-    1. Use Tailwind CSS for styling:
-        - Utilize styles in separate css files using the @apply rule.
-        - Nested css selectors are prefered over global ones.
+    1. This project uses Tailwind CSS v4. Always refer to the official Tailwind CSS v4 documentation when making style changes:
+        - Use CSS-first configuration with `@theme` directive instead of `tailwind.config.js`
+        - Understand that v4 uses CSS variables for theming and configuration
+        - Be aware that some utility classes and syntax have changed from v3 to v4
+        - Follow the v4 approach for custom utilities and responsive design
+        
+    2. Use Tailwind CSS for styling:
+        - Utilize styles in separate css files using the `@apply` directive when appropriate
+        - Nested css selectors are preferred over global ones
         - Maintain consistent class order:
             - Layout & Position (e.g., flex, grid)
             - Spacing (e.g., m-4, p-2)
@@ -111,7 +117,7 @@ import { utils } from '../utils';
            }
        ```
 
-    2. Follow mobile-first responsive design principles using Tailwind’s breakpoints (sm, md, lg, etc.) first before
+    3. Follow mobile-first responsive design principles using Tailwind's breakpoints (sm, md, lg, etc.) first before
        using custom breakpoint sizes.
 
 6. Always consider conventions used in a file or project, specifically:

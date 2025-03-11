@@ -87,70 +87,36 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    @apply border-[color:var(--color-gray-200,currentColor)];
   }
   
   body {
-    background-color: var(--color-dark);
-    color: white;
-    font-family: var(--font-sans);
-    font-weight: 300;
-    font-size: 1rem;
-    text-align: left;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
+    @apply bg-[color:var(--color-dark)] text-white font-sans font-light text-base text-left scroll-smooth antialiased;
   }
   
   main {
-    grid-column-start: 1;
-  }
-  
-  @media (min-width: 1024px) {
-    main {
-      grid-column-start: 2;
-    }
+    @apply col-start-1 lg:col-start-2;
   }
   
   a, button {
-    cursor: pointer;
+    @apply cursor-pointer;
   }
   
   h1, h2 {
-    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.25;
-    width: fit-content;
-  }
-  
-  @media (min-width: 1024px) {
-    h1, h2 {
-      margin-bottom: 1.5rem;
-    }
+    @apply mx-0 mt-2 mb-6 leading-tight w-fit lg:mb-6;
   }
   
   h1 {
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-    font-size: 3rem;
-    display: inline-block;
-    margin-top: 0;
-    font-family: var(--font-quicksand);
+    @apply my-[0.67em] border-b-2 border-b-[rgba(255,255,255,0.15)] text-3xl inline-block mt-0 font-quicksand font-medium;
     animation: var(--animate-track-in);
   }
   
   h1 span {
-    color: var(--color-primary);
+    @apply text-[color:var(--color-primary)];
   }
   
   h2 {
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    @apply my-[0.83em] mb-4 text-2xl;
   }
 }
 
@@ -159,43 +125,15 @@
  */
 @layer components {
   .banner {
-    position: relative;
-    padding: 1.75rem;
-    height: auto;
-  }
-  
-  @media (min-width: 640px) {
-    .banner {
-      height: 100vh;
-    }
+    @apply relative p-7 h-auto sm:h-screen;
   }
   
   .inner-container {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  
-  @media (min-width: 1024px) {
-    .inner-container {
-      grid-template-columns: 320px 1fr;
-    }
-  }
-  
-  @media (min-width: 1280px) {
-    .inner-container {
-      grid-template-columns: 375px 1fr;
-    }
+    @apply grid grid-cols-1 lg:grid-cols-[320px_1fr] xl:grid-cols-[375px_1fr];
   }
   
   .main-wrapper {
-    contain: none;
-    grid-column-start: 1;
-  }
-  
-  @media (min-width: 1024px) {
-    .main-wrapper {
-      grid-column-start: 2;
-    }
+    @apply contain-none col-start-1 lg:col-start-2;
   }
   
   .page-template {
@@ -203,7 +141,7 @@
   }
   
   .strong-emphasis {
-    font-weight: 600;
+    @apply font-semibold;
   }
 }
 

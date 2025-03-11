@@ -6,7 +6,7 @@
 
 .skills {
   grid-template-areas: 'content';
-  @apply grid max-h-[31rem] my-6 max-w-fit
+  @apply font-quicksand grid max-h-[31rem] my-6 max-w-fit
   md:max-w-full;
 
   > * {

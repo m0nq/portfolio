@@ -1,7 +1,7 @@
 @reference '../../app/globals.css';
 
 footer {
-  @apply bottom-0 text-sm text-white relative z-40 w-full p-4 bg-dark
+  @apply font-quicksand bottom-0 text-sm text-white relative z-40 w-full p-4 bg-dark
   sm:w-full sm:p-4 md:w-full
   md:p-4
   lg:fixed lg:w-[320px]
