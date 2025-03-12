@@ -15,14 +15,13 @@ export const generateStaticParams = async (): Promise<{ post: string; }[]> => {
 };
 
 interface BlogPostProps {
-    params: {
-        post: string;
-    };
+    params: Promise<{ post: string; }>;
 }
 
 const BlogPost = async (props: BlogPostProps): Promise<ReactElement> => {
     const { params } = props;
-    const postUri = (await params).post;
+    const postParams = await params;
+    const postUri = postParams.post;
 
     const post = await getPost(postUri);
 
