@@ -20,8 +20,7 @@ interface BlogPostProps {
 
 const BlogPost = async (props: BlogPostProps): Promise<ReactElement> => {
     const { params } = props;
-    const postParams = await params;
-    const postUri = postParams.post;
+    const postUri = (await params).post;
 
     const post = await getPost(postUri);
 
