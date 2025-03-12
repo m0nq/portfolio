@@ -15,9 +15,7 @@ export const generateStaticParams = async (): Promise<{ post: string; }[]> => {
 };
 
 interface BlogPostProps {
-    params: {
-        post: string;
-    };
+    params: Promise<{ post: string; }>;
 }
 
 const BlogPost = async (props: BlogPostProps): Promise<ReactElement> => {
