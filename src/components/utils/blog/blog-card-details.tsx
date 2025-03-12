@@ -15,7 +15,7 @@ export const BlogCardDetails = ({ post }: { post: Post }) => {
                         alt={post.featuredImage.node.altText || post.title}
                         width={600}
                         height={400}
-                        className="rounded-t-md"
+                        className="rounded-md"
                         priority={false} />
                 </div>
             )}

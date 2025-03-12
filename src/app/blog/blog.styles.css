@@ -25,7 +25,7 @@
     margin-block-end: 1em;
     margin-inline-start: 0;
     margin-inline-end: 0;
-    @apply text-[#afc2cb] mt-2 mb-4;
+    @apply text-[#afc2cb] my-1;
   }
 }
 
