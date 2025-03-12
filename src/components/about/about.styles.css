@@ -1,3 +1,5 @@
+@reference '../../app/globals.css';
+
 .about-container {
   @apply w-full text-[1.25rem] mx-auto flex content-center font-body;
 }

@@ -1,3 +1,5 @@
+@reference '../../app/globals.css';
+
 .skills-container {
   @apply z-[1] font-normal mx-auto flex flex-col items-center bottom-[29rem] w-full justify-start backdrop-blur
   md:justify-center md:items-center

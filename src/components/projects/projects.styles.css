@@ -1,5 +1,7 @@
+@reference '../../app/globals.css';
+
 .projects-container {
-  @apply mx-auto max-w-screen-xl;
+  @apply font-quicksand mx-auto max-w-screen-xl;
 }
 
 .intro-area {

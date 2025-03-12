@@ -1,3 +1,5 @@
+@reference '../../../app/globals.css';
+
 article.post {
   @apply mx-auto pb-0
   sm:max-w-4xl
@@ -5,7 +7,7 @@ article.post {
 }
 
 .post-title {
-  @apply font-medium
+  @apply font-medium text-5xl font-quicksand
   lg:mb-6;
 }
 

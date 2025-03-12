@@ -1,5 +1,7 @@
+@reference '../../app/globals.css';
+
 .offerings-container {
-  @apply w-full text-[1.25rem] mx-auto flex content-center md:max-w-3xl;
+  @apply font-quicksand w-full text-[1.25rem] mx-auto flex content-center md:max-w-3xl;
 }
 
 .offerings-container h2 {

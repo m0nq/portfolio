@@ -1,96 +1,175 @@
 /**
- * This injects Tailwind's base styles and any base styles registered by
- * plugins.
+ * Import Tailwind CSS
  */
-@tailwind base;
+@import 'tailwindcss';
 
 /**
- * This injects Tailwind's component classes and any component classes
- * registered by plugins.
+ * Theme configuration
  */
-@tailwind components;
+@theme {
+  --font-*: initial;
+  --font-sans: var(--quicksand-font-family), ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-body: var(--open-sans-font-family), ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-quicksand: var(--quicksand-font-family), ui-sans-serif, system-ui, sans-serif;
+  --font-open-sans: var(--open-sans-font-family), ui-sans-serif, system-ui, sans-serif;
 
-/**
- * This injects Tailwind's utility classes and any utility classes registered
- * by plugins.
- */
-@tailwind utilities;
+  /* Animations */
+  --animate-track-in: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  --animate-spin: spin 1s linear infinite;
+  --animate-fade-in-bottom: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  --animate-fade-in-center: fade-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
-/**
- * Use this directive to control where Tailwind injects the hover, focus,
- * responsive, dark mode, and other variants of each class.
- *
- * If omitted, Tailwind will append these classes to the very end of
- * your stylesheet by default.
- */
-@tailwind variants;
+  /* Background images */
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
 
-/*Variable font stuff...*/
-/*@font-face {*/
-/*  font-family: 'Quicksand', sans-serif;*/
-/*  !*font-optical-sizing: auto;*!*/
-/*  font-stretch: auto;*/
-/*  font-style: normal;*/
-/*  font-weight: 400;*/
-/*  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap') format('woff2');*/
-body {
-  @apply antialiased bg-dark text-base font-light font-sans text-white scroll-smooth text-left;
-}
+  /* Colors */
+  --color-dark: #181a1b;
+  --color-primary: hotpink;
+  --color-secondary: dodgerblue;
 
-main {
-  @apply col-start-1
-  lg:col-start-2;
-}
+  /* Positioning */
+  --inset-0: 0;
 
-a, button {
-  @apply cursor-pointer;
-}
-
-h1, h2 {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 1);
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  @apply mt-2 mb-6 leading-5 w-fit lg:mb-6;
-}
-
-h1 {
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-  @apply text-5xl inline-block mt-0 animate-track-in;
-
-  span {
-    @apply text-primary;
+  /* Animation keyframes */
+  @keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 0.5rem;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes fade-in-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-center {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
 
-h2 {
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  @apply mb-4 text-[1.5rem];
+/**
+ * Base styles
+ */
+@layer base {
+  /* Border color compatibility for Tailwind v4 */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-[color:var(--color-gray-200,currentColor)];
+  }
+  
+  body {
+    @apply bg-[color:var(--color-dark)] text-white font-sans font-light text-base text-left scroll-smooth antialiased;
+  }
+  
+  main {
+    @apply col-start-1 lg:col-start-2;
+  }
+  
+  a, button {
+    @apply cursor-pointer;
+  }
+  
+  h1, h2 {
+    @apply mx-0 mt-2 mb-6 leading-tight w-fit lg:mb-6;
+  }
+  
+  h1 {
+    @apply my-[0.67em] border-b-2 border-b-[rgba(255,255,255,0.15)] text-3xl inline-block mt-0 font-quicksand font-medium;
+    animation: var(--animate-track-in);
+  }
+  
+  h1 span {
+    @apply text-[color:var(--color-primary)];
+  }
+  
+  h2 {
+    @apply my-[0.83em] mb-4 text-2xl;
+  }
 }
 
-.banner {
-  @apply relative p-7 h-auto
-  sm:h-screen;
+/**
+ * Component styles
+ */
+@layer components {
+  .banner {
+    @apply relative p-7 h-auto sm:h-screen;
+  }
+  
+  .inner-container {
+    @apply grid grid-cols-1 lg:grid-cols-[320px_1fr] xl:grid-cols-[375px_1fr];
+  }
+  
+  .main-wrapper {
+    @apply contain-none col-start-1 lg:col-start-2;
+  }
+  
+  .page-template {
+    animation: var(--animate-fade-in-bottom);
+  }
+  
+  .strong-emphasis {
+    @apply font-semibold;
+  }
 }
 
-.inner-container {
-  @apply grid grid-cols-1
-  lg:grid-cols-[320px_1fr]
-  xl:grid-cols-[375px_1fr];
-}
-
-.main-wrapper {
-  contain: none;
-  @apply col-start-1
-  lg:col-start-2;
-}
-
-.page-template {
-  @apply animate-fade-in-bottom;
-}
-
-.strong-emphasis {
-  @apply font-semibold;
+/**
+ * Custom utility classes
+ */
+@layer utilities {
+  .font-quicksand {
+    font-family: var(--font-quicksand);
+  }
+  
+  .font-open-sans {
+    font-family: var(--font-open-sans);
+  }
+  
+  .top-0 {
+    top: var(--inset-0);
+  }
+  
+  .left-0 {
+    left: var(--inset-0);
+  }
+  
+  .right-0 {
+    right: var(--inset-0);
+  }
+  
+  .bottom-0 {
+    bottom: var(--inset-0);
+  }
 }

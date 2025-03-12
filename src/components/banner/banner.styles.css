@@ -1,3 +1,5 @@
+@reference '../../app/globals.css';
+
 .banner-image-container {
   @apply overflow-hidden z-[1] h-full w-full top-0 left-0 absolute;
 
@@ -8,7 +10,7 @@
 }
 
 .banner-container {
-  @apply mx-auto h-full;
+  @apply mx-auto h-full font-quicksand;
 
   .banner-content {
     @apply w-full min-h-[32vh] z-[2] relative flex flex-col items-start justify-between
@@ -16,7 +18,7 @@
     md:justify-end;
 
     h1 {
-      @apply font-medium uppercase;
+      @apply font-medium uppercase text-5xl;
     }
 
     p {
