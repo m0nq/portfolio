@@ -1,57 +1,75 @@
 @reference '../../globals.css';
 
 .post-content {
-  h2 {
-    @apply mb-4 text-4xl font-semibold font-sans text-left;
-  }
+    h2 {
+        @apply mb-4 text-4xl font-semibold font-sans text-left;
+    }
 
-  h3 {
-    @apply mb-4 text-2xl font-semibold font-sans text-left
-    sm:text-3xl;
-  }
+    h3 {
+        @apply mb-4 text-2xl font-semibold font-sans text-left
+        sm:text-3xl;
+    }
 
-  h4 {
-    @apply mb-4 text-xl font-semibold font-sans text-left;
-  }
+    h4 {
+        @apply mb-4 text-xl font-semibold font-sans text-left;
+    }
 
-  p {
-    @apply w-full text-xl pb-6 py-6;
-  }
+    p {
+        @apply w-full text-xl pb-6 py-6;
+    }
 
-  a {
-    @apply no-underline relative text-[#afc2cb];
-  }
+    a {
+        @apply no-underline relative text-[#afc2cb];
+    }
 
-  ol {
-    @apply list-decimal ml-8 text-left text-xl;
-  }
+    ol {
+        @apply list-decimal ml-8 text-left text-xl;
+    }
 
-  ol ol {
-    @apply list-[lower-alpha] ml-8 text-left text-xl;
-  }
+    ol ol {
+        @apply list-[lower-alpha] ml-8 text-left text-xl;
+    }
 
-  ul {
-    @apply list-disc ml-8 text-left text-xl;
-  }
+    ul {
+        @apply list-disc ml-8 text-left text-xl;
+    }
 
-  figure {
-    @apply mt-6 mx-auto;
-  }
+    figure {
+        @apply mt-6 mx-auto;
+    }
 
-  figcaption {
-    @apply text-center text-[#afc2cb];
-  }
+    figcaption {
+        @apply text-center text-[#afc2cb];
+    }
 
-  .is-layout-flex {
-    @apply flex;
-  }
+    .is-layout-flex {
+        @apply flex;
+    }
+
+    table {
+        @apply w-full my-8 border-collapse rounded-xl overflow-hidden;
+    }
+
+    th {
+        @apply text-left font-semibold px-6 py-4 text-[#afc2cb] border-b border-[#223044];
+    }
+
+    td {
+        @apply px-6 py-4 border-b border-[#223044] text-xl text-[#e4eaf1];
+    }
+
+    tr:last-child td {
+        @apply border-b-0;
+    }
+
+    blockquote {
+        quotes: '\201C' '\201D' '\2018' '\2019';
+        @apply border-l-8 border-primary px-2.5 py-2 my-6 mx-2.5 text-2xl before:text-8xl before:leading-6 before:mr-16
+        before:align-[-0.4rem];
+    }
+
+    blockquote:before {
+        content: open-quote;
+    }
 }
 
-blockquote {
-  quotes: '\201C' '\201D' '\2018' '\2019';
-  @apply border-l-8 border-primary px-2.5 py-2 my-6 mx-2.5 before:text-8xl before:leading-6 before:mr-16 before:align-[-0.4rem]
-}
-
-blockquote:before {
-  content: open-quote;
-}
