@@ -1,17 +1,52 @@
-import { ReactElement } from 'react';
-
+'use client';
+import { useCallback, useEffect, useState } from 'react';
 import './blog.styles.css';
 import { Section } from '@components/utils/section';
 import { Banner } from '@components/banner/banner';
 import macbookCloseupImage from '@public/macbook-closeup.webp';
-import { getPosts } from '@utils/api';
 import { BlogCardDetails } from '@components/utils/blog/blog-card-details';
 import { Post } from '@data-types/data-props';
 import { BackButton } from '@components/utils/back-button/back-button';
+import { Pagination } from '@components/blog/pagination';
 
-const BlogPage = async (): Promise<ReactElement> => {
+interface PageInfo {
+    hasPreviousPage: boolean;
+    hasNextPage: boolean;
+    startCursor?: string | null;
+    endCursor?: string | null;
+}
 
-    const { posts, pageInfo } = await getPosts();
+export default function BlogPage() {
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [pageInfo, setPageInfo] = useState<PageInfo>({
+        hasPreviousPage: false,
+        hasNextPage: false,
+        startCursor: null,
+        endCursor: null
+    });
+    const [loading, setLoading] = useState(true);
+
+    const fetchPosts = useCallback(async (options: { before?: string; after?: string } = {}) => {
+        setLoading(true);
+        try {
+            const res = await fetch('/api/posts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ first: 10, filter: {}, cursorInfo: options })
+            });
+            const data = await res.json();
+            setPosts(data.posts.map((edge: any) => edge.post));
+            setPageInfo(data.pageInfo);
+        } catch (err) {
+            // Optionally handle error
+        } finally {
+            setLoading(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        fetchPosts();
+    }, []);
 
     return (
         <>
@@ -31,30 +66,19 @@ const BlogPage = async (): Promise<ReactElement> => {
                 <div>
                     <div>
                         <Section className="blog-details">
-                            {posts?.map(({ post }: { post: Post }) => (
-                                <BlogCardDetails key={post.databaseId} post={post} />
-                            ))}
+                            {loading ? (
+                                <p>Loading...</p>
+                            ) : (
+                                posts.map((post: Post) => (
+                                    <BlogCardDetails key={post.databaseId} post={post} />
+                                ))
+                            )}
                         </Section>
                     </div>
                 </div>
             </Section>
-            <nav className="pagination-wrapper">
-                <div>
-                    {pageInfo?.hasPreviousPage &&
-                        <button onClick={async () => await getPosts(10, {}, { before: pageInfo?.startCursor })}>
-                            ← Newer Posts
-                        </button>}
-                </div>
-                <div>
-                    {pageInfo?.hasNextPage &&
-                        <button onClick={async () => await getPosts(10, {}, { after: pageInfo?.startCursor })}>
-                            Older Posts →
-                        </button>}
-                </div>
-            </nav>
+            <Pagination pageInfo={pageInfo} fetchPosts={fetchPosts} />
             <BackButton>← Back</BackButton>
         </>
     );
-};
-
-export default BlogPage;
+}
