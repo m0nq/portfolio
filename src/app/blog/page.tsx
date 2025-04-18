@@ -46,7 +46,7 @@ export default function BlogPage() {
 
     useEffect(() => {
         fetchPosts();
-    }, []);
+    }, [fetchPosts]);
 
     return (
         <>

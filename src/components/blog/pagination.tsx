@@ -14,13 +14,6 @@ interface PaginationProps {
 export const Pagination = ({ pageInfo, fetchPosts }: PaginationProps) => {
     const [loading, setLoading] = useState(false);
 
-    const handlePrev = async () => {
-        if (!pageInfo.startCursor) return;
-        setLoading(true);
-        await fetchPosts({ before: pageInfo.startCursor });
-        setLoading(false);
-    };
-
     const handleNext = async () => {
         if (!pageInfo.endCursor) return;
         setLoading(true);
@@ -31,15 +24,8 @@ export const Pagination = ({ pageInfo, fetchPosts }: PaginationProps) => {
     return (
         <nav className="pagination-wrapper">
             <div>
-                {pageInfo.hasPreviousPage && (
-                    <button onClick={handlePrev} disabled={loading}>
-                        ← Newer Posts
-                    </button>
-                )}
-            </div>
-            <div>
                 {pageInfo.hasNextPage && (
-                    <button onClick={handleNext} disabled={loading}>
+                    <button onClick={handleNext} disabled={loading || !pageInfo.hasNextPage}>
                         Older Posts →
                     </button>
                 )}
