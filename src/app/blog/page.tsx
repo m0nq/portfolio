@@ -1,5 +1,9 @@
 'use client';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+
 import './blog.styles.css';
 import { Section } from '@components/utils/section';
 import { Banner } from '@components/banner/banner';
@@ -17,6 +21,8 @@ interface PageInfo {
 }
 
 export default function BlogPage() {
+    const searchParams = useSearchParams();
+    const cursor = searchParams.get('cursor');
     const [posts, setPosts] = useState<Post[]>([]);
     const [pageInfo, setPageInfo] = useState<PageInfo>({
         hasPreviousPage: false,
@@ -45,8 +51,12 @@ export default function BlogPage() {
     }, []);
 
     useEffect(() => {
-        fetchPosts();
-    }, []);
+        if (cursor) {
+            fetchPosts({ after: cursor });
+        } else {
+            fetchPosts();
+        }
+    }, [cursor, fetchPosts]);
 
     return (
         <>
@@ -77,7 +87,7 @@ export default function BlogPage() {
                     </div>
                 </div>
             </Section>
-            <Pagination pageInfo={pageInfo} fetchPosts={fetchPosts} />
+            <Pagination pageInfo={pageInfo} />
             <BackButton>← Back</BackButton>
         </>
     );
