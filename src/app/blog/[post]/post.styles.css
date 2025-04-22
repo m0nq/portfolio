@@ -6,8 +6,7 @@
     }
 
     h3 {
-        @apply mb-4 text-2xl font-semibold font-sans text-left
-        sm:text-3xl;
+        @apply mb-4 text-2xl font-semibold font-sans text-left sm:text-3xl;
     }
 
     h4 {
@@ -46,30 +45,40 @@
         @apply flex;
     }
 
+    /* Responsive table container for injected HTML tables */
     table {
-        @apply w-full my-8 border-collapse rounded-xl overflow-hidden;
+        @apply block w-full overflow-x-auto border-collapse rounded-xl my-8 bg-transparent;
+    }
+
+    thead, tbody, tfoot, tr {
+        @apply w-full;
+    }
+
+    th, td {
+        @apply px-6 py-4 border-b border-[#223044] text-left text-xl text-[#e4eaf1] bg-transparent;
     }
 
     th {
-        @apply text-left font-semibold px-6 py-4 text-[#afc2cb] border-b border-[#223044];
-    }
-
-    td {
-        @apply px-6 py-4 border-b border-[#223044] text-xl text-[#e4eaf1];
+        @apply font-semibold text-[#afc2cb];
     }
 
     tr:last-child td {
         @apply border-b-0;
     }
 
+    /* Responsive adjustments for mobile */
+    @media (max-width: 640px) {
+        th, td {
+            @apply px-4 py-2 text-base;
+        }
+    }
+
     blockquote {
         quotes: '\201C' '\201D' '\2018' '\2019';
-        @apply border-l-8 border-primary px-2.5 py-2 my-6 mx-2.5 text-2xl before:text-8xl before:leading-6 before:mr-16
-        before:align-[-0.4rem];
+        @apply border-l-8 border-primary px-2.5 py-2 my-6 mx-2.5 text-2xl before:text-8xl before:leading-6 before:mr-16 before:align-[-0.4rem];
     }
 
     blockquote:before {
         content: open-quote;
     }
 }
-
