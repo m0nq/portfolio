@@ -12,6 +12,11 @@ export const About = () => {
                     ideas to life with understanding various requirements according to the latest industry trends.
                 </p>
                 <p>
+                    I currently work at <Link href="https://sutterhealth.org" target="_blank" rel="noopener noreferrer">
+                    Sutter Health</Link> as a web developer on their public-facing website, where I help deliver a
+                    polished, user-centered web experience at scale.
+                </p>
+                <p>
                     I started my career at <Link href="https://www.industriallogic.com/" target="_blank">
                     Industrial Logic</Link> where I learned the ropes of Extreme Programming and how to build
                     software that&apos;s robust and maintainable with agile methodologies. Working with <Link
