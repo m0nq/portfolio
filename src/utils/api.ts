@@ -9,9 +9,40 @@ import { PostEdges } from '@data-types/data-props';
 
 const WORDPRESS_API_URL = process.env.WORDPRESS_API_URL;
 
-const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> => {
+type GraphQLError = {
+    message: string;
+    extensions?: {
+        code?: string;
+    };
+};
+
+type GraphQLResponse<TData> = {
+    data?: TData | null;
+    errors?: GraphQLError[];
+};
+
+const logWpGraphqlFailure = (details: Record<string, unknown>): void => {
+    process.stderr.write(
+        `${JSON.stringify({
+            level: 'error',
+            source: 'wp-graphql',
+            ...details
+        })}\n`
+    );
+};
+
+const getQuery = async (postQuery: string, options?: { operationName: string; uri?: string }): Promise<Response> => {
+    if (!WORDPRESS_API_URL) {
+        logWpGraphqlFailure({
+            operationName: options?.operationName,
+            reason: 'missing_env',
+            envVar: 'WORDPRESS_API_URL'
+        });
+        throw new Error('WordPress API is not configured');
+    }
+
     const variables = {
-        uri
+        uri: options?.uri ?? ''
     };
 
     const res = await fetch(
@@ -27,11 +58,56 @@ const getQuery = async (postQuery: string, uri: string = ''): Promise<Response> 
     );
 
     if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
-        throw new Error('Failed to fetch data');
+        logWpGraphqlFailure({
+            operationName: options?.operationName,
+            reason: 'http_error',
+            status: res.status,
+            statusText: res.statusText,
+            uri: options?.uri
+        });
+
+        throw new Error('WordPress API request failed');
     }
 
     return res;
+};
+
+const parseGraphqlJson = async <TData>(
+    res: Response,
+    context: { operationName: string; uri?: string }
+): Promise<TData> => {
+    let json: GraphQLResponse<TData>;
+    try {
+        json = (await res.json()) as GraphQLResponse<TData>;
+    } catch (error) {
+        logWpGraphqlFailure({
+            operationName: context.operationName,
+            reason: 'invalid_json',
+            uri: context.uri
+        });
+        throw new Error('WordPress API returned invalid JSON');
+    }
+
+    if (json.errors?.length) {
+        logWpGraphqlFailure({
+            operationName: context.operationName,
+            reason: 'graphql_errors',
+            uri: context.uri,
+            errors: json.errors.map((e) => ({ message: e.message, code: e.extensions?.code }))
+        });
+        throw new Error('WordPress API returned GraphQL errors');
+    }
+
+    if (!json.data) {
+        logWpGraphqlFailure({
+            operationName: context.operationName,
+            reason: 'missing_data',
+            uri: context.uri
+        });
+        throw new Error('WordPress API returned no data');
+    }
+
+    return json.data;
 };
 
 // Take a filter param to filter projects?
@@ -87,9 +163,8 @@ export const getPosts = async (
           }
         }`;
 
-    const res = await getQuery(postsQuery);
-
-    const { data }: DataResponse = await res.json();
+    const res = await getQuery(postsQuery, { operationName: 'WPAllPostQuery' });
+    const data = await parseGraphqlJson<DataResponse['data']>(res, { operationName: 'WPAllPostQuery' });
 
     // There's a bug in WPGraphQL where it sometimes returns null values for both cursors
     // if (!data?.posts?.pageInfo?.hasNextPage && !data?.posts?.pageInfo?.hasPreviousPage) {
@@ -107,7 +182,7 @@ export const getPosts = async (
     };
 };
 
-export const getPost = async (uri: string): Promise<Post> => {
+export const getPost = async (uri: string): Promise<Post | null> => {
     const postQuery: QueryString = `query WPPostQuery {
             post(id: "${uri}", idType: URI) {
                 content(format: RENDERED)
@@ -122,9 +197,8 @@ export const getPost = async (uri: string): Promise<Post> => {
               }
             }`;
 
-    const res = await getQuery(postQuery, uri);
+    const res = await getQuery(postQuery, { operationName: 'WPPostQuery', uri });
+    const data = await parseGraphqlJson<{ post: Post | null }>(res, { operationName: 'WPPostQuery', uri });
 
-    const { data } = await res.json();
-
-    return data?.post || {};
+    return data?.post ?? null;
 };
