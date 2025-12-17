@@ -141,10 +141,10 @@ Fork &/or clone this repo get a local copy. To get up and running, follow these 
 
 This is an example of how to list things you need to use the software and how to install them.
 
-* yarn
+* pnpm
   ```sh
   corepack enable
-  yarn set version stable
+  pnpm --version
   ```
 
 ### Installation
@@ -157,7 +157,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 2. Install Packages
    ```sh
-   yarn install
+   pnpm install
    ```
 
 [//]: # (3. Enter your API in `config.js`)
@@ -368,4 +368,3 @@ Project Link: [https://github.com/m0nq/portfolio](https://github.com/m0nq/portfo
 [Gatsby.js]: https://img.shields.io/badge/Gatsby-%23663399.svg?style=for-the-badge&logo=gatsby&logoColor=white
 
 [Gatsby-url]: https://www.gatsbyjs.com/
-
