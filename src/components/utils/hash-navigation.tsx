@@ -1,21 +1,12 @@
 'use client';
 
-import { useRouter, usePathname } from 'next/navigation';
-import { PropsWithChildren, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { PropsWithChildren, useEffect } from 'react';
 
 export default function HashNavigation({ children }: PropsWithChildren) {
   const pathname = usePathname();
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Set loaded state to true after component mounts
-    setIsLoaded(true);
-  }, []);
-
-  useEffect(() => {
-    // Only run this effect when the component has loaded and when pathname changes
-    if (!isLoaded) return;
-
     // Scroll to hash after a short delay to ensure the DOM is fully rendered
     const timeoutId = setTimeout(() => {
       if (window.location.hash) {
@@ -30,7 +21,7 @@ export default function HashNavigation({ children }: PropsWithChildren) {
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [isLoaded, pathname]);
+  }, [pathname]);
 
   useEffect(() => {
     // Handle hash changes within the same page

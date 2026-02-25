@@ -22,8 +22,8 @@ describe('Section component tests', () => {
         const sectionElement = screen.getByText('Children');
         expect(sectionElement).toBeInTheDocument();
         expect(sectionElement.tagName).toBe('SECTION');
-        expect(sectionElement).toHaveStyle('backgroundColor: red');
-        expect(sectionElement).toHaveStyle('color: white');
+        expect(sectionElement).toHaveStyle('background-color: rgb(255, 0, 0)');
+        expect(sectionElement).toHaveStyle('color: rgb(255, 255, 255)');
         expect(sectionElement).toHaveClass('custom-class');
     });
 
