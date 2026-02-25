@@ -1,45 +1,25 @@
-import { screen } from '@testing-library/react';
-import { render } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 
 import { Main } from './main';
 
-jest.mock('@components/projects/projects', () => require('../../../__mocks__/Projects'));
+jest.mock('@components/projects/projects', () => ({
+    Projects: () => <div data-testid="mock-projects">Mock Projects</div>
+}));
 
-// TODO: Get this to work with the mock projects component
-xdescribe('Main', () => {
-    it('renders the Services component', () => {
+describe('Main', () => {
+    it('renders all top-level content sections', () => {
         render(<Main />);
-        const aboutSection = screen.getByTestId('services');
-        expect(aboutSection).toBeInTheDocument();
+
+        expect(screen.getByTestId('banner')).toBeInTheDocument();
+        expect(screen.getByTestId('services')).toBeInTheDocument();
+        expect(screen.getByTestId('skills')).toBeInTheDocument();
+        expect(screen.getByTestId('projects')).toBeInTheDocument();
     });
 
-    it('renders the Skills component', () => {
+    it('renders the Projects area content', () => {
         render(<Main />);
-        const skillsSection = screen.getByTestId('skills');
-        expect(skillsSection).toBeInTheDocument();
-    });
 
-    it('renders the Projects component', () => {
-        render(<Main />);
         const projectsSection = screen.getByTestId('projects');
-        expect(projectsSection).toBeInTheDocument();
-    });
-
-    it('renders the main wrapper', () => {
-        render(<Main />);
-        const mainWrapper = screen.getByRole('main');
-        expect(mainWrapper).toBeInTheDocument();
-    });
-
-    it('renders the item list wrapper', () => {
-        render(<Main />);
-        const itemListWrapper = screen.getByTestId('main-content-wrapper');
-        expect(itemListWrapper).toBeInTheDocument();
-    });
-
-    it('renders the item list', () => {
-        render(<Main />);
-        const itemList = screen.getByTestId('inner-content-wrapper');
-        expect(itemList).toBeInTheDocument();
+        expect(within(projectsSection).getByTestId('mock-projects')).toBeInTheDocument();
     });
 });

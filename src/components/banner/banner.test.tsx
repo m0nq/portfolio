@@ -8,7 +8,9 @@ describe('Banner', () => {
   it('renders the banner image', () => {
     render(<Banner image={mockImageSrc} />);
     const bannerImage = screen.getByTestId('banner-image');
+    const image = screen.getByRole('img', { name: 'Illuminated MacBook laptop' });
     expect(bannerImage).toBeInTheDocument();
+    expect(image).toHaveAttribute('src', mockImageSrc);
   });
 
   it('renders children when provided', () => {
