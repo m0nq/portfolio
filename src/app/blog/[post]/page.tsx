@@ -6,7 +6,6 @@ import { notFound } from 'next/navigation';
 import './post.styles.css';
 import { Section } from '@components/utils/section';
 import { getPost } from '@utils/api';
-import { getPosts } from '@utils/api';
 import { Article } from '@components/utils/article/article';
 import { BackButton } from '@components/utils/back-button/back-button';
 
@@ -17,25 +16,6 @@ const normalizeWpUri = (value: string): string => {
     const segments = withoutQuery.split('/').filter(Boolean);
 
     return `/${segments.join('/')}/`;
-};
-
-const wpUriToRouteParam = (wpUri: string): string | null => {
-    const segments = wpUri.split('/').filter(Boolean);
-    if (segments.length !== 1) {
-        return null;
-    }
-    return segments[0];
-};
-
-export const generateStaticParams = async (): Promise<{ post: string; }[]> => {
-    const { posts } = await getPosts(250, { tag: 'portfolio' });
-
-    const params = posts
-        .map(({ post: { uri } }) => wpUriToRouteParam(uri))
-        .filter((post): post is string => Boolean(post))
-        .map((post) => ({ post }));
-
-    return params;
 };
 
 interface BlogPostProps {
