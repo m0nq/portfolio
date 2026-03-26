@@ -84,14 +84,22 @@ describe('Projects', () => {
         render(await Projects());
 
         expect(screen.getByText('Latest Projects')).toBeInTheDocument();
+        expect(
+            screen.getByText('Project highlights are temporarily unavailable. Visit the blog for the latest updates.')
+        ).toBeInTheDocument();
         expect(screen.getByRole('link', { name: 'More →' })).toHaveAttribute('href', '/blog');
         expect(screen.queryByRole('link', { name: 'Read More' })).not.toBeInTheDocument();
     });
 
-    it('propagates errors when project loading fails', async () => {
+    it('renders the fallback content when project loading fails', async () => {
         mockedGetPosts.mockRejectedValue(new Error('WordPress API request failed'));
 
-        await expect(Projects()).rejects.toThrow('WordPress API request failed');
+        render(await Projects());
+
         expect(mockedGetPosts).toHaveBeenCalledWith(4, { category: 'projects', tag: 'portfolio' });
+        expect(
+            screen.getByText('Project highlights are temporarily unavailable. Visit the blog for the latest updates.')
+        ).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: 'More →' })).toHaveAttribute('href', '/blog');
     });
 });

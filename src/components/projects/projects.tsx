@@ -8,8 +8,13 @@ import { Post } from '@data-types/data-props';
 import { BlogCardDetails } from '@components/utils/blog/blog-card-details';
 
 export const Projects = async (): Promise<ReactElement> => {
-
-    const { posts } = await getPosts(4, { category: 'projects', tag: 'portfolio' });
+    let posts: { post: Post }[] = [];
+    try {
+        const response = await getPosts(4, { category: 'projects', tag: 'portfolio' });
+        posts = response.posts;
+    } catch {
+        posts = [];
+    }
 
     return (
         <>
@@ -24,6 +29,11 @@ export const Projects = async (): Promise<ReactElement> => {
                     {posts.map(({ post }: { post: Post }) => (
                         <BlogCardDetails key={post.databaseId} post={post} />
                     ))}
+                    {!posts.length && (
+                        <p>
+                            Project highlights are temporarily unavailable. Visit the blog for the latest updates.
+                        </p>
+                    )}
                 </Section>
                 <div className="learn-more">
                     <Link href={'/blog'} className="blog-link">More →</Link>
@@ -32,4 +42,3 @@ export const Projects = async (): Promise<ReactElement> => {
         </>
     );
 };
-
