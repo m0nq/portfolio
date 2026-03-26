@@ -27,7 +27,9 @@ describe('Skills', () => {
 
         const technicalSkillsList = screen.getByTestId('technical-skills-list');
         expect(technicalSkillsList).toBeInTheDocument();
-        expect(technicalSkillsList.children.length).toBe(9); // Check if there are 9 list items
+        expect(screen.getByText('JavaScript/TypeScript')).toBeInTheDocument();
+        expect(screen.getByText('Node.js')).toBeInTheDocument();
+        expect(technicalSkillsList.children.length).toBe(8);
     });
 
     it('should check if the soft skills list is rendered', () => {

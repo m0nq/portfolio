@@ -12,9 +12,9 @@ const sendEmail = async (form: any): Promise<any> => {
     const res: Response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify(form)
     });
 
     const { success, errors, response } = await res.json();
@@ -53,7 +53,7 @@ export const Contact = (): ReactElement | null => {
                     styles={{
                         height: 'calc(100% - 5rem)', // Subtract the height of the close button container
                         width: '100%',
-                        margin: 0,
+                        margin: 0
                     }}
                 />
             </div>
