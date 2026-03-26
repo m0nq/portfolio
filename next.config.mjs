@@ -3,7 +3,7 @@
 const nextConfig = {
     reactStrictMode: true,
     compiler: {
-        removeConsole: process.env.NODE_ENV === 'production'
+        removeConsole: process.env.NODE_ENV === 'production',
     },
     images: {
         remotePatterns: [
@@ -11,10 +11,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'cirquitree.com',
                 port: '',
-                pathname: '/wp-content/**'
-            }
-        ]
-    }
+                pathname: '/wp-content/**',
+            },
+        ],
+    },
 };
 
 export default nextConfig;

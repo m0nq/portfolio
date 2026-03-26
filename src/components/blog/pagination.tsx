@@ -18,7 +18,9 @@ export const Pagination = ({ pageInfo }: PaginationProps) => {
     const [loading, setLoading] = useState(false);
 
     const handleNext = async () => {
-        if (!pageInfo.endCursor) return;
+        if (!pageInfo.endCursor) {
+            return;
+        }
         setLoading(true);
         const params = new URLSearchParams(searchParams.toString());
         params.set('cursor', pageInfo.endCursor);

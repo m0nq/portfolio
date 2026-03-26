@@ -21,7 +21,9 @@ const normalizeWpUri = (value: string): string => {
 
 const wpUriToRouteParam = (wpUri: string): string | null => {
     const segments = wpUri.split('/').filter(Boolean);
-    if (segments.length !== 1) return null;
+    if (segments.length !== 1) {
+        return null;
+    }
     return segments[0];
 };
 
@@ -45,7 +47,9 @@ const BlogPost = async (props: BlogPostProps): Promise<ReactElement> => {
     const postUri = normalizeWpUri((await params).post);
 
     const post = await getPost(postUri);
-    if (!post?.title) notFound();
+    if (!post?.title) {
+        notFound();
+    }
 
     return (
         <>

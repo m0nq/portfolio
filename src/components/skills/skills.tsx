@@ -14,7 +14,6 @@ export const Skills = () => {
                         <ul data-testid="technical-skills-list">
                             <li>JavaScript/TypeScript</li>
                             <li>React</li>
-                            <li>GatsbyJS</li>
                             <li>Next.js</li>
                             <li>Jest</li>
                             <li>HTML</li>
